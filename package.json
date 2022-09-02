@@ -1,12 +1,23 @@
 {
   "name": "tech-blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "CMS App",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
   "author": "Nate",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "mysql2": "^2.3.3",
+    "express": "^4.18.1",
+    "sequelize": "^6.21.4",
+    "express-session": "^1.17.1",
+    "express-handlebars": "^6.0.6",
+    "connect-session-sequelize": "^7.0.4"
+  }
 }
