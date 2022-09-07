@@ -18,6 +18,10 @@ Comment.init(
     username: {
       type: DataTypes.STRING,
       allowNull: false,
+      references: {
+        model: "user",
+        key: "id"
+      }
     },
     date_created: {
       type: DataTypes.DATE,
