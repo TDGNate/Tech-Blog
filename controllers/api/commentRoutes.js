@@ -11,7 +11,9 @@ router.get("/", async (req, res) => {
         .status(404)
         .json({
         message: "Can't find comment"
-      });
+        });
+      
+        return;
     }
     res
       .status(200)
@@ -52,6 +54,8 @@ router.delete("/", async (req, res) => {
         .json({
           message: "No comment to delete that matches that ID"
         });
+      
+        return;
     }
 
     res.json(comment);
