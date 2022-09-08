@@ -5,6 +5,7 @@
 	background-size: cover;
 	width: 100%;
 	min-height: 100%;
+	text-align: center;
 }
 
 .container-home-post {
@@ -13,8 +14,9 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 1rem;
+	padding: 1.5rem 1rem;
 	border-radius: 8px;
+	margin: 2rem 0;
 }
 
 /* Post Styles  */
@@ -30,6 +32,12 @@
 	align-items: center;
 	text-align: center;
 	max-width: 95%;
+	transition: all 300ms ease;
+}
+
+.post:hover {
+	background-color: rgba(130, 130, 130, 0.335);
+	transform: translate(-2px, -3px);
 }
 
 .post-title {
@@ -52,6 +60,10 @@
 }
 
 @media screen and (min-width: 980px) {
+	.home {
+		text-align: start;
+	}
+
 	/* post container  */
 	.container-home-post {
 		flex-direction: row;
@@ -61,5 +73,15 @@
 	.post {
 		max-width: 45%;
 		margin: 0.5rem;
+		text-align: start;
+		align-items: flex-start;
+	}
+
+	.post-title {
+		width: 100%;
+	}
+
+	.post-bottom {
+		width: 100%;
 	}
 }
