@@ -11,6 +11,8 @@
 	background-color: rgba(0, 0, 0, 0.736);
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	padding: 1rem;
 	border-radius: 8px;
 }
@@ -27,6 +29,7 @@
 	justify-content: center;
 	align-items: center;
 	text-align: center;
+	max-width: 95%;
 }
 
 .post-title {
@@ -51,6 +54,12 @@
 @media screen and (min-width: 980px) {
 	/* post container  */
 	.container-home-post {
-		flex-direction: unset;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	.post {
+		max-width: 45%;
+		margin: 0.5rem;
 	}
 }
