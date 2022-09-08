@@ -25,15 +25,32 @@ router.post("/login", async (req, res) => {
 
     if (!user) {
       res.json({
-        message: "can't find user"
+        message: "check email and password again.."
       });
 
       return;
     }
 
-    res.json(user);
-  } catch (err) {
+    const isValPass = await User.checkPassword(req.body.password);
 
+    if (!isValPass) {
+      res.json({ message: "incorrect pass" });
+      
+      return;
+    }
+
+    req.session.save(() => {
+
+      req.session.logged_in = true;
+
+      res
+        .json({
+           message: "you're logged in!"
+        });
+    });
+
+  } catch (err) {
+    res.status(500).json({ message: "Server Error" });
   }
 });
 
