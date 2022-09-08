@@ -1,60 +1,61 @@
 const router = require("express").Router();
-const Comment = require("../../models/comment");
+const Post = require("../../models/post");
 
-// Comments
-// get comments
+// Posts
+// get posts
 router.get("/", async (req, res) => {
   try {
-    const comment = await Comment.findAll();
-    if (!comment) {
+    const posts = await Post.findAll();
+    if (!posts) {
       res
         .status(404)
         .json({
-        message: "Can't find comment"
+        message: "Can't find posts"
       });
     }
     res
       .status(200)
-      .json(comment);
+      .json(posts);
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
   }
  });
 
+//  create post 
 router.post("/", async (req, res) => {
   try {
-    const comment = await Comment.create({
-      comment: req.body.comment,
-      username_id: req.body.username_id,
-      post_id: req.body.post_id
+    const posts = await Post.create({
+      title: req.body.title,
+      content: req.body.content,
+      username_id: req.body.username_id
     });
 
-    res.json(comment);
+    res.json(posts);
   } catch (err) {
 
     res.status(500).json({ message: "Server Error" });
   }
 });
 
-// delete comment 
+// delete posts 
 router.delete("/", async (req, res) => {
   try {
-    const comment = await Comment.destroy({
+    const posts = await Post.destroy({
       where: {
         id: req.body.id
       }
     });
 
-    if (!comment) {
+    if (!posts) {
 
       res
         .status(404)
         .json({
-          message: "No comment to delete that matches that ID"
+          message: "No posts to delete that matches that ID"
         });
     }
 
-    res.json(comment);
+    res.json(posts);
   } catch (err) {
 
     res.status(500).json({ message: "Server Error" });
