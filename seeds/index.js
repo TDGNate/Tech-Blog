@@ -14,12 +14,17 @@ const commentSeeds = require("./comments.json");
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  await Event.bulkCreate(eventSeed, {
+  await User.bulkCreate(userSeeds, {
     individualHooks: true,
     returning: true,
   });
 
-  await Admin.bulkCreate(adminSeed, {
+  await Post.bulkCreate(postSeeds, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  await Comment.bulkCreate(commentSeeds, {
     individualHooks: true,
     returning: true,
   });
@@ -27,3 +32,5 @@ const seedDatabase = async () => {
   process.exit(0);
 
 };
+
+seedDatabase();
