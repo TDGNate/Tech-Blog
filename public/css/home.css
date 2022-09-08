@@ -1,3 +1,5 @@
+/* Home Page Styles  */
+
 .home {
 	background-image: url("../assets/polygon-grey.svg");
 	background-position: 50%;
@@ -65,10 +67,13 @@
 	}
 
 	/* post container  */
+
 	.container-home-post {
 		flex-direction: row;
 		flex-wrap: wrap;
 	}
+
+	/* Post  */
 
 	.post {
 		max-width: 45%;
