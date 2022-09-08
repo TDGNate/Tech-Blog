@@ -1,6 +1,13 @@
 /* Open Sans Font  */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
 
+/* Root Variables  */
+:root {
+	--light-clr: #fff;
+	--dark-clr: #1f1f1f;
+	--shaded-clr: rgb(80, 80, 80);
+}
+
 /* Universal  */
 * {
 	margin: 0;
@@ -12,4 +19,27 @@ body {
 	font-family: "Open Sans", sans-serif;
 	width: 100%;
 	background-color: #1f1f1f;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: white;
+	font-weight: bold;
+	margin: 1rem 0;
+}
+
+div,
+p,
+span,
+em,
+i {
+	color: var(--light-clr);
+}
+
+.container {
+	max-width: 1160px;
 }

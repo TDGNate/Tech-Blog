@@ -1,0 +1,34 @@
+.home {
+	background-image: url("../assets/polygon-grey.svg");
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	min-height: 100%;
+}
+
+.container-home-post {
+	background-color: rgba(0, 0, 0, 0.736);
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	border-radius: 8px;
+}
+
+.post {
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(64, 64, 64, 0.862);
+	padding: 0.5rem;
+	margin: 0.8rem;
+	border-radius: 8px;
+	justify-content: center;
+	align-items: center;
+}
+
+.post-title {
+	margin-bottom: 0.5rem;
+	font-size: 1.5rem;
+	font-weight: bold;
+	border-bottom: 1px solid var(--shaded-clr);
+}
