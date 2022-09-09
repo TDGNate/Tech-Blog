@@ -31,7 +31,7 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    const isValPass = await User.checkPassword(req.body.password);
+    const isValPass = await user.checkPassword(req.body.password);
 
     if (!isValPass) {
       res.json({ message: "incorrect pass" });
