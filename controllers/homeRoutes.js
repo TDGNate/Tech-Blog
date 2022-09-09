@@ -12,8 +12,11 @@ router.get("/", async (req, res) => {
       }
     });
 
-    const posts = postsData.map((post) => post.toJSON());
+    const posts = postsData.map((post) => post.get({
+      plain: true
+    }));
 
+    // res.send(posts);
 
     res.render(
       "home",
