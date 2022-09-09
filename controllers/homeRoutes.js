@@ -1,15 +1,25 @@
 const router = require("express").Router();
 const Post = require("../models/post");
+const User = require("../models/user");
 
 // homepage 
 router.get("/", async (req, res) => {
   try {
-    const posts = await Post.findAll();
+    const postsData = await Post.findAll({},{
+      include:
+      {
+        model: User
+      }
+    });
 
-    // const allPosts = posts.map((post) => post.get({ plain: true }));
+    const posts = postsData.map((post) => post.toJSON());
 
-    // res.send(allPosts);
-    res.render("home");
+
+    res.render(
+      "home",
+      {
+    posts,
+    });
 
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
