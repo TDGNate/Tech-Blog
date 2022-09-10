@@ -40,6 +40,7 @@
 #createPostBtn {
 	background-color: var(--sub-clr);
 	color: var(--light-clr);
+	margin-top: 0.4rem;
 }
 
 #createPostBtn:hover {
@@ -49,4 +50,7 @@
 }
 
 @media screen and (min-width: 980px) {
+	#createPostBtn {
+		width: 45%;
+	}
 }
