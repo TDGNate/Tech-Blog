@@ -10,17 +10,6 @@
 	text-align: center;
 }
 
-.container-home-post {
-	background-color: rgba(0, 0, 0, 0.736);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 1.5rem 1rem;
-	border-radius: 8px;
-	margin: 2rem 0;
-}
-
 /* Post Styles  */
 
 .post {

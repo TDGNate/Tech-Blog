@@ -5,6 +5,7 @@
 :root {
 	--light-clr: #fff;
 	--dark-clr: #1f1f1f;
+	--sub-dark-bg: rgba(0, 0, 0, 0.736);
 	--shaded-clr: rgb(80, 80, 80);
 }
 
@@ -46,4 +47,15 @@ hr {
 
 .container {
 	max-width: 1160px;
+}
+
+.container-sub {
+	background-color: var(--sub-dark-bg);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1.5rem 1rem;
+	border-radius: 8px;
+	margin: 2rem 0;
 }
