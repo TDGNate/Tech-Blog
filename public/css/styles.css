@@ -41,6 +41,23 @@ h6 {
 	margin: 1rem 0;
 }
 
+/* header Tags Sizes and Margins  */
+
+h1 {
+	font-size: 3.3rem;
+	margin: 2.5rem 0;
+}
+
+h2 {
+	font-size: 2rem;
+	margin: 1.3rem 0;
+}
+
+h3 {
+	font-size: 1.75rem;
+	margin: 1rem 0;
+}
+
 div,
 p,
 span,
