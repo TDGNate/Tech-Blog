@@ -10,7 +10,7 @@
 	--light-clr: #fff;
 	--dark-clr: #1f1f1f;
 	--sub-dark-bg: rgba(0, 0, 0, 0.736);
-	--shaded-clr: rgba(117, 117, 117, 0.238);
+	--shaded-clr: rgba(135, 135, 135, 0.238);
 	--shaded-clr-hover: rgba(130, 130, 130, 0.335);
 }
 
@@ -27,7 +27,7 @@
 body {
 	font-family: "Open Sans", sans-serif;
 	width: 100%;
-	background-color: #1f1f1f;
+	background-color: #151515;
 }
 
 h1,
