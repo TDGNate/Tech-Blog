@@ -67,7 +67,8 @@ i {
 }
 
 hr {
-	background-color: white;
+	padding: 1px;
+	background-color: rgb(255, 28, 202);
 }
 
 /* Conatiners  */

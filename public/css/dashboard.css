@@ -73,6 +73,12 @@
 	overflow: hidden;
 	margin: 0.8rem;
 	max-width: 80%;
+	transition: all 300ms ease;
+}
+
+.dashboard-post:hover {
+	background-color: var(--shaded-clr-hover);
+	transform: translate(-2px, -3px);
 }
 
 .dashboard-post-date {
@@ -91,6 +97,10 @@
 	margin: 0.5rem 0;
 }
 
+.dashboard-post-content {
+	padding: 0.5rem;
+}
+
 @media screen and (min-width: 980px) {
 	/* form  */
 
@@ -100,14 +110,16 @@
 
 	.dashboard-post {
 		flex-direction: row;
-		max-width: 550px;
+		max-width: 75%;
 		min-height: 200px;
-		gap: 0.8rem;
+		gap: 5%;
 	}
 
 	.second-side {
 		width: 75%;
 		height: 100%;
+		align-self: center;
+		text-align: start;
 	}
 
 	.dashboard-post-date {
@@ -116,5 +128,9 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	.dashboard-post-content {
+		padding: 0;
 	}
 }
