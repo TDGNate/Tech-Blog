@@ -1,33 +1,33 @@
-<div class="page login">
+<div class="page sign-up">
 	<div class="container">
 		<h1>Tech Blog</h1>
 
 		<hr />
-		<h2>Log in to your account</h2>
-		<p>Let's get you in!</p>
+		<h2>Create account</h2>
+		<p>Hey there!</p>
 
 		{{! form  }}
 
 		<form action="" class="container-sub">
+			{{! Name  }}
+			<label for="name">Name:</label>
+			<input type="text" class="signUp-form-name" placeholder="Clementine" />
 			{{! Email  }}
 			<label for="email">Email:</label>
 			<input
 				type="email"
-				class="login-form-email"
+				class="signUp-form-email"
 				placeholder="clem@gmail.com"
 			/>
 			{{! Password  }}
 			<label for="password">Password:</label>
 			<input
 				type="password"
-				class="login-form-password"
+				class="signUp-form-password"
 				placeholder="Enter Password..."
 			/>
 			{{! Send Button }}
-			<input type="submit" id="loginFormSubmit" value="Sign In!" class="btn" />
-
-			<p class="sign-up">Don't have an account?
-				<a href="/sign-up">Sign up!</a></p>
+			<input type="submit" id="signUpFormSubmit" value="Sign Up!" class="btn" />
 		</form>
 
 	</div>

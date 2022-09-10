@@ -16,3 +16,18 @@
 .login .btn:hover {
 	background-color: var(--accent-clr-hover);
 }
+
+.sign-up {
+	margin-top: 1rem;
+}
+
+/* small Sign in Page styles  */
+
+#signUpFormSubmit {
+	background-color: var(--accent-clr);
+	color: var(--light-clr);
+}
+
+#signUpFormSubmit:hover {
+	background-color: var(--accent-clr-hover);
+}
