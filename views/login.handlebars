@@ -5,5 +5,26 @@
 		<hr />
 		<h2>Log in to your account</h2>
 		<p>Let's get you in!</p>
+
+		{{! form  }}
+
+		<form action="" class="container-sub">
+			{{! Email  }}
+			<label for="email">Email:</label>
+			<input
+				type="email"
+				class="login-form-email"
+				placeholder="clem@gmail.com"
+			/>
+			{{! Password  }}
+			<label for="password">Password:</label>
+			<input
+				type="password"
+				class="login-form-password"
+				placeholder="Enter Password..."
+			/>
+			{{! Send Button }}
+			<input type="submit" id="loginFormSubmit" value="Sign In!" class="btn" />
+		</form>
 	</div>
 </div>

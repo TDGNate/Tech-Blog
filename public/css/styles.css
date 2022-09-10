@@ -5,10 +5,15 @@
 /* Root Variables  */
 
 :root {
+	/* main  */
 	--sub-clr: #184f68;
 	--sub-clr-hover: #277599;
+	--accent-clr: rgb(255, 28, 202);
+	--accent-clr-hover: rgb(255, 92, 217);
+	/* contrasts  */
 	--light-clr: #fff;
 	--dark-clr: #1f1f1f;
+	/* subs/transparents  */
 	--sub-dark-bg: rgba(0, 0, 0, 0.736);
 	--shaded-clr: rgba(135, 135, 135, 0.238);
 	--shaded-clr-hover: rgba(130, 130, 130, 0.335);
@@ -68,10 +73,10 @@ i {
 
 hr {
 	padding: 1px;
-	background-color: rgb(255, 28, 202);
+	background-color: var(--accent-clr);
 }
 
-/* Conatiners  */
+/* Extra Global Classes  */
 
 .container {
 	max-width: 1160px;
@@ -97,10 +102,42 @@ hr {
 	text-align: center;
 }
 
+.btn {
+	margin-top: 0.4rem;
+	transition: all 300ms ease;
+}
+
+.btn:hover {
+	cursor: pointer;
+}
+
+label {
+	font-size: 1.2rem;
+}
+
+input {
+	background-color: var(--shaded-clr);
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+	width: 80%;
+	outline: none;
+	border: none;
+	border-radius: 4px;
+	color: var(--light-clr);
+}
+
+input:focus {
+	background-color: var(--shaded-clr-hover);
+}
+
 /* fixing alignment for Desktop Version  */
 
 @media screen and (min-width: 980px) {
 	.page {
 		text-align: start;
+	}
+
+	.btn {
+		width: 45%;
 	}
 }

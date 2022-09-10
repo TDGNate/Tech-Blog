@@ -4,3 +4,15 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
+.login form {
+	margin: 2.8rem 0 4rem 0;
+}
+
+.login .btn {
+	background-color: var(--accent-clr);
+}
+
+.login .btn:hover {
+	background-color: var(--accent-clr-hover);
+}
