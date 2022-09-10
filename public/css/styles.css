@@ -87,3 +87,10 @@ hr {
 	border-radius: 8px;
 	margin: 2rem 0;
 }
+
+.page {
+	margin-top: 5.5rem;
+	width: 100%;
+	min-height: 100%;
+	text-align: center;
+}
