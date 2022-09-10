@@ -5,10 +5,13 @@
 /* Root Variables  */
 
 :root {
+	--sub-clr: #184f68;
+	--sub-clr-hover: #277599;
 	--light-clr: #fff;
 	--dark-clr: #1f1f1f;
 	--sub-dark-bg: rgba(0, 0, 0, 0.736);
-	--shaded-clr: rgb(80, 80, 80);
+	--shaded-clr: rgba(117, 117, 117, 0.238);
+	--shaded-clr-hover: rgba(130, 130, 130, 0.335);
 }
 
 /* Universal Reset */

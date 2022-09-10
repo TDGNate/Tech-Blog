@@ -15,7 +15,7 @@
 .post {
 	display: flex;
 	flex-direction: column;
-	background-color: rgba(117, 117, 117, 0.238);
+	background-color: var(--shaded-clr);
 	padding: 0.5rem;
 	margin: 0.8rem;
 	border-radius: 8px;
@@ -27,7 +27,7 @@
 }
 
 .post:hover {
-	background-color: rgba(130, 130, 130, 0.335);
+	background-color: var(--shaded-clr-hover);
 	transform: translate(-2px, -3px);
 }
 
