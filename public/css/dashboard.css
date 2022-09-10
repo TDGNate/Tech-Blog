@@ -71,7 +71,8 @@
 	flex-direction: column;
 	border-radius: 8px;
 	overflow: hidden;
-	margin: 1rem;
+	margin: 0.8rem;
+	max-width: 80%;
 }
 
 .dashboard-post-date {
@@ -91,7 +92,29 @@
 }
 
 @media screen and (min-width: 980px) {
+	/* form  */
+
 	#createPostBtn {
 		width: 45%;
+	}
+
+	.dashboard-post {
+		flex-direction: row;
+		max-width: 550px;
+		min-height: 200px;
+		gap: 0.8rem;
+	}
+
+	.second-side {
+		width: 75%;
+		height: 100%;
+	}
+
+	.dashboard-post-date {
+		text-align: center;
+		padding: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 }
