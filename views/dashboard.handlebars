@@ -2,5 +2,22 @@
 	<div class="container">
 		<h2>Dashboard</h2>
 		<p>Welcome! Wanna create a post?</p>
+		<hr />
+
+		{{! Creating a new Post  }}
+		<form class="dashboard-post-create">
+			<input
+				placeholder="Post Title..."
+				type="text"
+				class="dashboard-post-create-title"
+			/>
+			<input
+				class="dashboard-post-create-content"
+				type="text"
+				placeholder="Message..."
+			/>
+			<input type="submit" />
+		</form>
+
 	</div>
 </div>

@@ -40,6 +40,10 @@ i {
 	color: var(--light-clr);
 }
 
+hr {
+	background-color: white;
+}
+
 .container {
 	max-width: 1160px;
 }
