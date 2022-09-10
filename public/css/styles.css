@@ -1,7 +1,9 @@
 /* Open Sans Font  */
+
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
 
 /* Root Variables  */
+
 :root {
 	--light-clr: #fff;
 	--dark-clr: #1f1f1f;
@@ -9,12 +11,15 @@
 	--shaded-clr: rgb(80, 80, 80);
 }
 
-/* Universal  */
+/* Universal Reset */
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
+
+/* Reseting Global HTML Tags  */
 
 body {
 	font-family: "Open Sans", sans-serif;
@@ -44,6 +49,8 @@ i {
 hr {
 	background-color: white;
 }
+
+/* Conatiners  */
 
 .container {
 	max-width: 1160px;
