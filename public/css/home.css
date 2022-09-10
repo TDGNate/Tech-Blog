@@ -48,10 +48,6 @@
 }
 
 @media screen and (min-width: 980px) {
-	.home {
-		text-align: start;
-	}
-
 	/* post container  */
 
 	.home .container-sub {

@@ -88,9 +88,19 @@ hr {
 	margin: 2rem 0;
 }
 
+/* Each page  */
+
 .page {
-	margin-top: 5.5rem;
+	padding-top: 5.2rem;
 	width: 100%;
 	min-height: 100%;
 	text-align: center;
+}
+
+/* fixing alignment for Desktop Version  */
+
+@media screen and (min-width: 980px) {
+	.page {
+		text-align: start;
+	}
 }
