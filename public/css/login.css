@@ -27,3 +27,32 @@
 #signUpFormSubmit:hover {
 	background-color: var(--accent-clr-hover);
 }
+
+/* small Successful page styles  */
+
+.success-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+}
+
+.success-item {
+	padding: 1.5rem;
+	font-size: 2rem;
+	border-radius: 5px;
+	color: var(--accent-clr);
+	background-color: var(--shaded-clr);
+	margin: 1rem;
+}
+
+.success a {
+	text-decoration: none;
+	transition: all 300ms ease;
+}
+
+.success a:hover {
+	cursor: pointer;
+	text-decoration: none;
+	color: var(--accent-clr);
+}
