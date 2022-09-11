@@ -8,13 +8,14 @@
 
 		{{! form  }}
 
-		<form action="" class="container-sub">
+		<form action="/api/user/login" method="POST" class="container-sub">
 			{{! Email  }}
 			<label for="email">Email:</label>
 			<input
 				type="email"
 				class="login-form-email"
 				placeholder="clem@gmail.com"
+				name="email"
 			/>
 			{{! Password  }}
 			<label for="password">Password:</label>
@@ -22,6 +23,7 @@
 				type="password"
 				class="login-form-password"
 				placeholder="Enter Password..."
+				name="password"
 			/>
 			{{! Send Button }}
 			<input type="submit" id="loginFormSubmit" value="Sign In!" class="btn" />

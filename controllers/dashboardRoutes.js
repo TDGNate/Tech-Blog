@@ -1,7 +1,8 @@
 const router = require("express").Router();
+const auth = require("../utils/auth");
 
 // Dashboard 
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
   try {
     res.render("dashboard");
   } catch (err) {

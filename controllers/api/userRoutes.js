@@ -43,11 +43,9 @@ router.post("/login", async (req, res) => {
 
       req.session.logged_in = true;
 
-      res
-        .json({
-           message: "you're logged in!"
-        });
     });
+
+    res.redirect("/");
 
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
