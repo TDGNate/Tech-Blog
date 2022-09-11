@@ -54,6 +54,22 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// Create A User 
+router.post("/register", async (req, res) => { 
+  try {
+
+    // creating a new user in database 
+    const newUser = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password
+    });
+    
+  } catch (err) {
+    res.status(500).json({ message: "Server Error" });
+  }
+});
+
 // Logout User
 router.post("/logout", async (req, res) => {
 
