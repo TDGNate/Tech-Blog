@@ -8,16 +8,22 @@
 
 		{{! form  }}
 
-		<form action="" class="container-sub">
+		<form action="/api/user/register" method="post" class="container-sub">
 			{{! Name  }}
 			<label for="name">Name:</label>
-			<input type="text" class="signUp-form-name" placeholder="Clementine" />
+			<input
+				type="text"
+				class="signUp-form-name"
+				placeholder="Clementine"
+				name="name"
+			/>
 			{{! Email  }}
 			<label for="email">Email:</label>
 			<input
 				type="email"
 				class="signUp-form-email"
 				placeholder="clem@gmail.com"
+				name="email"
 			/>
 			{{! Password  }}
 			<label for="password">Password:</label>
@@ -25,6 +31,7 @@
 				type="password"
 				class="signUp-form-password"
 				placeholder="Enter Password..."
+				name="password"
 			/>
 			{{! Send Button }}
 			<input type="submit" id="signUpFormSubmit" value="Sign Up!" class="btn" />
