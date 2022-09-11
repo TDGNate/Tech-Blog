@@ -64,9 +64,17 @@ router.post("/register", async (req, res) => {
       email: req.body.email,
       password: req.body.password
     });
-    
+
+    req.session.save(() => {
+        
+      req.session.logged_in = true;
+      
+    });
+
+    res.status(200).json({message: "Successfully Created User!",newUser});
+
   } catch (err) {
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json({ message: "Server Error, cannot create user..." });
   }
 });
 
