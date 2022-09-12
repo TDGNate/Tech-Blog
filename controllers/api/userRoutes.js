@@ -17,12 +17,15 @@ router.get("/", async (req, res) => {
 // Login User
 router.post("/login", async (req, res) => {
   try {
+
+    // find user 
     const user = await User.findOne({
       where: {
         email: req.body.email
       }
     });
 
+    // check if there is a user 
     if (!user) {
       res.json({
         message: "check email and password again.."

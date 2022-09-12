@@ -16,8 +16,6 @@ router.get("/", async (req, res) => {
       plain: true
     }));
 
-    // res.send(posts);
-
     res.render(
       "home",
       {
