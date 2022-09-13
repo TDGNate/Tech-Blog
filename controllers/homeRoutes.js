@@ -4,13 +4,14 @@ const router = require("express").Router();
 
 // models 
 const User = require("../models/user");
-const Post = require("../models/post");
 const Comment = require("../models/comment");
+const Post = require("../models/post");
 
 router.get("/", async (req, res) => {
   try {
 
     const postData = await Post.findAll({
+
     //   include: [
     //     {
     //       model: Comment,
