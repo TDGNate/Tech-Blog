@@ -1,7 +1,7 @@
 // Auth Middleware
 
 const Auth = (req, res, next) => {
-  if (!req.session.logged_in) {
+  if (!req.session.loggedIn) {
 
   // redirect them to login page 
     res.redirect("/login");

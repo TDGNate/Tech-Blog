@@ -3,7 +3,6 @@ const router = require("express").Router();
 // import User Model 
 const User = require("../../models/user");
 
-
 // get all users 
 router.get("/", async (req, res) => {
   try {
@@ -21,13 +20,18 @@ router.post("/login", async (req, res) => {
     // find user 
     const user = await User.findOne({
       where: {
-        email: req.body.email
+        email: req.body.email,
       }
+    }).catch((err) => {
+      res
+        .json(err);
     });
 
     // check if there is a user 
     if (!user) {
-      res.json({
+      res
+        .status(400)
+        .json({
         message: "check email and password again.."
       });
 
@@ -37,17 +41,16 @@ router.post("/login", async (req, res) => {
     const isValPass = await user.checkPassword(req.body.password);
 
     if (!isValPass) {
-      res.json({ message: "incorrect pass" });
+      res.status(400).json({ message: "incorrect pass" });
       
       return;
     }
 
     req.session.save(() => {
-
-      req.session.logged_in = true;
-
+      
+      req.session.loggedIn = true;
     });
-
+    
     res.redirect("/");
 
   } catch (err) {
@@ -71,7 +74,7 @@ router.post("/register", async (req, res) => {
 
     req.session.save(() => {
         
-      req.session.logged_in = true;
+      req.session.loggedIn = true;
       
     });
 
@@ -86,7 +89,7 @@ router.post("/register", async (req, res) => {
 router.post("/logout", async (req, res) => {
 
   // checked if their logged in 
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
 
     // if there is a session, destory it 
     req.session.destroy(() => {
