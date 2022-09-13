@@ -1,8 +1,9 @@
+// homepage Routes
+
 const router = require("express").Router();
 const Post = require("../models/post");
 const User = require("../models/user");
 
-// homepage 
 router.get("/", async (req, res) => {
   try {
     const postsData = await Post.findAll({},{
