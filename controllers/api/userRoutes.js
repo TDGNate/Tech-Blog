@@ -82,16 +82,17 @@ router.post("/login", async (req, res) => {
       return;
     }
 
+    let userID = user.id;
+
      req.session.save(() => {
       
       req.session.loggedIn = true;
-      // req.session.userId = 
+      req.session.userId = userID;
 
       res.redirect("/");
 
     });
     
-
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
   }
