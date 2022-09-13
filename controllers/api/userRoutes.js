@@ -82,12 +82,13 @@ router.post("/login", async (req, res) => {
       return;
     }
 
-    req.session.save(() => {
+     req.session.save(() => {
       
       req.session.loggedIn = true;
       // req.session.userId = 
 
       res.redirect("/");
+
     });
     
 

@@ -1,7 +1,5 @@
 // User Logs 
 
-console.log("login page connected");
-
 const logoutBtn = document.getElementById("logout");
 
 logoutBtn.addEventListener("click", (e) => {
