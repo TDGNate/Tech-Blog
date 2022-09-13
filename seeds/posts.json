@@ -2,11 +2,11 @@
   {
     "title": "Hellooooo there",
     "content": "This is a comment, fdsafs fdsfsdf sdf",
-    "username_id": 1
+    "user_id": 1
   },
   {
     "title": "Hello",
     "content": "This is another amazing test comment, fdsafs fdsfsdf sdf",
-    "username_id": 2
+    "user_id": 2
   }
 ]

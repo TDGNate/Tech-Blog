@@ -15,7 +15,7 @@ Comment.init(
       type: DataTypes.TEXT,
       allowNull: false,
     },
-    username_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {

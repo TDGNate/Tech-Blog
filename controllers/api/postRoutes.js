@@ -69,7 +69,7 @@ router.post("/", async (req, res) => {
     const posts = await Post.create({
       title: req.body.title,
       content: req.body.content,
-      username_id: req.session.userId
+      user_id: req.session.userId
     });
 
     // to reload the page after creating a new post 

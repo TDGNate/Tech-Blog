@@ -26,7 +26,6 @@ router.get("/", async (req, res) => {
     //     }
     // ]
     
-    include: { model: User }
     });
 
     const posts = postData.map((post) =>

@@ -14,7 +14,7 @@ router.get("/", auth, async (req, res) => {
     // getting all post related to One User 
     const postData = await Post.findAll({
       where: {
-        username_id: req.session.userId
+        user_id: req.session.userId
       }
     })
       // catching any errors 
