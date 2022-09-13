@@ -47,7 +47,7 @@
 	border-radius: 8px;
 	overflow: hidden;
 	margin: 0.8rem;
-	max-width: 80%;
+	width: 80%;
 	transition: all 300ms ease;
 }
 
@@ -81,7 +81,7 @@
 
 	.dashboard-post {
 		flex-direction: row;
-		max-width: 75%;
+		width: 75%;
 		min-height: 200px;
 		gap: 5%;
 	}
