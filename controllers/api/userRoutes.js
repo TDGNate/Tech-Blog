@@ -49,9 +49,10 @@ router.post("/login", async (req, res) => {
     req.session.save(() => {
       
       req.session.loggedIn = true;
+      
+      res.redirect("/");
     });
     
-    res.redirect("/");
 
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
@@ -76,9 +77,10 @@ router.post("/register", async (req, res) => {
         
       req.session.loggedIn = true;
       
+      res.render("successful");
+
     });
 
-    res.render("successful");
 
   } catch (err) {
     res.status(500).json({ message: "Server Error, cannot create user..." });
