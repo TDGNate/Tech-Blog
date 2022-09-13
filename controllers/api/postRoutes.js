@@ -69,10 +69,11 @@ router.post("/", async (req, res) => {
     const posts = await Post.create({
       title: req.body.title,
       content: req.body.content,
-      username_id: req.body.username_id
+      username_id: req.session.userId
     });
 
-    res.json(posts);
+    // to reload the page after creating a new post 
+    res.redirect("/dashboard");
   } catch (err) {
 
     res.status(500).json({ message: "Server Error" });
