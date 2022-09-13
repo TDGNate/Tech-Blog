@@ -6,15 +6,21 @@ const Post = require("../models/post");
 const User = require("../models/user");
 
 // Dashboard 
-router.get("/", auth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
-    const postsData = await Post.findAll();
+    const postData = await Post.findAll();
 
-    const posts = postsData.map((post) => post.toJSON());
+    const posts = postData.map((post) => 
+
+      post.get({ plain: true })
+    );
 
     res.render(
       "dashboard",
-      { posts });
+      {
+        posts,
+        loggedIn: req.session.loggedIn,
+      });
 
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
