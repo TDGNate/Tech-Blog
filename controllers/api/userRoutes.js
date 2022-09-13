@@ -1,13 +1,49 @@
 const router = require("express").Router();
 
+const Post = require("../../models/post");
 // import User Model 
 const User = require("../../models/user");
+const Comment = require("../../models/comment");
 
 // get all users 
 router.get("/", async (req, res) => {
   try {
     const user = await User.findAll();
     res.json(user);
+  } catch (err) {
+    res.status(500).json({ message: "Server Error" });
+  }
+});
+
+// Get One user 
+router.get("/:id", async (req, res) => {
+  try {
+
+    const id = req.params.id;
+    const user = await User.findOne({
+      attributes: {
+        exclude: ["password"]
+      },
+      where: {
+        id: id
+      },
+      include: [
+        {
+          model: Post,
+          attributes: ["id", "title", "content", "date_created"]
+        },
+        {
+          model: Comment,
+          attributes: ["id", "comment", "post_id", "date_created"],
+          include: {
+            model: Post,
+            attributes: ["title"]
+          }
+        }
+      ]
+    });
+    res.json(user);
+
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
   }
@@ -49,7 +85,8 @@ router.post("/login", async (req, res) => {
     req.session.save(() => {
       
       req.session.loggedIn = true;
-      
+      // req.session.userId = 
+
       res.redirect("/");
     });
     

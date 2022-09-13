@@ -6,7 +6,7 @@ const Post = require("../models/post");
 const User = require("../models/user");
 
 // Dashboard 
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
   try {
     const postData = await Post.findAll();
 

@@ -9,13 +9,14 @@
 
 		{{! Creating a new Post  }}
 
-		<form class="container-sub">
+		<form action="/api/post/" method="post" class="container-sub">
 			{{! Title  }}
 			<label for="post title">Title:</label>
 			<input
 				placeholder="Post Title..."
 				type="text"
 				class="dashboard-post-create-title"
+				name="title"
 			/>
 			{{! Content  }}
 			<label for="post message">Message:</label>
@@ -23,9 +24,14 @@
 				class="dashboard-post-create-content"
 				type="text"
 				placeholder="Message..."
+				name="content"
 			></textarea>
 			{{! Submit Button  }}
-			<input type="submit" id="createPostBtn" value="Submit!" class="btn" />
+			<input 
+			type="submit" 
+			id="createPostBtn" 
+			value="Submit!" 
+			class="btn" />
 		</form>
 
 		<hr />
