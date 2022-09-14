@@ -1,5 +1,3 @@
-// Sign Up Routes 
-
 const router = require("express").Router();
 
 // Sign Up 
