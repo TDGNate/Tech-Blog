@@ -65,7 +65,7 @@ router.get("/:id", async (req, res) => {
   }
  });
 
-//  create post 
+// create post 
 router.post("/", async (req, res) => {
   try {
     const posts = await Post.create({

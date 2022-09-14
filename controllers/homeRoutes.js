@@ -1,11 +1,9 @@
 // homepage Routes
 
 const router = require("express").Router();
+const sequelize = require ("../config/connection");
 
 // models 
-// const User = require("../models/user");
-// const Comment = require("../models/comment");
-// const Post = require("../models/post");
 
 const { User, Comment, Post } = require("../models");
 
@@ -13,6 +11,8 @@ router.get("/", async (req, res) => {
   try {
 
     const postData = await Post.findAll({
+
+      order: sequelize.literal("id DESC"),
 
       include: [{
         model: User,
