@@ -3,7 +3,10 @@
 async function getComments(postId) {
   
   if (typeof postId == "number") {
-    console.log("this is a number");
+
+    // console.log("this is a number");
+
+    document.querySelector(".preloader").style.display = "block";
 
     let coreParent = document.querySelector(".container-comments");
 
@@ -33,7 +36,7 @@ async function getComments(postId) {
           subTxt.style.display = "block";
           setTimeout(() => {
           subTxt.style.display = "none";
-            }, 2000);
+            }, 2500);
         }
 
         setTimeout(() => {
@@ -78,6 +81,8 @@ async function getComments(postId) {
             // Append to Core parent 
             coreParent.appendChild(commentDiv);
           });
+        document.querySelector(".preloader").style.display = "none";
+
          }, 800);
         
         

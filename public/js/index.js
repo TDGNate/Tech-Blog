@@ -25,7 +25,10 @@ postsContainer.addEventListener("click", (e) => {
   let w = window.innerWidth;
   let post = e.target;
 
-  if (e.target.className == "home-container-posts") {
+  if ( e.target.className == "home-container-posts") {
+    removePicked();
+    return;
+  } else if (e.target.classList.contains("picked") || e.target == document.querySelector("picked")) {
     removePicked();
     return;
   }
