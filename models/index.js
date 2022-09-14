@@ -1,8 +1,10 @@
+// Models Core 
+
 const Comment = require("./comment");
 const Post = require("./post");
 const User = require("./user");
 
-module.exports = { User, Post, Comment };
+// Association
 
 User.hasMany(Post, {
   foreignKey: "user_id",
