@@ -14,9 +14,6 @@ const commentXBtn = document.querySelector(".x");
 // All posts 
 let posts = document.querySelectorAll(".post");
 
-// Window Width 
-let w = window.innerWidth;
-
 commentXBtn.addEventListener("click", () => {
   removePicked();
 });
@@ -56,6 +53,7 @@ postsContainer.addEventListener("click", (e) => {
 
 });
 
+// Removes the pick class on any element 
 function removePicked() {
 
   for (i = 0; i < posts.length; i++) {
@@ -73,41 +71,3 @@ function removePicked() {
 }
 
 removePicked();
-
-let dektpSize = "45%";
-let phneSize = "95%";
-
-function fixDesktopSize() {
-
-  let posts = document.querySelectorAll(".post");
-
-    for (i = 0; i <= posts.length; i++) {
-      let post = posts[i];
-      post.style.width = dektpSize;
-    }
-
-}
-
-function fixPhoneSize() {
-
-  let posts = document.querySelectorAll(".post");
-
-    for (i = 0; i <= posts.length; i++) {
-      let post = posts[i];
-      post.style.width = phneSize;
-    }
-  
-}
-
-
-
-window.addEventListener("resize", (e) => {
-  let w = window.innerWidth;
-  if (w < 980) {
-    fixPhoneSize();
-  } else {
-    fixDesktopSize();
-  }
-});
-
-
