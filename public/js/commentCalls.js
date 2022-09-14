@@ -13,6 +13,16 @@ function getComments(postId) {
       )
       .then((postData) => {
         console.log(postData);
+
+        let comments = postData.comments;
+        // console.log(comments);
+
+        comments.forEach((com) => {
+          let text = com.comment;
+          let user = com.user.name;
+          let date = com.date_created;
+          console.log(text, user, date);
+        });
         
       })
     .catch(err => console.log(err));

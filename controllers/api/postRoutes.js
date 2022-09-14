@@ -69,7 +69,14 @@ router.get("/:id", async (req, res) => {
       },
       {
         model: Comment,
-        attributes: ["id", "comment", "date_created"]
+        attributes: ["id", "comment", "date_created"],
+        include: {
+          model: User,
+          attributes: {
+            exclude: [
+              "password", "createdAt", "updatedAt"
+            ]
+        }}
       }
       ]
     });
