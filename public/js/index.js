@@ -45,7 +45,10 @@ postsContainer.addEventListener("click", (e) => {
 
   } else {
 
+    console.log(post);
+
     // getting all contents for clicked post 
+    let elValue = post.getAttribute("value");
     let elTitle = post.querySelector(".post-title").textContent;
     let elContent = post.querySelector(".post-content").textContent;
     let elUser = post.querySelector(".post-user").textContent;
@@ -63,6 +66,10 @@ postsContainer.addEventListener("click", (e) => {
     newPickPost.querySelector(".picked-pc").textContent = elContent;
     newPickPost.querySelector(".picked-pu").textContent = elUser;
     newPickPost.querySelector(".picked-pcr").textContent = elCreated;
+
+    let mobilePostId = parseInt(elValue);
+
+    mobileComments(mobilePostId);
 
     // console.log(elTitle, elContent, elUser, elCreated);
   }

@@ -20,6 +20,7 @@ async function getComments(postId) {
       }
     }
 
+    // call api 
     await fetch(`/api/post/${postId}`, {
       method: "GET",
     })
