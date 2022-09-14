@@ -1,3 +1,5 @@
+/* Core Styles  */
+
 /* Open Sans Font  */
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap");
@@ -35,6 +37,8 @@ body {
 	background-color: #151515;
 }
 
+/* headers  */
+
 h1,
 h2,
 h3,
@@ -45,6 +49,8 @@ h6 {
 	font-weight: bold;
 	margin: 1rem 0;
 }
+
+/* lists  */
 
 ul {
 	list-style: none;
@@ -72,6 +78,8 @@ h3 {
 	margin: 1rem 0;
 }
 
+/* All elements  */
+
 div,
 p,
 span,
@@ -83,6 +91,27 @@ i {
 hr {
 	padding: 1px;
 	background-color: var(--accent-clr);
+}
+
+/* forms  */
+
+label {
+	font-size: 1.2rem;
+}
+
+input {
+	background-color: var(--shaded-clr);
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+	width: 80%;
+	outline: none;
+	border: none;
+	border-radius: 4px;
+	color: var(--light-clr);
+}
+
+input:focus {
+	background-color: var(--shaded-clr-hover);
 }
 
 /* Extra Global Classes  */
@@ -102,8 +131,6 @@ hr {
 	margin: 2rem 0;
 }
 
-/* Each page  */
-
 .page {
 	padding-top: 5.2rem;
 	width: 100%;
@@ -118,25 +145,6 @@ hr {
 
 .btn:hover {
 	cursor: pointer;
-}
-
-label {
-	font-size: 1.2rem;
-}
-
-input {
-	background-color: var(--shaded-clr);
-	padding: 0.5rem;
-	margin-bottom: 1rem;
-	width: 80%;
-	outline: none;
-	border: none;
-	border-radius: 4px;
-	color: var(--light-clr);
-}
-
-input:focus {
-	background-color: var(--shaded-clr-hover);
 }
 
 /* fixing alignment for Desktop Version  */
@@ -158,6 +166,8 @@ input:focus {
 		font-size: 2.3rem;
 		margin: 1.4rem 0;
 	}
+
+	/* Globals  */
 
 	.page {
 		text-align: start;
