@@ -1,8 +1,21 @@
-// Core
+// Core File 
 
+// Globals
+
+// Container for Posts 
 const postsContainer = document.querySelector(".home-container-posts");
+
+// Container For Comments 
 const commentContainer = document.querySelector(".post-container-comments");
+
+// X Btn for Comments 
 const commentXBtn = document.querySelector(".x");
+
+// All posts 
+let posts = document.querySelectorAll(".post");
+
+// Window Width 
+let w = window.innerWidth;
 
 commentXBtn.addEventListener("click", () => {
   removePicked();
@@ -41,11 +54,9 @@ postsContainer.addEventListener("click", (e) => {
     console.log(elTitle, elContent, elUser, elCreated);
   }
 
-  console.log(post);
 });
 
 function removePicked() {
-  let posts = document.querySelectorAll(".post");
 
   for (i = 0; i < posts.length; i++) {
     let post = posts[i];
@@ -53,7 +64,7 @@ function removePicked() {
     if (post.classList.contains("picked")) {
       post.classList.remove("picked");
       post.style.cssText = "border: none";
-      post.style.width = "45%";
+      post.style.width = dektpSize;
     }
   }
 
@@ -62,3 +73,41 @@ function removePicked() {
 }
 
 removePicked();
+
+let dektpSize = "45%";
+let phneSize = "95%";
+
+function fixDesktopSize() {
+
+  let posts = document.querySelectorAll(".post");
+
+    for (i = 0; i <= posts.length; i++) {
+      let post = posts[i];
+      post.style.width = dektpSize;
+    }
+
+}
+
+function fixPhoneSize() {
+
+  let posts = document.querySelectorAll(".post");
+
+    for (i = 0; i <= posts.length; i++) {
+      let post = posts[i];
+      post.style.width = phneSize;
+    }
+  
+}
+
+
+
+window.addEventListener("resize", (e) => {
+  let w = window.innerWidth;
+  if (w < 980) {
+    fixPhoneSize();
+  } else {
+    fixDesktopSize();
+  }
+});
+
+
