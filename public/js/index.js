@@ -50,8 +50,21 @@ postsContainer.addEventListener("click", (e) => {
     let elContent = post.querySelector(".post-content").textContent;
     let elUser = post.querySelector(".post-user").textContent;
     let elCreated = post.querySelector(".post-created").textContent;
-    
-    console.log(elTitle, elContent, elUser, elCreated);
+
+    // hide the home container 
+    postsContainer.style.display = "none";
+    document.querySelector(".home-container-picked").style.display = "block";
+
+    // Exchange the contents from picked post into new element 
+    let newPickPost = document.querySelector(".phone-picked");
+
+    // Updaing all values 
+    newPickPost.querySelector(".picked-pt").textContent = elTitle;
+    newPickPost.querySelector(".picked-pc").textContent = elContent;
+    newPickPost.querySelector(".picked-pu").textContent = elUser;
+    newPickPost.querySelector(".picked-pcr").textContent = elCreated;
+
+    // console.log(elTitle, elContent, elUser, elCreated);
   }
 
 });
