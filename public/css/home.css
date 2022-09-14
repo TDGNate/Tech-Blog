@@ -53,7 +53,7 @@
 	z-index: 10;
 }
 
-.post:hover {
+.post:active {
 	background-color: var(--shaded-clr-hover);
 	transform: translate(-2px, -3px);
 	cursor: pointer;
@@ -121,6 +121,7 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		/* width: 65%; */
+		position: relative;
 	}
 
 	/* Post  */
@@ -144,6 +145,8 @@
 	/* comments  */
 
 	.post-container-comments {
+		position: sticky;
+		top: 18%;
 		display: none;
 		background-color: var(--sub-dark-bg);
 		width: 38%;
@@ -157,7 +160,16 @@
 	}
 }
 
+body {
+	position: relative;
+}
+
 .picked {
+	/* position: sticky !important; */
+	background-color: var(--sub-dark-bg);
+	position: sticky;
+	top: 18%;
 	width: 91%;
 	border: 1px solid var(--light-clr);
+	z-index: 100;
 }
