@@ -1,3 +1,5 @@
+// Core API Routes 
+
 const router = require("express").Router();
 
 const commentRoutes = require("./commentRoutes");
