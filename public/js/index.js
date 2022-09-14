@@ -27,6 +27,7 @@ postsContainer.addEventListener("click", (e) => {
     post.style.width = "91%";
     let onePostId = parseInt(post.getAttribute("value"));
     post.classList.add("picked");
+    
     getComments(onePostId);
 
   } else {

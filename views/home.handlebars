@@ -7,7 +7,7 @@
 
 			<div class="home-container-posts">
 
-			<div class="post ">
+			{{!-- <div class="post ">
 				{{! Post Content  }}
 				<div class="post-title">Title</div>
 				<div class="post-content">this is where the content is going to go, only testing rn</div>
@@ -20,7 +20,7 @@
 						<span class="post-created">Aug 1</span>
 					</div>
 				</div>
-			</div>
+			</div> --}}
 
 			{{!-- Home Page Cards  --}}
 				{{#each posts as |post|}}
@@ -35,7 +35,9 @@
 					<h3>Comments:</h3>
 					<div class="x"></div>
 				</div>
-				
+				<div class="comment-sub-text">
+					No comments yet...
+				</div>
 				<div class="container-comments">
 				{{!-- Comment  --}}
 

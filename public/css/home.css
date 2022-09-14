@@ -212,3 +212,7 @@
 	border: 1px solid var(--light-clr);
 	z-index: 100;
 }
+
+.comment-sub-text {
+	display: none;
+}
