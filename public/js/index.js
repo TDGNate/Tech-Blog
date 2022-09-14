@@ -25,8 +25,9 @@ postsContainer.addEventListener("click", (e) => {
     commentContainer.style.display = "block";
     post.style.cssText = "border: 1px solid var(--light-clr)";
     post.style.width = "91%";
-
+    let onePostId = parseInt(post.getAttribute("value"));
     post.classList.add("picked");
+    getComments(onePostId);
 
   } else {
 
