@@ -3,7 +3,24 @@
 		<h1>Home</h1>
 		<p>Live Posts:</p>
 		<hr>
-		<div class="container-sub home-container-posts">
+		<div class="container-sub">
+
+			<div class="home-container-posts">
+
+			<div class="post picked">
+				{{! Post Content  }}
+				<div class="post-title">Title</div>
+				<div class="post-content">this is where the content is going to go, only testing rn</div>
+				{{! bottom half  }}
+				<div class="post-bottom">
+					{{! Post user  }}
+					<div class="post-user-sec">-
+						<span class="post-user">bob</span>
+						<br />
+						<span class="post-created">Aug 1</span>
+					</div>
+				</div>
+			</div>
 
 			{{!-- Home Page Cards  --}}
 				{{#each posts as |post|}}
@@ -11,5 +28,22 @@
 				{{/each}}
 
 		</div>
+
+			{{!-- Comments Section --}}
+			<div class="post-container-comments">
+				<h3>Comments:</h3>
+
+				<div class="comment">
+						<div class="comment-content">This is a great post, this is a test</div>
+						<div class="comment-bottom">
+							<hr>
+								<div class="comment-name">Nate</div>
+								<div class="comment-created">Aug 2</div>
+						</div>
+				</div>
+
+				
+			</div>
+
 	</div>
 </div>

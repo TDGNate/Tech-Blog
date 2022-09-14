@@ -13,7 +13,7 @@
 	--accent-clr: rgb(255, 28, 202);
 	--accent-clr-hover: rgb(255, 92, 217);
 	/* contrasts  */
-	--light-clr: #fff;
+	--light-clr: rgb(216, 216, 216);
 	--dark-clr: #1f1f1f;
 	/* subs/transparents  */
 	--sub-dark-bg: rgba(0, 0, 0, 0.736);
