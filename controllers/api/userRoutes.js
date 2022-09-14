@@ -114,9 +114,12 @@ router.post("/register", async (req, res) => {
         .json(err);
     });
 
+    const userID = newUser.id;
+
     req.session.save(() => {
         
       req.session.loggedIn = true;
+      req.session.userId = userID;
       
       res.render("successful");
 

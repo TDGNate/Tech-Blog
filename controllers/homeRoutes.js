@@ -14,22 +14,23 @@ router.get("/", async (req, res) => {
 
     const postData = await Post.findAll({
 
-      include: { model: User }
-
-    //   include: [
-    //     {
-    //       model: Comment,
-    //       attributes: "comment",
-    //       include: { 
-    //         model: User,
-    //         attributes: "name",
-    //       },
-    //     },
-    //     {
-    //       model: User,
-    //       attributes: "name",
-    //     }
-    // ]
+      include: [{
+        model: User,
+        attributes: {
+        exclude: "password"
+        }
+      },
+      {
+        model: Comment,
+        attributes: ["comment", "date_created"],
+        include: {
+          model: User,
+          attributes: {
+            exclude: [
+              "password", "createdAt", "updatedAt"
+            ]
+        }}
+      }]
     
     });
 
@@ -44,6 +45,8 @@ router.get("/", async (req, res) => {
     });
 
     // res.json(postData);
+
+    // res.json(posts);
 
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
