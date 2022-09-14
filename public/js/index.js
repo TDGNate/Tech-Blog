@@ -2,6 +2,11 @@
 
 const postsContainer = document.querySelector(".home-container-posts");
 const commentContainer = document.querySelector(".post-container-comments");
+const commentXBtn = document.querySelector(".x");
+
+commentXBtn.addEventListener("click", () => {
+  removePicked();
+});
 
 postsContainer.addEventListener("click", (e) => {
 
@@ -11,6 +16,7 @@ postsContainer.addEventListener("click", (e) => {
   let post = e.target;
 
   if (e.target.className == "home-container-posts") {
+    removePicked();
     return;
   }
 
@@ -22,14 +28,15 @@ postsContainer.addEventListener("click", (e) => {
 
     post.classList.add("picked");
 
-    // Getting Clicked Post Content for later 
+  } else {
+
+    // getting all contents for clicked post 
     let elTitle = post.querySelector(".post-title").textContent;
     let elContent = post.querySelector(".post-content").textContent;
     let elUser = post.querySelector(".post-user").textContent;
     let elCreated = post.querySelector(".post-created").textContent;
     
     console.log(elTitle, elContent, elUser, elCreated);
-
   }
 
   console.log(post);
@@ -47,4 +54,9 @@ function removePicked() {
       post.style.width = "45%";
     }
   }
+
+  postsContainer.style.width = "100%";
+  commentContainer.style.display = "none";
 }
+
+removePicked();

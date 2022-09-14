@@ -173,3 +173,13 @@ body {
 	border: 1px solid var(--light-clr);
 	z-index: 100;
 }
+
+.x:after {
+	content: "";
+	transform: translateY(-40px);
+	font-size: 2rem;
+	float: right;
+	display: inline-block;
+	content: "\00d7";
+	cursor: pointer;
+}
