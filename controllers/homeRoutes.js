@@ -1,18 +1,18 @@
 // homepage Routes
 
 const router = require("express").Router();
+const sequelize = require ("../config/connection");
 
 // models 
-// const User = require("../models/user");
-// const Comment = require("../models/comment");
-// const Post = require("../models/post");
 
-const { User, Comment, Post } = require("../models/index.js");
+const { User, Comment, Post } = require("../models");
 
 router.get("/", async (req, res) => {
   try {
 
     const postData = await Post.findAll({
+
+      order: sequelize.literal("id DESC"),
 
       include: [{
         model: User,
@@ -49,7 +49,7 @@ router.get("/", async (req, res) => {
     // res.json(posts);
 
   } catch (err) {
-    res.status(500).json({ message: "Server Error" });
+    res.status(500).json(err);
   }
 });
 
