@@ -1,14 +1,38 @@
 // Post Routes 
 
 const router = require("express").Router();
-const Post = require("../../models/post");
-const User = require("../../models/user");
+const { Comment, Post, User} = require("../../models");
 
 // Posts
 // get posts
 router.get("/", async (req, res) => {
   try {
-    const posts = await Post.findAll();
+
+    const postData = await Post.findAll({
+
+      include: [{
+        model: User,
+        attributes: {
+        exclude: "password"
+        }
+      },
+      {
+        model: Comment,
+        attributes: ["comment", "date_created"],
+        include: {
+          model: User,
+          attributes: {
+            exclude: [
+              "password", "createdAt", "updatedAt"
+            ]
+        }}
+      }]
+    
+    });
+
+    const posts = postData.map((post) =>
+      post.get({ plain: true }));
+
     if (!posts) {
       res
         .status(404)
@@ -18,9 +42,11 @@ router.get("/", async (req, res) => {
       
         return;
     }
+
     res
       .status(200)
       .json(posts);
+    
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
   }

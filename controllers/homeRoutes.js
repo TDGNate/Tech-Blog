@@ -5,7 +5,7 @@ const sequelize = require ("../config/connection");
 
 // models 
 
-const { User, Comment, Post } = require("../models");
+const { Comment, Post, User} = require("../models");
 
 router.get("/", async (req, res) => {
   try {

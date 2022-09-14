@@ -2,10 +2,7 @@
 
 const router = require("express").Router();
 
-const Post = require("../../models/post");
-// import User Model 
-const User = require("../../models/user");
-const Comment = require("../../models/comment");
+const { Comment, Post, User } = require("../../models");
 
 // get all users 
 router.get("/", async (req, res) => {
