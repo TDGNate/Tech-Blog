@@ -20,6 +20,19 @@
 	padding: 1.5rem 1rem;
 	border-radius: 8px;
 	margin: 2rem 0;
+	position: relative;
+	z-index: 9;
+}
+
+.home .home-container-posts::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none !important;
+	z-index: 10;
 }
 
 /* Post Styles  */
@@ -37,6 +50,7 @@
 	width: 95%;
 	min-height: 200px;
 	transition: all 300ms ease;
+	z-index: 10;
 }
 
 .post:hover {
