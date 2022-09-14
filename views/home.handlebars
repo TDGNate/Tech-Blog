@@ -5,9 +5,85 @@
 		<hr>
 		<div class="container-sub">
 
+			<div class="home-container-picked">
+
+				<div class="post phone-picked">
+					{{! Post Content  }}
+					<div class="post-title">Title</div>
+					<div class="post-content">this is where the content is going to go, only testing rn</div>
+					{{! bottom half  }}
+					<div class="post-bottom">
+						{{! Post user  }}
+						<div class="post-user-sec">-
+							<span class="post-user">bob</span>
+							<br />
+							<span class="post-created">Aug 1</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="phone-comment-section">
+						<div class="post-container-comment-top">
+							<h3>Comments:</h3>
+						</div>
+						{{!-- <div class="comment-sub-text">
+							No comments yet...
+						</div> --}}
+
+					<div class="phone-comment-container">
+						{{!-- <div class="preloader"></div> --}}
+
+						{{!-- phone comment  --}}
+
+						<div class="phone-comment">
+							<div class="phone-comment-content">fdsa  jkl ds fjsdklafjsdf dsklajf;s ff ds fa</div>
+							<div class="phone-comment-bottom">
+								<hr>
+								<div class="phone-comment-name">Nate</div>
+								<div class="phone-comment-date">Sept 8</div>
+							</div>
+						</div>
+						<div class="phone-comment">
+							<div class="phone-comment-content">fdsa  jkl ds fjsdklafjsdf dsklajf;s ff ds fa</div>
+							<div class="phone-comment-bottom">
+								<hr>
+								<div class="phone-comment-name">Nate</div>
+								<div class="phone-comment-date">Sept 8</div>
+							</div>
+						</div>
+						<div class="phone-comment">
+							<div class="phone-comment-content">fdsa  jkl ds fjsdklafjsdf dsklajf;s ff ds fa</div>
+							<div class="phone-comment-bottom">
+								<hr>
+								<div class="phone-comment-name">Nate</div>
+								<div class="phone-comment-date">Sept 8</div>
+							</div>
+						</div>
+						<div class="phone-comment">
+							<div class="phone-comment-content">fdsa  jkl ds fjsdklafjsdf dsklajf;s ff ds fa</div>
+							<div class="phone-comment-bottom">
+								<hr>
+								<div class="phone-comment-name">Nate</div>
+								<div class="phone-comment-date">Sept 8</div>
+							</div>
+						</div>
+						<div class="phone-comment">
+							<div class="phone-comment-content">fdsa  jkl ds fjsdklafjsdf dsklajf;s ff ds fa</div>
+							<div class="phone-comment-bottom">
+								<hr>
+								<div class="phone-comment-name">Nate</div>
+								<div class="phone-comment-date">Sept 8</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
 			<div class="home-container-posts">
 
-			{{!-- <div class="post ">
+			{{!-- <div class="post picked">
 				{{! Post Content  }}
 				<div class="post-title">Title</div>
 				<div class="post-content">this is where the content is going to go, only testing rn</div>
@@ -23,6 +99,7 @@
 			</div> --}}
 
 			{{!-- Home Page Cards  --}}
+
 				{{#each posts as |post|}}
 					{{> postCard}}
 				{{/each}}
@@ -58,4 +135,5 @@
 
 
 	</div>
+	
 </div>

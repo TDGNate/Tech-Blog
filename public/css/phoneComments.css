@@ -1,0 +1,74 @@
+.picked {
+	width: 95%;
+}
+
+.home-container-picked {
+	background-color: var(--sub-dark-bg);
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1.3rem 0.5rem;
+	border-radius: 8px;
+	margin: 2rem 0;
+	width: 100%;
+	gap: 2rem;
+}
+
+.phone-picked {
+	width: 95%;
+	border: 1px solid var(--light-clr);
+	min-height: 275px;
+	align-self: center;
+	justify-self: center;
+}
+
+.phone-comment-section {
+	width: 100%;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.phone-comment-section .post-container-comment-top {
+	margin-bottom: 1.5rem;
+}
+
+.phone-comment-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.phone-comment {
+	padding: 1rem;
+	border-radius: 8px;
+	width: 95%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--shaded-clr);
+	margin-bottom: 0.8rem;
+	font-size: 1.3rem;
+}
+
+.phone-comment-content {
+	margin: 0.8rem 0;
+}
+
+.phone-comment-bottom {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.1rem;
+	width: 100%;
+}
+
+.phone-comment hr {
+	width: 90%;
+}

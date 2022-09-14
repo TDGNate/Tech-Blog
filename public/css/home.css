@@ -13,7 +13,7 @@
 
 .home .home-container-posts {
 	background-color: var(--sub-dark-bg);
-	display: flex;
+	display: block;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
@@ -22,6 +22,7 @@
 	margin: 2rem 0;
 	position: relative;
 	z-index: 9;
+	width: 100%;
 }
 
 .home .home-container-posts::before {
@@ -49,6 +50,8 @@
 	text-align: center;
 	width: 95%;
 	min-height: 200px;
+	align-self: center;
+	justify-self: center;
 	transition: all 300ms ease;
 	z-index: 10;
 }
@@ -81,30 +84,6 @@
 	padding: 0.5rem;
 }
 
-/* Comment Styles  */
-
-.comment {
-	background-color: var(--shaded-clr);
-	border: 1px solid var(--light-clr);
-	width: 100%;
-	border-radius: 8px;
-	transition: all 300ms ease;
-	padding: 1rem;
-	margin-bottom: 1rem;
-}
-
-.comment:hover {
-	background-color: var(--dark-clr);
-	border: 1px solid var(--accent-clr-hover);
-	transform: translate(-1.5px, -2.3px);
-}
-
-.comment hr {
-	background-color: white;
-	width: 18%;
-	height: 0.5px;
-}
-
 /* Desktop Version for Homepage  */
 
 @media screen and (min-width: 980px) {
@@ -118,6 +97,7 @@
 	/* post container  */
 
 	.home .home-container-posts {
+		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
 		/* width: 65%; */
@@ -186,6 +166,30 @@
 		padding: 1.5rem 0;
 	}
 
+	/* Comment Styles  */
+
+	.comment {
+		background-color: var(--shaded-clr);
+		border: 1px solid var(--light-clr);
+		width: 100%;
+		border-radius: 8px;
+		transition: all 300ms ease;
+		padding: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.comment:hover {
+		background-color: var(--dark-clr);
+		border: 1px solid var(--accent-clr-hover);
+		transform: translate(-1.5px, -2.3px);
+	}
+
+	.comment hr {
+		background-color: white;
+		width: 18%;
+		height: 0.5px;
+	}
+
 	/* Comment X button  */
 
 	.x {
@@ -203,19 +207,29 @@
 		cursor: pointer;
 		text-align: end;
 	}
+
+	.picked {
+		background-color: var(--sub-dark-bg);
+		position: sticky;
+		top: 20%;
+		width: 91%;
+		border: 1px solid var(--light-clr);
+		z-index: 999;
+	}
+
+	.comment-sub-text {
+		display: none;
+	}
 }
 
-.picked {
-	background-color: var(--sub-dark-bg);
-	position: sticky;
-	top: 20%;
-	width: 91%;
-	border: 1px solid var(--light-clr);
-	z-index: 999;
-}
-
-.comment-sub-text {
-	display: none;
+.x:after {
+	content: "";
+	transform: translateY(-10px);
+	font-size: 2rem;
+	display: inline-block;
+	content: "\00d7";
+	cursor: pointer;
+	text-align: end;
 }
 
 .preloader {
@@ -229,6 +243,8 @@
 	animation: spin 2s linear infinite;
 	margin: 1rem;
 }
+
+/* Animations  */
 
 /* Safari */
 @-webkit-keyframes spin {

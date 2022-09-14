@@ -73,4 +73,3 @@ function removePicked() {
   commentContainer.style.display = "none";
 }
 
-removePicked();
