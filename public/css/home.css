@@ -160,12 +160,7 @@
 	}
 }
 
-body {
-	position: relative;
-}
-
 .picked {
-	/* position: sticky !important; */
 	background-color: var(--sub-dark-bg);
 	position: sticky;
 	top: 18%;
@@ -174,12 +169,25 @@ body {
 	z-index: 100;
 }
 
+.comment-top {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+.x {
+	display: inline;
+	display: flex;
+	justify-content: end;
+}
+
 .x:after {
 	content: "";
-	transform: translateY(-40px);
+	transform: translateY(-22px);
 	font-size: 2rem;
-	float: right;
 	display: inline-block;
 	content: "\00d7";
 	cursor: pointer;
+	text-align: end;
 }
