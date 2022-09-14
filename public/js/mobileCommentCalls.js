@@ -5,6 +5,8 @@ async function mobileComments(postId) {
   if (typeof postId == "number") {
     console.log("this is a num");
 
+    document.querySelector(".preloader-mv").style.display = "block";
+
   let phoneComents = document.querySelectorAll(".phone-comment-content");
 
     // call api 
@@ -22,11 +24,14 @@ async function mobileComments(postId) {
         let comments = postData.comments;
 
         // check if there is comments 
-        if (comments == undefined || comments == [] || comments.length == 0) {
-          let subTxtmv = document.querySelector(".comment-sub-text");
+        if (comments == undefined || comments == [] || comments.length === 0) {
+          let subTxtmv = document.querySelector(".comment-sub-text-mv");
           subTxtmv.style.display = "block";
+          document.querySelector(".preloader-mv").style.display = "none";
+
           setTimeout(() => {
             subTxtmv.style.display = "none";
+
             }, 2500);
         }
 
@@ -36,8 +41,7 @@ async function mobileComments(postId) {
           // cache the API data 
           let text = com.comment;
           let user = com.user.name;
-          let date = com.date_created;
-          console.log(text, user, date);
+          let date = com.date_created; 
 
           //  creating elements 
           let commentDivMobile = document.createElement("div");
@@ -69,13 +73,20 @@ async function mobileComments(postId) {
           commentBottomDivMobile.appendChild(commentDateDivMobile);
 
           // append to core parent 
-            phoneContainerComments.appendChild(commentDivMobile);
-            
+          phoneContainerComments.appendChild(commentDivMobile);
+
+            document.querySelector(".preloader-mv").style.display = "none";
+
           });
+
         }, 800);
         
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        document.querySelector(".preloader-mv").style.display = "none";
+        
+        console.log(err);
+      });
 
   } else {
     console.log("not");

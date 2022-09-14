@@ -48,7 +48,6 @@ async function getComments(postId) {
             let text = com.comment;
             let user = com.user.name;
             let date = com.date_created;
-            console.log(text, user, date);
   
             // creating Elements for page 
             let commentDiv = document.createElement("div");

@@ -16,11 +16,22 @@
 }
 
 .phone-picked {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--shaded-clr);
+	padding: 0.5rem;
+	margin: 0.8rem;
 	width: 95%;
 	border: 1px solid var(--light-clr);
+	border-radius: 8px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
 	min-height: 275px;
 	align-self: center;
 	justify-self: center;
+	transition: all 300ms ease;
+	z-index: 10;
 }
 
 .phone-comment-section {
@@ -71,4 +82,22 @@
 
 .phone-comment hr {
 	width: 90%;
+}
+
+/* mobile version preloaders  */
+
+.preloader-mv {
+	display: block;
+	border: 5px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 5px solid var(--accent-clr-hover);
+	width: 80px;
+	height: 80px;
+	-webkit-animation: spin 2s linear infinite; /* Safari */
+	animation: spin 2s linear infinite;
+	margin: 1rem;
+}
+
+.comment-sub-text-mv {
+	display: none;
 }
