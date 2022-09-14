@@ -63,6 +63,7 @@
 	.post {
 		width: 45%;
 		margin: 0.5rem;
+		min-height: 240px;
 		text-align: start;
 		align-items: flex-start;
 	}
