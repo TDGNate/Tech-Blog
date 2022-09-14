@@ -27,6 +27,7 @@
 .post:hover {
 	background-color: var(--shaded-clr-hover);
 	transform: translate(-2px, -3px);
+	cursor: pointer;
 }
 
 .post-title {
