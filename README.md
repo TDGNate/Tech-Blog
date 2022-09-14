@@ -2,8 +2,6 @@
 
 A CMS site where devs can publish their blogs and add comments on other dev's posts. The app is deployed on Heroku and uses the MVC paradigm, handlebars, Sequelize, and express-sessions.
 
-`No License`
-
 ## Table Of Contents
 
 - [Usage](#usage)
