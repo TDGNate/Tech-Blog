@@ -65,6 +65,7 @@ if (postsContainer) {
 
       // hide the home container 
       postsContainer.style.display = "none";
+      commentContainer.style.display = "none";
       document.querySelector(".home-container-picked").style.display = "block";
 
       // Exchange the contents from picked post into new element 
@@ -104,3 +105,12 @@ function removePicked() {
 
 }
 
+// hides the desktop comment section 
+function hideDesktopCommentsSec() {
+
+  let desktopComments = document.querySelector(".post-container-comments");
+
+  desktopComments.style.display = "none";
+}
+
+hideDesktopCommentsSec();

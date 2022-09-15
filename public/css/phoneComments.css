@@ -65,6 +65,13 @@
 	background-color: var(--shaded-clr);
 	margin-bottom: 0.8rem;
 	font-size: 1.3rem;
+	transition: all 200ms ease;
+}
+
+.phone-comment:hover {
+	background-color: var(--dark-clr);
+	border: 1px solid var(--accent-clr-hover);
+	transform: translate(-1.5px, -2.3px);
 }
 
 .phone-comment-content {

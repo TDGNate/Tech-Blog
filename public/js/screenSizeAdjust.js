@@ -33,16 +33,13 @@ function fixDesktopSize() {
 
   removePicked();
 
-// Also Check if Null 
-
   containerPosts.style.width = "100%";
 
-  let desktopComments = document.querySelector(".post-container-comments");
+  hideDesktopCommentsSec();
 
-  desktopComments.style.display = "none";
   postsContainer.style.width = "100%";
   commentContainer.style.display = "none";
-  
+
 }
 
 // Phone Size 
@@ -59,10 +56,7 @@ function fixPhoneSize() {
     });
   }
 
-  if (document.querySelector(".post-container-comments")) {
-    document.querySelector(".post-container-comments").style.display = "none";
-  }
-
+  hideDesktopCommentsSec();
 
   const containerPosts = document.querySelector(".home-container-posts");
 
@@ -96,6 +90,4 @@ window.addEventListener("resize", (e) => {
     }
 
   }, 500);
-  
-
 });

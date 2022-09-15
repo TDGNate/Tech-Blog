@@ -54,12 +54,12 @@
 	justify-self: center;
 	transition: all 200ms ease;
 	z-index: 10;
+	cursor: pointer;
 }
 
 .post:active {
 	background-color: var(--shaded-clr-hover);
 	transform: translate(-2px, -3px);
-	cursor: pointer;
 }
 
 .post-title {
@@ -125,11 +125,11 @@
 	/* comments  */
 
 	.post-container-comments {
+		display: none;
 		max-height: 750px;
 		overflow-y: scroll;
 		position: sticky;
 		top: 20%;
-		display: none;
 		background-color: var(--sub-dark-bg);
 		width: 38%;
 		height: 100%;
