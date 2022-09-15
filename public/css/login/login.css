@@ -1,0 +1,33 @@
+/* Login page Styles  */
+
+.login {
+	background-image: url("../assets/polygon-login.svg");
+	background-position: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.login form {
+	margin: 2.8rem 0 4rem 0;
+}
+
+.login .btn {
+	background-color: var(--accent-clr);
+}
+
+.login .btn:hover {
+	background-color: var(--accent-clr-hover);
+}
+
+/* small Sign in Page styles  */
+
+#signUpFormSubmit {
+	background-color: var(--accent-clr);
+	color: var(--light-clr);
+}
+
+#signUpFormSubmit:hover {
+	background-color: var(--accent-clr-hover);
+}
+
+
