@@ -4,8 +4,6 @@ async function getComments(postId) {
   
   if (typeof postId == "number") {
 
-    // console.log("this is a number");
-
     document.querySelector(".preloader").style.display = "block";
 
     let coreParent = document.querySelector(".container-comments");
@@ -85,10 +83,10 @@ async function getComments(postId) {
 
          }, 800);
         
-        
       })
     .catch(err => console.log(err));
   } else {
+    
     console.log("not a number");
   }
 }

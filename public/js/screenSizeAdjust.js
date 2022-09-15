@@ -9,33 +9,39 @@ let phneSize = "95%";
 // Desktop Size 
 function fixDesktopSize() {
 
-  if (document.querySelectorAll(".phone-comment").length > 0) {
+  if (document.querySelectorAll(".phone-comment").length > 0 ) {
 
     setTimeout(() => {
     
       location.reload();
   
-    }, 450);
+    }, 200);
 
   }
 
   removePicked();
 
-  const containerPosts = document.querySelector(".home-container-posts");
+// Also Check if Null 
+   
+  let isHome = isHomeContainers();
 
-  containerPosts.style.width = "100%";
+  if (isHome) {
 
-  let desktopComments = document.querySelector(".post-container-comments");
+    const containerPosts = document.querySelector(".home-container-posts");
 
-  desktopComments.style.display = "none";
+    containerPosts.style.width = "100%";
+
+    let desktopComments = document.querySelector(".post-container-comments");
+
+    desktopComments.style.display = "none";
+
+  }
+
+
 
   let posts = document.querySelectorAll(".post");
 
   if (posts != undefined) {
-    // for (i = 0; i <= posts.length; i++) {
-    //   let post = posts[i];
-    //   post.style.width = dektpSize;
-    // }
 
     posts.forEach((post) => {
       post.style.width = dektpSize;
@@ -47,11 +53,16 @@ function fixDesktopSize() {
 // Phone Size 
 function fixPhoneSize() {
 
-  setTimeout(() => {
+  if (document.querySelector(".phone-picked").style.width == "45%") {
     
-    location.reload();
+    setTimeout(() => {
+      
+      location.reload();
+  
+    }, 200);
 
-  }, 450);
+  }
+
 
   const containerPosts = document.querySelector(".home-container-posts");
 
@@ -66,10 +77,6 @@ function fixPhoneSize() {
   let posts = document.querySelectorAll(".post");
 
   if (posts != undefined) {
-    // for (i = 0; i <= posts.length; i++) {
-    //   let post = posts[i];
-    //   post.style.width = phneSize;
-    // }
 
     posts.forEach((post) => {
       post.style.width = phneSize;
@@ -80,11 +87,23 @@ function fixPhoneSize() {
 
 // Listening to every window Resize 
 window.addEventListener("resize", (e) => {
+  
   let w = window.innerWidth;
-  if (w < 980) {
-    fixPhoneSize();
-  } else {
-    fixDesktopSize();
-    removePicked();
-  }
+  let is_root = location.pathname == "/";
+  
+  setTimeout(() => {
+
+    if (w < 980 && is_root) {
+  
+      fixPhoneSize();
+    } else if (w > 980 && is_root) {
+  
+      fixDesktopSize();
+    } else {
+      console.log("not home");
+      return;
+    }
+
+  }, 200);
+
 });

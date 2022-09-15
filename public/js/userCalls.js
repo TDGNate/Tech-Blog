@@ -2,17 +2,20 @@
 
 const logoutBtn = document.getElementById("logout");
 
-logoutBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+if (logoutBtn) {
 
-  fetch("/api/user/logout", {
-    method: "POST"
-  })
-    .then(() => {
-      window
-      .document
-      .location
-      .href="/";
+  logoutBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    fetch("/api/user/logout", {
+      method: "POST"
     })
-  .catch(err => console.log(err));
-});
+      .then(() => {
+        window
+          .document
+          .location
+          .href = "/";
+      })
+      .catch(err => console.log(err));
+  });
+}
