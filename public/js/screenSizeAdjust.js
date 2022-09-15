@@ -12,6 +12,12 @@ function fixDesktopSize() {
   const containerPosts = document.querySelector(".home-container-posts");
   const pickedPostMobileContainer = document.querySelector(".home-container-picked");
 
+  let postPicked = document.querySelector(".picked");
+
+  if (postPicked) {
+    postPicked.style.maxHeight = "240px";
+  }
+
   let posts = document.querySelectorAll(".post");
 
   if (posts != undefined) {
@@ -47,16 +53,10 @@ function fixDesktopSize() {
 // Phone Size 
 function fixPhoneSize() {
 
-  let posts = document.querySelectorAll(".post");
+  let postPicked = document.querySelector(".picked");
 
-  if (posts != undefined) {
-
-  // Resizing the Post for Mobile 
-    posts.forEach((post) => {
-      if (post.style.width == dektpSize) {
-        post.style.width = phneSize;
-      }
-    });
+  if (postPicked) {
+    postPicked.style.maxHeight = "350px";
   }
 
   hideDesktopCommentsSec();
@@ -71,6 +71,23 @@ function fixPhoneSize() {
   thePickedPost.classList.remove("post");
 
   thePickedPost.style.width = "phneSize";
+
+  let posts = document.querySelectorAll(".post");
+
+  if (posts != undefined) {
+
+  // Resizing the Post for Mobile 
+    posts.forEach((post) => {
+      if (post.style.width == dektpSize) {
+        post.style.width = phneSize;
+
+        setTimeout(() => {
+          location.reload();
+        }, 80);
+        
+      }
+    });
+  }
   
 }
 
@@ -93,5 +110,5 @@ window.addEventListener("resize", (e) => {
       return;
     }
 
-  }, 500);
+  }, 350);
 });

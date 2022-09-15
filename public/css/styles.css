@@ -16,7 +16,7 @@
 	--light-clr: rgb(216, 216, 216);
 	--dark-clr: #1f1f1f;
 	/* subs/transparents  */
-	--sub-dark-bg: rgba(0, 0, 0, 0.736);
+	--sub-dark-bg: rgba(0, 0, 0, 0.783);
 	--shaded-clr: rgba(135, 135, 135, 0.238);
 	--shaded-clr-hover: rgba(130, 130, 130, 0.335);
 }

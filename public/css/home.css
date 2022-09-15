@@ -50,6 +50,7 @@
 	text-align: center;
 	width: 95%;
 	min-height: 200px;
+	max-height: 350px;
 	align-self: center;
 	justify-self: center;
 	transition: all 200ms ease;
@@ -73,6 +74,8 @@
 .post-content {
 	pointer-events: none;
 	margin: 0.5rem;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .post-bottom {
@@ -110,6 +113,7 @@
 		width: 45%;
 		margin: 0.5rem;
 		min-height: 240px;
+		max-height: 240px;
 		text-align: start;
 		align-items: flex-start;
 	}

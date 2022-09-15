@@ -49,6 +49,8 @@ if (postsContainer) {
       post.style.width = "91%";
       let onePostId = parseInt(post.getAttribute("value"));
       post.classList.add("picked");
+      let postPicked = document.querySelector(".picked");
+      postPicked.style.maxHeight = "320px"; 
     
       getComments(onePostId);
 
