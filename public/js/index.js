@@ -95,7 +95,10 @@ function removePicked() {
     if (post.classList.contains("picked")) {
       post.classList.remove("picked");
       post.style.cssText = "border: none";
-      post.style.width = dektpSize;
+      post.style.width = "45%";
+      postsContainer.style.width = "100%";
+      commentContainer.style.display = "none";
+
     }
   }
 
@@ -104,11 +107,11 @@ function removePicked() {
 // To fix Null Console Errors 
 function isHomeContainers() {
   
-  const containerPosts = document.querySelector(".home-container-posts");
+  // const containerPosts = document.querySelector(".home-container-posts");
 
-  const commentContainer = document.querySelector(".post-container-comments");
+  // const commentContainer = document.querySelector(".post-container-comments");
 
-  let desktopComments = document.querySelector(".post-container-comments");
+  // let desktopComments = document.querySelector(".post-container-comments");
 
 
   if (postsContainer || commentContainer || containerPosts || desktopComments) {

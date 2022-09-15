@@ -9,7 +9,9 @@ let phneSize = "95%";
 // Desktop Size 
 function fixDesktopSize() {
 
-  if (document.querySelectorAll(".phone-comment").length > 0 ) {
+  const allMobileComments = document.querySelectorAll(".phone-comment");
+  const pickedPostMobileContainer = document.querySelector(".home-container-picked");
+  if (allMobileComments.length > 0 || pickedPostMobileContainer.style.display === "block" ) {
 
     setTimeout(() => {
     
