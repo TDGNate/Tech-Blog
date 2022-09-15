@@ -20,7 +20,7 @@
 	flex-direction: column;
 	background-color: var(--shaded-clr);
 	padding: 0.5rem;
-	margin: 0.8rem;
+	margin: 0.8rem auto;
 	width: 95%;
 	border: 1px solid var(--light-clr);
 	border-radius: 8px;

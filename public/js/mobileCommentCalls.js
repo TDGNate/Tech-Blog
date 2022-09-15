@@ -1,13 +1,10 @@
 // mobile comments api Calls
 
-
 async function mobileComments(postId) {
+  
   if (typeof postId == "number") {
-    console.log("this is a num");
 
     document.querySelector(".preloader-mv").style.display = "block";
-
-  let phoneComents = document.querySelectorAll(".phone-comment-content");
 
     // call api 
     await fetch(`/api/post/${postId}`, {
@@ -17,7 +14,7 @@ async function mobileComments(postId) {
     res.json()
     )
       .then((postData) => {
-        console.log(postData);
+        // console.log(postData); 
 
         let phoneContainerComments = document.querySelector(".phone-comment-container");
 
@@ -89,6 +86,8 @@ async function mobileComments(postId) {
       });
 
   } else {
-    console.log("not");
+    console.log("The Post Value ID is not a number (Mobile Call)");
+
+    return;
   }
 }

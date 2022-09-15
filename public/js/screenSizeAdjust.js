@@ -9,7 +9,6 @@ let phneSize = "95%";
 // Desktop Size 
 function fixDesktopSize() {
 
-  const allMobileComments = document.querySelectorAll(".phone-comment");
   const containerPosts = document.querySelector(".home-container-posts");
   const pickedPostMobileContainer = document.querySelector(".home-container-picked");
 
@@ -18,9 +17,12 @@ function fixDesktopSize() {
   if (posts != undefined) {
 
     posts.forEach((post) => {
+
+      // Resizing the Post for Desktop
       if (post.style.width == phneSize) {
         post.style.width = dektpSize;
       }
+
     });
   }
 
@@ -33,10 +35,10 @@ function fixDesktopSize() {
 
   removePicked();
 
-  containerPosts.style.width = "100%";
-
   hideDesktopCommentsSec();
 
+  // Adjusting Container and Elements for Desktop
+  containerPosts.style.width = "100%";
   postsContainer.style.width = "100%";
   commentContainer.style.display = "none";
 
@@ -49,6 +51,7 @@ function fixPhoneSize() {
 
   if (posts != undefined) {
 
+  // Resizing the Post for Mobile 
     posts.forEach((post) => {
       if (post.style.width == dektpSize) {
         post.style.width = phneSize;
@@ -58,6 +61,7 @@ function fixPhoneSize() {
 
   hideDesktopCommentsSec();
 
+  // Adjusting Container and Elements for mobile 
   const containerPosts = document.querySelector(".home-container-posts");
 
   containerPosts.style.width = "100%";

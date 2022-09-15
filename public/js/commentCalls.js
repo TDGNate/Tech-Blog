@@ -26,7 +26,7 @@ async function getComments(postId) {
         res.json()
       )
       .then((postData) => {
-        console.log(postData);
+        // console.log(postData); 
 
         comments = postData.comments;
 
@@ -87,6 +87,8 @@ async function getComments(postId) {
     .catch(err => console.log(err));
   } else {
     
-    console.log("not a number");
+    console.log("The Post Value ID is not a number (Desktop Call)");
+    
+    return;
   }
 }

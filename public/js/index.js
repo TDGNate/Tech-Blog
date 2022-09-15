@@ -54,8 +54,6 @@ if (postsContainer) {
 
     } else {
 
-      console.log(post);
-
       // getting all contents for clicked post 
       let elValue = post.getAttribute("value");
       let elTitle = post.querySelector(".post-title").textContent;
@@ -81,7 +79,6 @@ if (postsContainer) {
 
       mobileComments(mobilePostId);
 
-      // console.log(elTitle, elContent, elUser, elCreated);
     }
 
   });
