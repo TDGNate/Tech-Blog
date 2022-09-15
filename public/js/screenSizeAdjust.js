@@ -10,15 +10,24 @@ let phneSize = "95%";
 function fixDesktopSize() {
 
   const allMobileComments = document.querySelectorAll(".phone-comment");
+  const containerPosts = document.querySelector(".home-container-posts");
   const pickedPostMobileContainer = document.querySelector(".home-container-picked");
-  
-  if (allMobileComments.length > 0 || pickedPostMobileContainer.style.display === "block" ) {
 
-    setTimeout(() => {
-    
-      location.reload();
-  
-    }, 50);
+  let posts = document.querySelectorAll(".post");
+
+  if (posts != undefined) {
+
+    posts.forEach((post) => {
+      if (post.style.width == phneSize) {
+        post.style.width = dektpSize;
+      }
+    });
+  }
+
+  if (pickedPostMobileContainer.style.display === "block" ) {
+
+    pickedPostMobileContainer.style.display = "none";
+    containerPosts.style.display = "flex";
 
   }
 
@@ -30,25 +39,12 @@ function fixDesktopSize() {
 
   if (isHome) {
 
-    const containerPosts = document.querySelector(".home-container-posts");
-
     containerPosts.style.width = "100%";
 
     let desktopComments = document.querySelector(".post-container-comments");
 
     desktopComments.style.display = "none";
 
-  }
-
-
-
-  let posts = document.querySelectorAll(".post");
-
-  if (posts != undefined) {
-
-    posts.forEach((post) => {
-      post.style.width = dektpSize;
-    });
   }
 
 }
@@ -103,7 +99,7 @@ window.addEventListener("resize", (e) => {
       return;
     }
 
-  }, 900);
+  }, 500);
   
 
 });
