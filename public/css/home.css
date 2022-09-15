@@ -52,7 +52,7 @@
 	min-height: 200px;
 	align-self: center;
 	justify-self: center;
-	transition: all 300ms ease;
+	transition: all 200ms ease;
 	z-index: 10;
 }
 
@@ -173,7 +173,7 @@
 		border: 1px solid var(--light-clr);
 		width: 100%;
 		border-radius: 8px;
-		transition: all 300ms ease;
+		transition: all 200ms ease;
 		padding: 1rem;
 		margin-bottom: 1rem;
 	}

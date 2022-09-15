@@ -11,13 +11,14 @@ function fixDesktopSize() {
 
   const allMobileComments = document.querySelectorAll(".phone-comment");
   const pickedPostMobileContainer = document.querySelector(".home-container-picked");
+  
   if (allMobileComments.length > 0 || pickedPostMobileContainer.style.display === "block" ) {
 
     setTimeout(() => {
     
       location.reload();
   
-    }, 200);
+    }, 50);
 
   }
 
@@ -55,14 +56,19 @@ function fixDesktopSize() {
 // Phone Size 
 function fixPhoneSize() {
 
-  if (document.querySelector(".phone-picked").style.width == "45%") {
-    
-    setTimeout(() => {
-      
-      location.reload();
-  
-    }, 200);
+  let posts = document.querySelectorAll(".post");
 
+  if (posts != undefined) {
+
+    posts.forEach((post) => {
+      if (post.style.width == dektpSize) {
+        post.style.width = phneSize;
+      }
+    });
+  }
+
+  if (document.querySelector(".post-container-comments")) {
+    document.querySelector(".post-container-comments").style.display = "none";
   }
 
 
@@ -75,15 +81,6 @@ function fixPhoneSize() {
   thePickedPost.classList.remove("post");
 
   thePickedPost.style.width = "phneSize";
-
-  let posts = document.querySelectorAll(".post");
-
-  if (posts != undefined) {
-
-    posts.forEach((post) => {
-      post.style.width = phneSize;
-    });
-  }
   
 }
 
@@ -92,9 +89,9 @@ window.addEventListener("resize", (e) => {
   
   let w = window.innerWidth;
   let is_root = location.pathname == "/";
-  
-  setTimeout(() => {
 
+  setTimeout(() => {
+    
     if (w < 980 && is_root) {
   
       fixPhoneSize();
@@ -102,10 +99,11 @@ window.addEventListener("resize", (e) => {
   
       fixDesktopSize();
     } else {
-      console.log("not home");
+  
       return;
     }
 
-  }, 200);
+  }, 900);
+  
 
 });
