@@ -104,21 +104,3 @@ function removePicked() {
 
 }
 
-// To fix Null Console Errors 
-function isHomeContainers() {
-  
-  // const containerPosts = document.querySelector(".home-container-posts");
-
-  // const commentContainer = document.querySelector(".post-container-comments");
-
-  // let desktopComments = document.querySelector(".post-container-comments");
-
-
-  if (postsContainer || commentContainer || containerPosts || desktopComments) {
-    postsContainer.style.width = "100%";
-    commentContainer.style.display = "none";
-
-    return true;
-  } else return false;
-}
-

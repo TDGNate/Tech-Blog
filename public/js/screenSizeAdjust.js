@@ -34,19 +34,15 @@ function fixDesktopSize() {
   removePicked();
 
 // Also Check if Null 
-   
-  let isHome = isHomeContainers();
 
-  if (isHome) {
+  containerPosts.style.width = "100%";
 
-    containerPosts.style.width = "100%";
+  let desktopComments = document.querySelector(".post-container-comments");
 
-    let desktopComments = document.querySelector(".post-container-comments");
-
-    desktopComments.style.display = "none";
-
-  }
-
+  desktopComments.style.display = "none";
+  postsContainer.style.width = "100%";
+  commentContainer.style.display = "none";
+  
 }
 
 // Phone Size 
