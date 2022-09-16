@@ -82,11 +82,13 @@ router.post("/login", async (req, res) => {
     }
 
     let userID = user.id;
+    let userName = user.name;
 
      req.session.save(() => {
       
       req.session.loggedIn = true;
       req.session.userId = userID;
+      req.session.userName = userName;
 
       res.redirect("/");
 
@@ -112,11 +114,13 @@ router.post("/register", async (req, res) => {
     });
 
     const userID = newUser.id;
+    let userName = newUser.name; 
 
     req.session.save(() => {
         
       req.session.loggedIn = true;
       req.session.userId = userID;
+      req.session.userName = userName; 
       
       res.render("successful");
 

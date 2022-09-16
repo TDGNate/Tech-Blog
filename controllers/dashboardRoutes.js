@@ -27,7 +27,9 @@ router.get("/", auth, async (req, res) => {
     // Sending back the correct posts to user
     res.render("dashboard", {
       posts,
-      loggedIn: req.session.loggedIn
+      loggedIn: req.session.loggedIn,
+      userName: req.session.userName,
+      active: {dashboard: true}
     });
 
   } catch (err) {

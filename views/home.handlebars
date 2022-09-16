@@ -1,6 +1,10 @@
 <div class="page home">
 	<div class="container">
-		<h1>Home</h1>
+		{{#if loggedIn}}
+			<h1>Hello, {{userName}}!</h1>
+		{{else}}
+			<h1>Home</h1>
+		{{/if}}
 		<p>Live Posts:</p>
 		<hr>
 		<div class="container-sub">

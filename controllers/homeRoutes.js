@@ -42,6 +42,8 @@ router.get("/", async (req, res) => {
       {
         posts,
         loggedIn: req.session.loggedIn,
+        userName: req.session.userName,
+        active: {home: true}
     });
 
     // res.json(postData);

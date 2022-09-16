@@ -1,11 +1,11 @@
 <div class="page dashboard">
 	<div class="container">
 		<h1>Dashboard</h1>
+		<p class="dash-sub">Welcome! What's on your mind <span id="dashboardUsername">{{userName}}</span>?</p>
 
 		<hr />
 
 		<h2>Create Post</h2>
-		<p>Welcome! Wanna create a post?</p>
 
 		{{! Creating a new Post  }}
 
@@ -38,7 +38,6 @@
 		<hr />
 
 		<h2>Your Posts</h2>
-		<p>Everything you've shared!</p>
 
 		<div class="container-sub">
 
@@ -48,6 +47,12 @@
 			{{/each}}
 
 		</div>
+
+		<hr />
+
+		<h2>Your Comments</h2>
+
+		<div class="container-sub"></div>
 
 	</div>
 </div>

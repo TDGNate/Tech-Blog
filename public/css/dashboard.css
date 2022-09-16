@@ -7,6 +7,10 @@
 	background-size: cover;
 }
 
+#dashboardUsername {
+	font-weight: bold;
+}
+
 /* Form Section  */
 
 .dashboard form {
@@ -79,6 +83,21 @@
 }
 
 @media screen and (min-width: 980px) {
+	/* header  */
+	.dashboard h1 {
+		margin: 2.8rem 0 1.2rem 0;
+	}
+
+	.dash-sub {
+		font-size: 1.3rem;
+	}
+
+	/* dash container  */
+
+	.dashboard .container-sub {
+		margin: 2.8rem 0;
+	}
+
 	/* form  */
 
 	.dashboard-post {
