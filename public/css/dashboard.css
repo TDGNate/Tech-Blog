@@ -87,6 +87,7 @@
 .dashboard-comment-section {
 	padding: 1.8rem;
 	min-height: 25%;
+	width: 100%;
 }
 
 .dashboard-comment-section-container {
@@ -156,6 +157,8 @@
 	.dashboard-post-content {
 		padding: 0;
 	}
+
+	/* Comment Section  */
 
 	.dashboard-comment-section {
 		padding: 1rem;

@@ -53,21 +53,21 @@
 		<div class="dashboard-comment-section">
 			<h2>Your Comments</h2>
 
-		<div class="dashboard-comment-section-container">
-				{{#if user.comments}}
+		<div class="container-sub">
+					{{#if user.comments}}
 
-				<div class="container-sub">
+						{{!-- Each User's Posts  --}}
+						{{#each user.comments}}
+							{{> dashComment}}
+						{{/each}}
 
-					{{!-- Each User's Posts  --}}
-					{{#each user.comments}}
-						{{> dashComment}}
-					{{/each}}
+					{{else}}
 
-				</div>
+						<div class="dashboard-comment-section-container">
+							<p class="dashboard-no-comment-message">You have no comments yet</p>
+						</div>
 
-				{{else}}
-				<p class="dashboard-no-comment-message">You have no comments yet</p>
-				{{/if}}
+					{{/if}}
 			</div>
 		</div>
 	</div>

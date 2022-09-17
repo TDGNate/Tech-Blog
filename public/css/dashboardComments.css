@@ -1,0 +1,35 @@
+.dashboard-comment {
+	background-color: var(--shaded-clr);
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	overflow: hidden;
+	margin: 0.8rem;
+	width: 80%;
+	transition: all 300ms ease;
+}
+
+.dashboard-comment:hover {
+	background-color: var(--shaded-clr-hover);
+	transform: translate(-2px, -3px);
+}
+
+.dashboard-comment-date {
+	background-color: var(--sub-clr);
+	padding: 0.8rem;
+}
+
+.comment-second-side {
+	text-align: center;
+	padding: 0.5rem;
+}
+
+.dashboard-comment-content {
+	padding: 0.5rem;
+}
+
+.dashboard-comment-title {
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin: 0.5rem 0;
+}
