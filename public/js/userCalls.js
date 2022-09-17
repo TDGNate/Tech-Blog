@@ -34,15 +34,38 @@ if (signUpBtn) {
     const newEmail = document.querySelector(".signUp-form-email").value;
     const newPassword = document.querySelector(".signUp-form-password").value;
 
-    
+    // check if all input fields are filled in
+    if (newName == "") {
+      swal({
+        title: "What should we call you?",
+        text: "Empty input field, please add your name.",
+        button: "Ok"
+      });
+      
+      return;
+    } else if (newEmail == "") {
+      swal({
+        title: "Don't forget your Email",
+        button: "Ok"
+      });
 
-    // check if all input fields are filled in 
-    swal({
-      className: "swal",
-      title: "Uh oh...",
-      text: "It seems like this account already exist.",
-      button: "Ok"
-    });
+      return;
+    } else if (newPassword == "") {
+      swal({
+        title: "Please add your password",
+        text: "Make it secure!",
+        button: "Ok"
+      });
+
+      return;
+    }
+
+    // swal({
+    //   className: "swal",
+    //   title: "Uh oh...",
+    //   text: "It seems like this account already exist.",
+    //   button: "Ok"
+    // });
 
   });
 }
