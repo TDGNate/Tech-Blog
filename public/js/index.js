@@ -47,6 +47,7 @@ if (postsContainer) {
       commentContainer.style.display = "block";
       post.style.cssText = "border: 1px solid var(--light-clr)";
       post.style.width = "91%";
+      post.classList.remove("post-hover");
       let onePostId = parseInt(post.getAttribute("value"));
       post.classList.add("picked");
       let postPicked = document.querySelector(".picked");
@@ -94,6 +95,11 @@ function removePicked() {
 
     if (post.classList.contains("picked")) {
       post.classList.remove("picked");
+
+      // check if it has the hover effect, if not add the class with hovering 
+      if (!post.classList.contains("post-hover")) {
+        post.classList.add("post-hover");
+      }
       post.style.cssText = "border: none";
       post.style.width = "45%";
       postsContainer.style.width = "100%";

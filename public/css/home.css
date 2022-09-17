@@ -55,10 +55,10 @@
 	justify-self: center;
 	transition: all 200ms ease;
 	z-index: 10;
-	cursor: pointer;
 }
 
-.post:active {
+.post-hover:hover {
+	cursor: pointer;
 	background-color: var(--shaded-clr-hover);
 	transform: translate(-2px, -3px);
 }

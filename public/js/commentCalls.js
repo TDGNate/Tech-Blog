@@ -57,6 +57,7 @@ async function getComments(postId) {
   
             // adding classes to new Elements 
             commentDiv.classList.add("comment");
+            commentDiv.classList.add("post-hover");
             commentContentDiv.classList.add("comment-content");
             commentBottomDiv.classList.add("comment-bottom");
             commentUserDiv.classList.add("comment-name");
