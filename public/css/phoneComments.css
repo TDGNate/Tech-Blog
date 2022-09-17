@@ -108,3 +108,17 @@
 .comment-sub-text-mv {
 	display: none;
 }
+
+.home-container-picked a {
+	font-size: 1.4rem;
+	text-align: center;
+	color: var(--sub-clr);
+	padding: 0.8rem;
+	border-radius: 4px;
+}
+
+.home-container-picked a:hover {
+	text-decoration: none;
+	cursor: pointer;
+	color: var(--sub-clr-hover);
+}
