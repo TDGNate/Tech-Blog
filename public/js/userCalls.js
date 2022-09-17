@@ -1,5 +1,6 @@
-// User Logs 
+// User Logs
 
+// Log Out 
 const logoutBtn = document.getElementById("logout");
 
 if (logoutBtn) {
@@ -17,5 +18,23 @@ if (logoutBtn) {
           .href = "/";
       })
       .catch(err => console.log(err));
+  });
+}
+
+// Signing Up 
+const signUpBtn = document.getElementById("signUpFormSubmit");
+
+if (signUpBtn) {
+
+  signUpBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    swal({
+      className: "swal",
+      title: "Uh oh...",
+      text: "It seems like this account already exist.",
+      button: "Ok"
+    });
+
   });
 }

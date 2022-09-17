@@ -147,6 +147,33 @@ input:focus {
 	cursor: pointer;
 }
 
+/* Sweet Alert Styles  */
+
+.swal-modal {
+	background-color: var(--dark-clr);
+	border: 1px solid var(--sub-clr-hover);
+}
+
+.swal-title {
+	color: var(--light-clr);
+}
+
+.swal-text {
+	color: var(--light-clr);
+}
+
+.swal-button {
+	padding: 7px 19px;
+	border-radius: 2px;
+	background-color: var(--sub-clr-hover);
+	font-size: 12px;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+}
+
+.swal-overlay {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
 /* fixing alignment for Desktop Version  */
 
 @media screen and (min-width: 980px) {
