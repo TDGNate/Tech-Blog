@@ -32,8 +32,7 @@ router.get("/", auth, async (req, res) => {
           attributes: {
             exclude: [
               "user_id",
-              "content",
-              "date_created"
+              "content"
             ]
           }
         }

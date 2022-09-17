@@ -15,8 +15,9 @@
 }
 
 .dashboard-comment-date {
-	background-color: var(--sub-clr);
+	background-color: rgb(175, 0, 134);
 	padding: 0.8rem;
+	color: var(--light-clr);
 }
 
 .comment-second-side {
@@ -32,4 +33,37 @@
 	font-size: 1.2rem;
 	font-weight: bold;
 	margin: 0.5rem 0;
+}
+
+/* Desktop Dashboard Comments  */
+
+@media screen and (min-width: 980px) {
+	/* Posts  */
+	.dashboard-comment {
+		flex-direction: row;
+		width: 75%;
+		min-height: 200px;
+		gap: 5%;
+	}
+
+	.comment-second-side {
+		width: 75%;
+		height: 100%;
+		align-self: center;
+		text-align: start;
+	}
+
+	.dashboard-comment-date {
+		text-align: center;
+		padding: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.dashboard-comment-content {
+		margin-bottom: 1rem;
+
+		padding: 0;
+	}
 }
