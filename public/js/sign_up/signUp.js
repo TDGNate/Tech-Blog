@@ -38,7 +38,12 @@ if (signUpBtn) {
     }
 
     // check Password Length
-    checkPassword(newPassword);
+
+    let isValidPass = await checkPassword(newPassword);
+
+    if (!isValidPass) {
+      return;
+    }
 
     // Regex Check 
     const isNameValid = await regexCheckName(newName);

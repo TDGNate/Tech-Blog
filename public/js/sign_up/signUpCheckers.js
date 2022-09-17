@@ -35,7 +35,7 @@ async function checkPassword(password) {
       button: "Ok"
     });
 
-    return;
+    return false;
     
-  }
+  } else return true;
 }
