@@ -186,6 +186,24 @@ input:focus {
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
+.swal-icon {
+	background-color: var(--dark-clr);
+	gap: 0;
+}
+.swal-icon::after {
+	background-color: var(--dark-clr);
+}
+.swal-icon::before {
+	background-color: var(--dark-clr);
+}
+.swal-icon--success__hide-corners {
+	background-color: var(--dark-clr);
+	padding: 0;
+	top: -13px;
+	width: 25px;
+	height: 128px;
+}
+
 /* fixing alignment for Desktop Version  */
 
 @media screen and (min-width: 980px) {

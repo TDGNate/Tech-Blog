@@ -66,8 +66,28 @@ if (signUpBtn) {
       return;
     }
 
-    // After all checks, make call to Register the new user  
-    registerUser(newName, newEmail, newPassword);
+    swal({
+      icon: "success",
+      text: "Ayyy, you're in!",
+      button: false
+    });
+
+    setTimeout(() => {
+
+      swal({
+        text: "Redirecting...",
+        button: false
+      });
+      
+    }, 1500);
+
+
+    // setTimeout(() => {
+
+    //   // After all checks, make call to Register the new user  
+    //   registerUser(newName, newEmail, newPassword);
+
+    // }, 2300);
 
   });
 }
