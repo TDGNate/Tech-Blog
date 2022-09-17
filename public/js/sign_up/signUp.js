@@ -37,14 +37,6 @@ if (signUpBtn) {
       return;
     }
 
-    // check Password Length
-
-    let isValidPass = await checkPassword(newPassword);
-
-    if (!isValidPass) {
-      return;
-    }
-
     // Regex Check 
     const isNameValid = await regexCheckName(newName);
     const isEmailValid = await regexCheckEmail(newEmail); 
@@ -53,7 +45,7 @@ if (signUpBtn) {
 
       swal({
         title: "Hmmm...",
-        text: "Please try another name",
+        text: "Please refrain from using numbers, special characters, etc..",
         button: "Ok"
       });
 
@@ -63,7 +55,7 @@ if (signUpBtn) {
     if (!isEmailValid) {
 
       swal({
-        title: "Email not valid",
+        title: "Not a valid email",
         text: "Please try another email",
         button: "Ok"
       });
@@ -71,28 +63,26 @@ if (signUpBtn) {
       return;
     }
 
-    swal({
-      icon: "success",
-      text: "Ayyy, you're in!",
-      button: false
-    });
+    // check Password Length
 
-    setTimeout(() => {
+    let isValidPass = await checkPassword(newPassword);
+
+    if (!isValidPass) {
+
+      return;
+    }
 
       swal({
-        text: "Redirecting...",
+        text: "Evaluating...",
         button: false
       });
-      
-    }, 1500);
-
 
     setTimeout(() => {
 
       // After all checks, make call to Register the new user  
       registerUser(newName, newEmail, newPassword);
 
-    }, 3000);
+    }, 900);
 
   });
 }

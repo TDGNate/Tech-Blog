@@ -14,7 +14,11 @@ router.get("/", async (req, res) => {
 // successfully signed in 
 router.get("/success", async (req, res) => {
   try {
-    res.render("successful");
+    res.render("successful",
+      {
+        loggedIn: req.session.loggedIn
+      }
+    );
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
   }

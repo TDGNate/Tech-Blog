@@ -103,21 +103,24 @@ router.post("/login", async (req, res) => {
 router.post("/register", async (req, res) => { 
   try {
 
+    let isAlreadyUser = false;
+
     // creating a new user in database 
      await User.create({
       name: req.body.name,
       email: req.body.email,
       password: req.body.password
      })
-       .catch((err) => {
-         res
-           .json(
-             {
-               message: "email must be unique"
-             }); 
+       .catch(err => {
          
+           isAlreadyUser = true;
+           res.json({ message: "email must be unique" });
+           
          return;
-    });
+       }
+    );
+    
+    
 
     const userData = await User.findOne({
       where: {
@@ -134,21 +137,22 @@ router.post("/register", async (req, res) => {
     const userID = userData.id;
     let userName = userData.name; 
 
-    req.session.save(() => {
+    if (!isAlreadyUser) {
+      req.session.save(() => {
         
-      req.session.loggedIn = true;
-      req.session.userId = userID;
-      req.session.userName = userName; 
+        req.session.loggedIn = true;
+        req.session.userId = userID;
+        req.session.userName = userName;
       
-      res
-        .status(200)
-        .json({
-          message: "User Created!",
-          user: userData
-        });
-    });
+        res
+          .status(200)
+          .json({
+            message: "User Created!",
+            user: userData
+          });
+      });
+    }
 
-    
   } catch (err) {
     res.status(500).json({ message: "Server Error, cannot create user..." });
   }
