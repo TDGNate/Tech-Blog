@@ -1,0 +1,134 @@
+.not-found {
+	background-color: rgb(15, 15, 15);
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.not-found .container {
+	display: flex;
+	flex-direction: column;
+	justify-self: center;
+	align-self: center;
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+	height: 90%;
+}
+
+.not-found-top {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.neonText {
+	font-size: 3.5rem;
+	color: #fff;
+	text-shadow: 0 0 7px rgb(255, 232, 250), 0 0 10px rgb(255, 232, 250),
+		0 0 21px rgb(255, 232, 250), 0 0 42px var(--accent-clr),
+		0 0 82px var(--accent-clr), 0 0 92px var(--accent-clr),
+		0 0 102px var(--accent-clr), 0 0 151px var(--accent-clr);
+}
+
+.not-found h1 {
+	font-size: 4.8rem;
+	animation: flicker 1.5s infinite alternate;
+}
+
+.not-found-bottom {
+	margin-top: 4rem;
+}
+
+.not-found-bottom p {
+	color: rgb(206, 206, 206);
+	margin: 1rem 0;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.not-found-bottom ul {
+	align-self: center;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	list-style: none;
+}
+
+.not-found-bottom ul li a {
+	margin: 0 0.8rem;
+	font-size: 1.2rem;
+	color: var(--accent-clr);
+	border: 1px solid rgb(15, 15, 15);
+}
+
+.not-found-bottom ul li a:hover {
+	text-decoration: none;
+	cursor: pointer;
+	color: var(--accent-clr-hover);
+	border-bottom: 1px solid var(--sub-clr-hover);
+}
+
+/* desktop version  */
+@media screen and (min-width: 980px) {
+	.not-found .container {
+		height: auto;
+		border: 1px solid #fff;
+		border-radius: 5px;
+		padding: 5rem 3rem;
+		margin: 1rem;
+		width: 90%;
+		box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff,
+			0 0 1.3rem var(--sub-clr-hover), 0 0 0.2rem var(--sub-clr-hover),
+			0 0 2.2rem var(--sub-clr-hover), inset 0 0 1.3rem var(--sub-clr-hover);
+	}
+
+	.neonText {
+		font-size: 4.8rem;
+	}
+
+	.not-found h1 {
+		font-size: 6rem;
+		animation: flicker 1.5s infinite alternate;
+	}
+
+	.not-found-bottom p {
+		font-size: 1.6rem;
+	}
+
+	.not-found-bottom ul li a {
+		font-size: 1.4rem;
+	}
+}
+
+/* Galaxy Fold  */
+@media screen and (max-width: 280px) {
+	.neonText {
+		font-size: 2rem;
+	}
+}
+
+/* Flickering animation */
+@keyframes flicker {
+	0%,
+	18%,
+	22%,
+	25%,
+	53%,
+	57%,
+	100% {
+		text-shadow: 0 0 4px rgb(255, 232, 250), 0 0 11px rgb(255, 232, 250),
+			0 0 19px rgb(255, 232, 250), 0 0 40px var(--accent-clr),
+			0 0 80px var(--accent-clr), 0 0 90px var(--accent-clr),
+			0 0 100px var(--accent-clr), 0 0 150px var(--accent-clr);
+	}
+
+	24%,
+	55% {
+		text-shadow: none;
+	}
+}

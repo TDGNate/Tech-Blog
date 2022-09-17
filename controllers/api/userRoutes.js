@@ -104,17 +104,35 @@ router.post("/register", async (req, res) => {
   try {
 
     // creating a new user in database 
-    const newUser = await User.create({
+     await User.create({
       name: req.body.name,
       email: req.body.email,
       password: req.body.password
-    }).catch((err) => {
-      res
-        .json(err);
+     })
+       .catch((err) => {
+         res
+           .json(
+             {
+               message: "email must be unique"
+             }); 
+         
+         return;
     });
 
-    const userID = newUser.id;
-    let userName = newUser.name; 
+    const userData = await User.findOne({
+      where: {
+        email: req.body.email
+      }
+    });
+
+    if (!userData) {
+      res.render("404", {
+        layout: "blank"
+      });
+    }
+
+    const userID = userData.id;
+    let userName = userData.name; 
 
     req.session.save(() => {
         
