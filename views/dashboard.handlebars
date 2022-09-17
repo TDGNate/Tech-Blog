@@ -1,7 +1,7 @@
 <div class="page dashboard">
 	<div class="container">
 		<h1>Dashboard</h1>
-		<p class="dash-sub">Welcome! What's on your mind <span id="dashboardUsername">{{userName}}</span>?</p>
+		<p class="dash-sub">Welcome! What's on your mind <span id="dashboardUsername">{{user.name}}</span>?</p>
 
 		<hr />
 
@@ -42,7 +42,7 @@
 		<div class="container-sub">
 
 			{{! Dashboard Cards  }}
-			{{#each posts as |post|}}
+			{{#each user.posts as |post|}}
 				{{> dashCard}}
 			{{/each}}
 
@@ -54,8 +54,17 @@
 			<h2>Your Comments</h2>
 
 		<div class="dashboard-comment-section-container">
-				{{#if comments}}
-				<div class="container-sub"></div>
+				{{#if user.comments}}
+
+				<div class="container-sub">
+
+					{{!-- Each User's Posts  --}}
+					{{#each user.comments}}
+						{{> dashComment}}
+					{{/each}}
+
+				</div>
+
 				{{else}}
 				<p class="dashboard-no-comment-message">You have no comments yet</p>
 				{{/if}}

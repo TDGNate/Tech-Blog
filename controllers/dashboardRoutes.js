@@ -4,33 +4,54 @@ const router = require("express").Router();
 const auth = require("../utils/auth");
 
 // Models 
-const User = require("../models/user");
-const Post = require("../models/post");
-const Comment = require("../models/comment");
+const { Comment, Post, User} = require("../models");
 
 router.get("/", auth, async (req, res) => {
   try {
 
-    // getting all post related to One User 
-    const postData = await Post.findAll({
+    const userData = await User.findOne({
       where: {
-        user_id: req.session.userId
-      }
-    })
-      // catching any errors 
-      .catch((err) => {
-      res.json({message: "no post?"});
-      });
-    
-    const posts = postData.map((post) => post.get({ plain: true }));
-
-    // Sending back the correct posts to user
-    res.render("dashboard", {
-      posts,
-      loggedIn: req.session.loggedIn,
-      userName: req.session.userName,
-      active: {dashboard: true}
+        id: req.session.userId
+      },
+      attributes: {
+        exclude: "password"
+      },
+      include: [
+        {
+          model: Post,
+          attributes: {
+            exclude: "user_id"
+          }
+        },
+        {
+          model: Comment,
+          attributes: {
+            exclude: "user_id"
+          },
+          include: { model: Post },
+          attributes: {
+            exclude: [
+              "user_id",
+              "content",
+              "date_created"
+            ]
+          }
+        }
+      ]
     });
+
+    const user = userData.get({ plain: true });
+
+    if (!user) {
+      res.render("404", {
+        layout: "blank"
+      });
+    }
+
+    res.render("dashboard", {
+      user
+    });
+
 
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
