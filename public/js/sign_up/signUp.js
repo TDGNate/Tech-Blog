@@ -3,7 +3,7 @@ const signUpBtn = document.getElementById("signUpFormSubmit");
 
 if (signUpBtn) {
 
-  signUpBtn.addEventListener("click", (e) => {
+  signUpBtn.addEventListener("click", async (e) => {
     e.preventDefault();
 
     // Get all elements from form 
@@ -38,10 +38,30 @@ if (signUpBtn) {
     }
 
     // Regex Check 
-    const isNameValid = regexCheckName(newName);
-    // const isEmailValid = regexCheckEmail(newEmail); 
+    const isNameValid = await regexCheckName(newName);
+    const isEmailValid = await regexCheckEmail(newEmail); 
 
-    console.log(isNameValid);
+    if (!isNameValid) {
+
+      swal({
+        title: "Hmmm...",
+        text: "Please try another name.",
+        button: "Ok"
+      });
+
+      return;
+    }
+
+    if (!isEmailValid) {
+
+      swal({
+        title: "Email not valid",
+        text: "Please try another email.",
+        button: "Ok"
+      });
+
+      return;
+    }
 
   });
 }
