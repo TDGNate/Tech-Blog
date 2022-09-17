@@ -6,8 +6,6 @@ if (signUpBtn) {
   signUpBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    const nameRegex =  /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/;
-
     // Get all elements from form 
     const newName = document.querySelector(".signUp-form-name").value;
     const newEmail = document.querySelector(".signUp-form-email").value;
@@ -40,14 +38,10 @@ if (signUpBtn) {
     }
 
     // Regex Check 
-    nameRegex.test(newName);
+    const isNameValid = regexCheckName(newName);
+    // const isEmailValid = regexCheckEmail(newEmail); 
 
-    // swal({
-    //   className: "swal",
-    //   title: "Uh oh...",
-    //   text: "It seems like this account already exist.",
-    //   button: "Ok"
-    // });
+    console.log(isNameValid);
 
   });
 }
