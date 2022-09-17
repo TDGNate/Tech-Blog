@@ -29,10 +29,14 @@
 	padding: 0.5rem;
 }
 
-.dashboard-comment-title {
+.dashboard-comment-post a {
 	font-size: 1.2rem;
 	font-weight: bold;
 	margin: 0.5rem 0;
+}
+
+.dashboard-comment-post a:hover {
+	color: var(--accent-clr);
 }
 
 /* Desktop Dashboard Comments  */
