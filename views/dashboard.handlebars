@@ -50,9 +50,16 @@
 
 		<hr />
 
-		<h2>Your Comments</h2>
+		<div class="dashboard-comment-section">
+			<h2>Your Comments</h2>
 
-		<div class="container-sub"></div>
-
+		<div class="dashboard-comment-section-container">
+				{{#if comments}}
+				<div class="container-sub"></div>
+				{{else}}
+				<p class="dashboard-no-comment-message">You have no comments yet</p>
+				{{/if}}
+			</div>
+		</div>
 	</div>
 </div>

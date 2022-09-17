@@ -1,7 +1,9 @@
 <div class="page home">
 	<div class="container">
+
+		{{!-- If they are logged in, show name and give user ID value as attribute  --}}
 		{{#if loggedIn}}
-			<h1>Hello, {{userName}}!</h1>
+			<h1 class="home-hello-user" value="{{userId}}" >Hello, {{userName}}!</h1>
 		{{else}}
 			<h1>Home</h1>
 		{{/if}}
@@ -41,15 +43,6 @@
 
 						{{!-- phone comment  --}}
 
-						{{!-- <div class="phone-comment">
-							<div class="phone-comment-content">fdsa  jkl ds fjsdklafjsdf dsklajf;s ff ds fa</div>
-							<div class="phone-comment-bottom">
-								<hr>
-								<div class="phone-comment-name">Nate</div>
-								<div class="phone-comment-date">Sept 8</div>
-							</div>
-						</div> --}}
-
 					</div>
 				</div>
 
@@ -57,28 +50,13 @@
 
 			<div class="home-container-posts">
 
-			{{!-- <div class="post picked">
-				{{! Post Content  }}
-				<div class="post-title">Title</div>
-				<div class="post-content">this is where the content is going to go, only testing rn</div>
-				{{! bottom half  }}
-				<div class="post-bottom">
-					{{! Post user  }}
-					<div class="post-user-sec">-
-						<span class="post-user">bob</span>
-						<br />
-						<span class="post-created">Aug 1</span>
-					</div>
-				</div>
-			</div> --}}
-
 			{{!-- Home Page Cards  --}}
 
 				{{#each posts as |post|}}
 					{{> postCard}}
 				{{/each}}
 
-		</div>
+			</div>
 
 			{{!-- Comments Section --}}
 			<div class="post-container-comments">
@@ -91,25 +69,14 @@
 				</div>
 				<div class="container-comments">
 					<div class="preloader"></div>
+
 				{{!-- Comment  --}}
 
-				{{!-- <div class="comment">
-						<div class="comment-content">This is a great post, this is a test</div>
-						<div class="comment-bottom">
-							<hr>
-								<div class="comment-name">Nate</div>
-								<div class="comment-created">Aug 2</div>
-						</div>
-				</div> --}}
-
-				{{!-- {{#each posts as |post|}}
-					{{> comment}}
-				{{/each}} --}}
+				</div>
 			</div>
-
-
-	</div>
 	
+		</div>
+	</div>
 </div>
 
 {{!-- Scripts For Home Page  --}}

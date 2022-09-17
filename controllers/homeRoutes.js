@@ -43,6 +43,7 @@ router.get("/", async (req, res) => {
         posts,
         loggedIn: req.session.loggedIn,
         userName: req.session.userName,
+        userId: req.session.userId,
         active: {home: true}
     });
 

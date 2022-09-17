@@ -82,7 +82,38 @@
 	padding: 0.5rem;
 }
 
+/* Dashboard Comments Section */
+
+.dashboard-comment-section {
+	padding: 1.8rem;
+	min-height: 25%;
+}
+
+.dashboard-comment-section-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.dashboard-no-comment-message {
+	background-color: var(--shaded-clr);
+	padding: 1rem;
+	width: 80%;
+	text-align: center;
+	font-size: 1.2rem;
+	border-radius: 8px;
+	justify-self: center;
+	margin: 0;
+}
+
+/* Desktop Version  */
+
 @media screen and (min-width: 980px) {
+	.page .dashboard {
+		min-height: 100%;
+		height: auto;
+	}
 	/* header  */
 	.dashboard h1 {
 		margin: 2.8rem 0 1.2rem 0;
@@ -124,5 +155,22 @@
 
 	.dashboard-post-content {
 		padding: 0;
+	}
+
+	.dashboard-comment-section {
+		padding: 1rem;
+		min-height: 30%;
+	}
+
+	.dashboard-comment-section-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.dashboard-no-comment-message {
+		margin: 2.5rem;
+		font-size: 1.4rem;
 	}
 }
