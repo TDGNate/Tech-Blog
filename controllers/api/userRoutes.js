@@ -140,10 +140,15 @@ router.post("/register", async (req, res) => {
       req.session.userId = userID;
       req.session.userName = userName; 
       
-      res.render("successful");
-
+      res
+        .status(200)
+        .json({
+          message: "User Created!",
+          user: userData
+        });
     });
 
+    
   } catch (err) {
     res.status(500).json({ message: "Server Error, cannot create user..." });
   }

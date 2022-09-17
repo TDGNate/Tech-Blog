@@ -82,12 +82,12 @@ if (signUpBtn) {
     }, 1500);
 
 
-    // setTimeout(() => {
+    setTimeout(() => {
 
-    //   // After all checks, make call to Register the new user  
-    //   registerUser(newName, newEmail, newPassword);
+      // After all checks, make call to Register the new user  
+      registerUser(newName, newEmail, newPassword);
 
-    // }, 2300);
+    }, 3000);
 
   });
 }

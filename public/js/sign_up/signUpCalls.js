@@ -14,5 +14,14 @@ async function registerUser(name, email, password) {
       password: password
     })
     
-  });
+  })
+    .then(() => {
+      window
+        .document
+        .location
+        .href = "/sign-up/success";
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
