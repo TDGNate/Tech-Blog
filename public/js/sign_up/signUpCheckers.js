@@ -20,5 +20,22 @@ async function regexCheckName(name) {
   // Regex Check 
   let checker = emailRegex.test(email);
 
-  return checker;
+   return checker;
+   
+}
+
+// check password 
+async function checkPassword(password) {
+
+  if (password.length < 8) {
+
+    swal({
+      title: "Password is too short!",
+      text: "Password must have a minimum of 8 characters",
+      button: "Ok"
+    });
+
+    return;
+    
+  }
 }

@@ -15,7 +15,7 @@ if (signUpBtn) {
     if (newName == "") {
       swal({
         title: "What should we call you?",
-        text: "Empty input field, please add your name.",
+        text: "Empty input field, please add your name",
         button: "Ok"
       });
       
@@ -37,6 +37,9 @@ if (signUpBtn) {
       return;
     }
 
+    // check Password Length
+    checkPassword(newPassword);
+
     // Regex Check 
     const isNameValid = await regexCheckName(newName);
     const isEmailValid = await regexCheckEmail(newEmail); 
@@ -45,7 +48,7 @@ if (signUpBtn) {
 
       swal({
         title: "Hmmm...",
-        text: "Please try another name.",
+        text: "Please try another name",
         button: "Ok"
       });
 
@@ -56,12 +59,15 @@ if (signUpBtn) {
 
       swal({
         title: "Email not valid",
-        text: "Please try another email.",
+        text: "Please try another email",
         button: "Ok"
       });
 
       return;
     }
+
+    // After all checks, make call to Register the new user  
+    registerUser(newName, newEmail, newPassword);
 
   });
 }
