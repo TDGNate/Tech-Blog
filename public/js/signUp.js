@@ -1,26 +1,3 @@
-// User Logs
-
-// Log Out 
-const logoutBtn = document.getElementById("logout");
-
-if (logoutBtn) {
-
-  logoutBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    fetch("/api/user/logout", {
-      method: "POST"
-    })
-      .then(() => {
-        window
-          .document
-          .location
-          .href = "/";
-      })
-      .catch(err => console.log(err));
-  });
-}
-
 // Signing Up 
 const signUpBtn = document.getElementById("signUpFormSubmit");
 
@@ -28,6 +5,8 @@ if (signUpBtn) {
 
   signUpBtn.addEventListener("click", (e) => {
     e.preventDefault();
+
+    const nameRegex =  /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/;
 
     // Get all elements from form 
     const newName = document.querySelector(".signUp-form-name").value;
@@ -59,6 +38,9 @@ if (signUpBtn) {
 
       return;
     }
+
+    // Regex Check 
+    nameRegex.test(newName);
 
     // swal({
     //   className: "swal",
