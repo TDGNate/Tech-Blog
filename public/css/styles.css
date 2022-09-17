@@ -151,7 +151,7 @@ input:focus {
 
 .swal-modal {
 	background-color: var(--dark-clr);
-	border: 1px solid var(--sub-clr-hover);
+	border: 2px solid var(--sub-clr-hover);
 }
 
 .swal-title {
@@ -165,9 +165,21 @@ input:focus {
 .swal-button {
 	padding: 7px 19px;
 	border-radius: 2px;
-	background-color: var(--sub-clr-hover);
-	font-size: 12px;
+	background-color: var(--sub-clr);
+	font-size: 15px;
 	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
+	outline: none;
+	border: 1px solid var(--dark-clr);
+	padding: 0.7rem 1.5rem;
+	border-radius: 5px;
+}
+
+.swal-button:hover {
+	background-color: var(--sub-clr-hover) !important;
+}
+
+.swal-button:active {
+	background-color: var(--sub-clr-hover) !important;
 }
 
 .swal-overlay {

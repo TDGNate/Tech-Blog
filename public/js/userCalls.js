@@ -29,6 +29,14 @@ if (signUpBtn) {
   signUpBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
+    // Get all elements from form 
+    const newName = document.querySelector(".signUp-form-name").value;
+    const newEmail = document.querySelector(".signUp-form-email").value;
+    const newPassword = document.querySelector(".signUp-form-password").value;
+
+    
+
+    // check if all input fields are filled in 
     swal({
       className: "swal",
       title: "Uh oh...",
