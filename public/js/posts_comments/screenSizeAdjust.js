@@ -27,9 +27,21 @@ function fixDesktopSize() {
       // Resizing the Post for Desktop
       if (post.style.width == phneSize) {
         post.style.width = dektpSize;
+
       }
 
     });
+  }
+
+  let phoneComments = document.querySelectorAll(".phone-comment");
+
+  // if there are comments on the mobile side, refresh on desktop so comments to duplicate when resized back to mobile 
+  if (phoneComments.length > 0) {
+
+      setTimeout(() => {
+        location.reload();
+      }, 123);
+
   }
 
   if (pickedPostMobileContainer.style.display === "block" ) {
@@ -83,7 +95,7 @@ function fixPhoneSize() {
 
         setTimeout(() => {
           location.reload();
-        }, 80);
+        }, 123);
         
       }
     });
