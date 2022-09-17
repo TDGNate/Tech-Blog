@@ -63,6 +63,15 @@ if (signUpBtn) {
       return;
     }
 
+    // check Name Length
+
+    let isValidName = await checkName(newName);
+
+    if (!isValidName) {
+
+      return;
+    }
+
     // check Password Length
 
     let isValidPass = await checkPassword(newPassword);

@@ -1,6 +1,6 @@
 // Sign Up Checkers
 
-// check name 
+// check name regex
 async function regexCheckName(name) {
 
   const nameRegex = /^[\w'\-,.][^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]]{2,}$/;
@@ -12,7 +12,7 @@ async function regexCheckName(name) {
 
 }
 
-// check email 
+// check email regex
  async function regexCheckEmail(email) {
 
   const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -22,6 +22,23 @@ async function regexCheckName(name) {
 
    return checker;
    
+}
+
+// check name 
+async function checkName(name) {
+
+  if (name.length > 45) {
+
+    swal({
+      title: "Username is too long!",
+      text: "Your username is over 45 characters\n Please use a different name :)",
+      button: "Ok"
+    });
+
+    return false;
+    
+  } else return true;
+
 }
 
 // check password 
@@ -38,4 +55,5 @@ async function checkPassword(password) {
     return false;
     
   } else return true;
+
 }
