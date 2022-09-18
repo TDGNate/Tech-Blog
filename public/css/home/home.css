@@ -55,6 +55,8 @@
 	justify-self: center;
 	transition: all 200ms ease;
 	z-index: 10;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .post-hover:hover {
