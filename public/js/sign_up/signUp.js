@@ -20,6 +20,7 @@ if (signUpBtn) {
       });
       
       return;
+
     } else if (newEmail == "") {
       swal({
         title: "Don't forget your Email",
@@ -27,6 +28,7 @@ if (signUpBtn) {
       });
 
       return;
+
     } else if (newPassword == "") {
       swal({
         title: "Please add your password",
@@ -35,6 +37,7 @@ if (signUpBtn) {
       });
 
       return;
+
     }
 
     // Regex Check 
@@ -50,6 +53,7 @@ if (signUpBtn) {
       });
 
       return;
+
     }
 
     if (!isEmailValid) {
@@ -61,6 +65,7 @@ if (signUpBtn) {
       });
 
       return;
+
     }
 
     // check Name Length
@@ -70,6 +75,7 @@ if (signUpBtn) {
     if (!isValidName) {
 
       return;
+
     }
 
     // check Password Length
@@ -79,6 +85,7 @@ if (signUpBtn) {
     if (!isValidPass) {
 
       return;
+      
     }
 
       swal({

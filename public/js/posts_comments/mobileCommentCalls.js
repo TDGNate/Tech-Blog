@@ -1,4 +1,4 @@
-// mobile comments api Calls
+// mobile comments API Calls
 
 async function mobileComments(postId) {
   
@@ -14,7 +14,6 @@ async function mobileComments(postId) {
     res.json()
     )
       .then((postData) => {
-        // console.log(postData); 
 
         let phoneContainerComments = document.querySelector(".phone-comment-container");
 

@@ -1,4 +1,4 @@
-console.log("link");
+// Mobile Version for Sending Comments 
 
 const sendBtnMobile = document.getElementById("phneBtn");
 
@@ -31,9 +31,7 @@ async function initMobileComments() {
   const postIdMobile = parseInt(document.querySelector(".phone-picked").getAttribute("value"));
 
   // Get the User's ID to complete the API call along with the post ID 
-  const userIdMobile = parseInt(document.querySelector(".home-hello-user").getAttribute("value"));
-
-  // console.log(commentMobile, postIdMobile, userIdMobile);  
+  const userIdMobile = parseInt(document.querySelector(".home-hello-user").getAttribute("value")); 
 
   AddComment(commentMobile, userIdMobile, postIdMobile, device); 
 

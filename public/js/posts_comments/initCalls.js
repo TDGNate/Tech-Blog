@@ -13,7 +13,6 @@ const commentXBtn = document.querySelector(".x");
 let posts = document.querySelectorAll(".post");
 
 // Check if Null 
-
 if (commentXBtn) {
 
   commentXBtn.addEventListener("click", () => {
@@ -82,6 +81,5 @@ if (postsContainer) {
       mobileComments(mobilePostId);
 
     }
-
   });
 }

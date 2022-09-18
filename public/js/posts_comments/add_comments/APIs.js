@@ -1,7 +1,8 @@
-// calling the comment apis
+// API call and remove comments page 
 
 async function AddComment(comment, userId, postId, device) {
 
+  // API call to get comments 
   await fetch("/api/comment", {
 
     method: "POST",
@@ -32,7 +33,6 @@ async function AddComment(comment, userId, postId, device) {
         }, 1000);
 
         // get back all the comments
-
         if ( device == "desktop" ) {
 
           getComments(postId);
@@ -46,7 +46,7 @@ async function AddComment(comment, userId, postId, device) {
       } else {
 
         swal({
-          title: "uh oh...",
+          title: "Uh oh...",
           text: "Hmmm something happened... if it happens again please contact itsnzte@gmail.com",
           button: "Ok"
         });
@@ -56,18 +56,18 @@ async function AddComment(comment, userId, postId, device) {
     .catch((err) => {
     
       swal({
-        title: "uh oh...",
-        text: "Couldn't send comment, an error occured while trying to make a request",
+        title: "Uh oh...",
+        text: "Couldn't send comment, an error occured while trying to make a request. If it happens again please contact itsnzte@gmail.com",
         button: "Ok"
       });
 
   });
 }
 
+// Function to reset all post's
 async function resetComments() {
 
   // Desktop Remove Comments 
-
   let commentEls = document.querySelectorAll(".comment");
 
   if (commentEls) {
@@ -79,26 +79,23 @@ async function resetComments() {
         com.remove();
 
       });
-
     }
+
   }
 
   // Phone Remove Comments 
-
   let phoneCommentsEls = document.querySelectorAll(".phone-comment");
 
   if (phoneCommentsEls) {
     
     if (phoneCommentsEls.length > 0) {
-      
       phoneCommentsEls.forEach((com) => {
 
         com.remove();
 
       });
-
     }
-
+  
   }
 }
 
