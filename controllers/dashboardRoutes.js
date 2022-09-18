@@ -66,4 +66,66 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
+// get One Post 
+router.get("/post/:id", auth, async (req, res) => {
+  try {
+
+    const postData = await Post.findOne({
+      where: {
+        id: req.params.id
+      },
+      attributes: [
+        "id",
+        "title",
+        "content",
+        "date_created"
+      ],
+      include: [
+        {
+          model: User,
+          attributes: {
+            exclude: ["password"]
+          }
+        },
+        {
+          model: Comment,
+          attributes: [
+            "comment",
+            "date_created"
+          ],
+          include: {
+            model: User,
+            attributes: {
+              exclude: ["password"]
+            }
+          }
+        }
+      ]
+    });
+
+    if (!postData) {
+
+      res.render("404", {
+        layout: "blank"
+      });
+
+      return;
+    }
+
+    const post = postData.get({ plain: true });  
+
+    res.render("onePostPage", {
+      post,
+      loggedIn: req.session.loggedIn
+    });
+
+    // res.json(post); 
+
+  } catch (err) {
+
+    res.status(500).json({ message: "Server Error" });
+
+  }
+});
+
 module.exports = router;

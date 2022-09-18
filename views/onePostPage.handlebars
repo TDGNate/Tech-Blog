@@ -1,0 +1,38 @@
+<div class="page post-page">
+	<div class="container">
+		<h1>Selected Post:
+			<span class="post-page-selected-title">{{post.title}}</span></h1>
+
+		{{! Selected Post  }}
+
+		<div class="post-page-post">
+			<div class="post-page-post-content">
+				{{post.content}}
+			</div>
+			<div class="post-page-post-right">
+				<div class="post-page-post-user">by: {{post.user.name}}</div>
+				<div class="post-page-post-date"> {{post.date_created}}</div>
+			</div>
+		</div>
+
+		{{! Selected Post Comments  }}
+
+		<div class="container-sub">
+
+			{{#each post.comments as |comment|}}
+				<div class="post-page-post-comment">
+
+					<div class="post-page-post-comment-user">{{comment.comment}}</div>
+					<div class="post-page-post-comment-content">
+						{{comment.content}}
+					</div>
+					<hr />
+					<div class="post-page-post-comment-date">
+						{{comment.date_created}}
+					</div>
+
+				</div>
+			{{/each}}
+		</div>
+	</div>
+</div>
