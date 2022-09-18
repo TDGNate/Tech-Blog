@@ -29,7 +29,11 @@ function hideDesktopCommentsSec() {
 
   let desktopComments = document.querySelector(".post-container-comments");
 
-  desktopComments.style.display = "none";
+  // To avoid console log errors 
+  if (desktopComments) {
+
+    desktopComments.style.display = "none";
+  }
 }
 
 hideDesktopCommentsSec();

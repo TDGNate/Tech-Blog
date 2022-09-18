@@ -24,12 +24,45 @@ if (commentXBtn) {
 // Check if Null 
 if (postsContainer) {
 
-  postsContainer.addEventListener("click", (e) => {
+  postsContainer.addEventListener("click", async (e) => {
 
     removePicked();
 
     let w = window.innerWidth;
     let post = e.target;
+
+    // check if user is logged in 
+    let homeUserTag = document.querySelector(".home-hello-user");
+
+    if (!homeUserTag) {
+      
+        swal({
+          title: "Oi...",
+          text: "You must sign in first",
+          button: false
+        });
+      
+      setTimeout(() => {
+
+        swal({
+          text: "Redirecting...",
+          button: false
+        });
+
+      }, 1750);
+      
+      setTimeout(() => {
+        
+        window
+        .document
+        .location
+          .href = "/login";
+
+        return;
+
+      }, 2775);
+
+    }
 
     if (e.target.className == "home-container-posts") {
       removePicked();
