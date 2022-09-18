@@ -48,7 +48,8 @@ router.get("/", auth, async (req, res) => {
     }
 
     res.render("dashboard", {
-      user
+      user,
+      loggedIn: req.session.loggedIn,
     });
 
     // res.json(user); 
