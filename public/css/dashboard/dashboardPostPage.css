@@ -69,9 +69,17 @@
 	color: rgb(167, 167, 167);
 }
 
+.post-page-no-comments {
+	font-size: 1.2rem;
+}
+
 /* Desktop  */
 
 @media screen and (min-width: 980px) {
+	.page .post-page {
+		height: auto;
+	}
+
 	.post-page-post {
 		flex-direction: row;
 		min-height: 200px;
@@ -114,6 +122,10 @@
 
 	.post-page-post-comment hr {
 		width: 60%;
+	}
+
+	.post-page-no-comments {
+		font-size: 1.4rem;
 	}
 }
 

@@ -20,25 +20,33 @@
 
 		<h2>Comments: </h2>
 
-		<div class="container-sub">
+		{{#if post.comments}}
 
-			{{#each post.comments as |comment|}}
-				<div class="post-page-post-comment">
+			<div class="container-sub">
 
-					<div class="post-page-post-comment-content">
-						{{comment.comment}}
+				{{#each post.comments as |comment|}}
+					<div class="post-page-post-comment">
+
+						<div class="post-page-post-comment-content">
+							{{comment.comment}}
+						</div>
+
+						<hr />
+
+						<div class="post-page-post-comment-user">{{comment.user.name}}</div>
+
+						<div class="post-page-post-comment-date">
+							{{comment.date_created}}
+						</div>
+
 					</div>
+				{{/each}}
+			</div>
 
-					<hr />
+		{{else}}
 
-					<div class="post-page-post-comment-user">{{comment.user.name}}</div>
+			<div class="post-page-no-comments">This post has no comments yet</div>
 
-					<div class="post-page-post-comment-date">
-						{{comment.date_created}}
-					</div>
-
-				</div>
-			{{/each}}
-		</div>
+		{{/if}}
 	</div>
 </div>
