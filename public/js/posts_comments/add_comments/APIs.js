@@ -22,6 +22,7 @@ async function deskAddComment(comment, userId, postId) {
           button: false
         });
 
+        // clearout all the comments 
         resetComments();
 
         setTimeout(() => {
@@ -30,6 +31,8 @@ async function deskAddComment(comment, userId, postId) {
 
         }, 1000);
 
+        // get back all the comments 
+        getComments(postId);
 
       } else {
 

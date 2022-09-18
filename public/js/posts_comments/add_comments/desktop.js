@@ -30,7 +30,7 @@ if (sendBtn) {
 
     deskAddComment(comment, userId, postId);
 
-    console.log(comment, postId, userId);
+    document.getElementById("deskComment").value = "";
   });
 
 }
