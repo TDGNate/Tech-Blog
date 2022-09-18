@@ -28,6 +28,8 @@ if (sendBtn) {
     // Get the User's ID to complete the API call along with the post ID 
     const userId = parseInt(document.querySelector(".home-hello-user").getAttribute("value"));
 
+    deskAddComment(comment, userId, postId);
+
     console.log(comment, postId, userId);
   });
 
