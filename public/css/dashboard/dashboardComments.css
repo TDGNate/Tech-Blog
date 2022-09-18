@@ -33,10 +33,18 @@
 	font-size: 1.2rem;
 	font-weight: bold;
 	margin: 0.5rem 0;
+	color: var(--sub-clr-hover);
+	transition: all 400 ease;
 }
 
 .dashboard-comment-post a:hover {
-	color: var(--accent-clr);
+	cursor: pointer;
+	color: var(--accent-clr-hover);
+	text-decoration: none;
+}
+
+.dashboard-comment-post-user {
+	font-weight: bold;
 }
 
 /* Desktop Dashboard Comments  */

@@ -12,9 +12,14 @@
 			{{comment}}
 		</div>
 		<div class="dashboard-comment-post" value="{{post.id}}">
-			Post:
-			<a class="dashboard-comment-title" href="">{{post.title}}
+			Commented on the Post 
+			<a
+				class="dashboard-comment-title"
+				href="/api/post/{{post.id}}"
+			>{{post.title}}
 			</a>
+			by
+			<span class="dashboard-comment-post-user">{{post.user.name}}</span>
 		</div>
 
 	</div>

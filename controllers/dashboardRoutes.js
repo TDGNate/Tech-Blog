@@ -28,7 +28,13 @@ router.get("/", auth, async (req, res) => {
           attributes: {
             exclude: "user_id"
           },
-          include: { model: Post },
+          include: {
+            model: Post,
+            include: {
+              model: User,
+              attributes: ["name"]
+            }
+          },
           attributes: {
             exclude: [
               "user_id",
