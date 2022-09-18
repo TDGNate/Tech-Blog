@@ -34,11 +34,11 @@ router.get("/", async (req, res) => {
       post.get({ plain: true }));
 
     if (!posts) {
-      res
-        .status(404)
-        .json({
-        message: "Can't find posts"
-        });
+
+      // Send back 404 page 
+      res.render("404", {
+        layout: "blank"
+      });
       
         return;
     }
@@ -82,11 +82,11 @@ router.get("/:id", async (req, res) => {
     });
 
     if (!posts) {
-      res
-        .status(404)
-        .json({
-        message: "Can't find posts"
-        });
+
+      // Send back 404 page 
+      res.render("404", {
+        layout: "blank"
+      });
       
         return;
     }
@@ -109,6 +109,7 @@ router.post("/", async (req, res) => {
 
     // to reload the page after creating a new post 
     res.redirect("/dashboard");
+
   } catch (err) {
 
     res.status(500).json({ message: "Server Error" });
@@ -126,11 +127,10 @@ router.delete("/", async (req, res) => {
 
     if (!posts) {
 
-      res
-        .status(404)
-        .json({
-          message: "No posts to delete that matches that ID"
-        });
+      // Send back 404 page 
+      res.render("404", {
+        layout: "blank"
+      });
       
         return;
     }

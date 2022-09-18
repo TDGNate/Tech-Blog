@@ -34,6 +34,15 @@ router.get("/", async (req, res) => {
     
     });
 
+    if (!postData) {
+      // Send back 404 page 
+      res.render("404", {
+        layout: "blank"
+      });
+
+      return;
+    }
+
     const posts = postData.map((post) =>
       post.get({ plain: true }));
 

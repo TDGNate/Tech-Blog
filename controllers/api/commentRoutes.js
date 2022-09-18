@@ -9,11 +9,10 @@ router.get("/", async (req, res) => {
   try {
     const comment = await Comment.findAll();
     if (!comment) {
-      res
-        .status(404)
-        .json({
-        message: "Can't find comment"
-        });
+      // Send back 404 page 
+      res.render("404", {
+        layout: "blank"
+      });
       
         return;
     }

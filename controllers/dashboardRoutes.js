@@ -5,6 +5,7 @@ const auth = require("../utils/auth");
 
 // Models 
 const { Comment, Post, User} = require("../models");
+const sequelize = require("sequelize");
 
 router.get("/", auth, async (req, res) => {
   try {
@@ -19,7 +20,8 @@ router.get("/", auth, async (req, res) => {
       include: [
         {
           model: Post,
-          attributes: ["id", "title", "content", "date_created"]
+          order: sequelize.literal("id DESC"),
+          attributes: ["id", "title", "content", "date_created"],
         },
         {
           model: Comment,

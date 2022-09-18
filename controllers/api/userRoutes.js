@@ -41,6 +41,18 @@ router.get("/:id", async (req, res) => {
         }
       ]
     });
+
+    if (!user) {
+
+      // Send back 404 page 
+      res.render("404", {
+        layout: "blank"
+      });
+      
+      return;
+
+    }
+
     res.json(user);
 
   } catch (err) {
@@ -64,10 +76,10 @@ router.post("/login", async (req, res) => {
 
     // check if there is a user 
     if (!user) {
-      res
-        .status(400)
-        .json({
-        message: "check email and password again.."
+
+      // Send back 404 page 
+      res.render("404", {
+        layout: "blank"
       });
 
       return;
