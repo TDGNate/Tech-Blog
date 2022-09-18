@@ -25,7 +25,7 @@
 }
 
 .post-page-post-content {
-	font-size: 1.5rem;
+	font-size: 1.3rem;
 	padding: 1rem;
 }
 
@@ -58,8 +58,48 @@
 	font-size: 1.2rem;
 }
 
+.post-page-post-comment:hover {
+	cursor: pointer;
+	background-color: var(--dark-clr);
+	border: 3px solid var(--accent-clr-hover);
+	transform: translate(-1.5px, -2.3px);
+}
+
 .post-page-post-comment-date {
 	color: rgb(167, 167, 167);
+}
+
+/* Desktop  */
+
+@media screen and (min-width: 980px) {
+	.post-page-post {
+		flex-direction: row;
+		min-height: 200px;
+	}
+
+	.post-page-post-content {
+		font-size: 1.5rem;
+		padding: 1.2rem;
+		width: 65%;
+	}
+
+	.post-page-post-right {
+		border-top: none;
+		border-left: 1px solid rgb(167, 167, 167);
+		width: 30%;
+		gap: 1rem;
+		font-size: 1.5rem;
+	}
+
+	/* Comments  */
+
+	.post-page-post-comment {
+		width: 50%;
+	}
+
+	.post-page-post-comment hr {
+		width: 60%;
+	}
 }
 
 /* @keyframes sub-flicker {

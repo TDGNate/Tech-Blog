@@ -184,7 +184,7 @@
 
 	.comment:hover {
 		background-color: var(--dark-clr);
-		border: 1px solid var(--accent-clr-hover);
+		border: 3px solid var(--accent-clr-hover);
 		transform: translate(-1.5px, -2.3px);
 	}
 
