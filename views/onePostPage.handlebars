@@ -1,8 +1,9 @@
 <div class="page post-page">
 	<div class="container">
 		<h1>Selected Post:
-			<span class="post-page-selected-title">{{post.title}}</span></h1>
 
+			<span class="post-page-selected-title">{{post.title}}</span></h1>
+		<hr />
 		{{! Selected Post  }}
 
 		<div class="post-page-post">
@@ -17,16 +18,21 @@
 
 		{{! Selected Post Comments  }}
 
+		<h2>Comments: </h2>
+
 		<div class="container-sub">
 
 			{{#each post.comments as |comment|}}
 				<div class="post-page-post-comment">
 
-					<div class="post-page-post-comment-user">{{comment.comment}}</div>
 					<div class="post-page-post-comment-content">
-						{{comment.content}}
+						{{comment.comment}}
 					</div>
+
 					<hr />
+
+					<div class="post-page-post-comment-user">{{comment.user.name}}</div>
+
 					<div class="post-page-post-comment-date">
 						{{comment.date_created}}
 					</div>

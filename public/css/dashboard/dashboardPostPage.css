@@ -1,5 +1,9 @@
 /* Dashboard post page  */
 
+.page .post-page {
+	height: auto;
+}
+
 .post-page-selected-title {
 	color: var(--sub-clr-hover);
 }
@@ -17,6 +21,7 @@
 		0 0 0.2rem var(--sub-clr-hover), 0 0 2.2rem var(--sub-clr-hover),
 		inset 0 0 1.3rem var(--sub-clr-hover);
 	animation: sub-flicker 2s infinite alternate;
+	margin: 4rem 0;
 }
 
 .post-page-post-content {
@@ -37,6 +42,23 @@
 }
 
 .post-page-post-date {
+	color: rgb(167, 167, 167);
+}
+
+/* Comments  */
+
+.post-page-post-comment {
+	background-color: var(--shaded-clr);
+	border: 3px solid var(--shaded-clr-hover);
+	width: 100%;
+	border-radius: 8px;
+	transition: all 200ms ease;
+	padding: 1rem;
+	margin-bottom: 1rem;
+	font-size: 1.2rem;
+}
+
+.post-page-post-comment-date {
 	color: rgb(167, 167, 167);
 }
 

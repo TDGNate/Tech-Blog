@@ -7,6 +7,10 @@
 	background-size: cover;
 }
 
+.dash-sub {
+	font-size: 1.1rem;
+}
+
 #dashboardUsername {
 	font-weight: bold;
 }
