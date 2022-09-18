@@ -26,6 +26,8 @@ if (textArea) {
 // Setting up the add comments functionality 
 function initDeskComments() {
 
+  let device = "desktop";
+
   // get User's Comment 
   const comment = document.getElementById("deskComment").value;
 
@@ -47,7 +49,7 @@ function initDeskComments() {
   // Get the User's ID to complete the API call along with the post ID 
   const userId = parseInt(document.querySelector(".home-hello-user").getAttribute("value"));
 
-  deskAddComment(comment, userId, postId);
+  AddComment(comment, userId, postId, device);
 
   document.getElementById("deskComment").value = "";
 

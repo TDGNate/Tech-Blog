@@ -7,7 +7,9 @@ const Comment = require("../../models/comment");
 // get comments
 router.get("/", async (req, res) => {
   try {
-    const comment = await Comment.findAll();
+
+    const comment = await Comment.findAll({});
+
     if (!comment) {
       // Send back 404 page 
       res.render("404", {
@@ -20,6 +22,7 @@ router.get("/", async (req, res) => {
       .status(200)
       .json(comment);
   } catch (err) {
+
     res.status(500).json({ message: "Server Error" });
   }
  });

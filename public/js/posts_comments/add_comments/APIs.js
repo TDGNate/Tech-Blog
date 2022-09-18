@@ -1,6 +1,6 @@
 // calling the comment apis
 
-async function deskAddComment(comment, userId, postId) {
+async function AddComment(comment, userId, postId, device) {
 
   await fetch("/api/comment", {
 
@@ -31,8 +31,17 @@ async function deskAddComment(comment, userId, postId) {
 
         }, 1000);
 
-        // get back all the comments 
-        getComments(postId);
+        // get back all the comments
+
+        if ( device == "desktop" ) {
+
+          getComments(postId);
+          
+        } else if (device == "mobile") {
+
+          mobileComments(postId);
+          
+        } else return;
 
       } else {
 
