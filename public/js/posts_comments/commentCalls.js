@@ -25,8 +25,7 @@ async function getComments(postId) {
       .then((res) => 
         res.json()
       )
-      .then((postData) => {
-        // console.log(postData); 
+      .then((postData) => { 
 
         comments = postData.comments;
 
@@ -40,7 +39,6 @@ async function getComments(postId) {
 
         setTimeout(() => {
           comments.forEach((com) => {
-
 
             // cache the API data 
             let text = com.comment;
@@ -79,7 +77,9 @@ async function getComments(postId) {
   
             // Append to Core parent 
             coreParent.appendChild(commentDiv);
+
           });
+          
         document.querySelector(".preloader").style.display = "none";
 
          }, 800);

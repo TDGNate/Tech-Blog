@@ -172,6 +172,70 @@
 		padding: 1.5rem 0;
 	}
 
+	.post-container-add-comment {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		font-size: 1.2rem;
+		margin: 1rem 0;
+		text-align: start;
+	}
+
+	.post-container-add-comment h4 {
+		text-align: start;
+	}
+
+	/* Adding a comment  */
+
+	#deskComment {
+		width: 100%;
+		background-color: var(--shaded-clr);
+		padding: 0.5rem;
+		margin-bottom: 1rem;
+		outline: none;
+		border: none;
+		border-radius: 4px;
+		min-height: 100px;
+		max-height: 125px;
+		resize: none;
+		color: var(--light-clr);
+	}
+
+	#deskComment::-webkit-scrollbar {
+		width: 8px;
+		background: var(--shaded-clr);
+		border-radius: 10px;
+		cursor: pointer;
+	}
+
+	#deskComment::-webkit-scrollbar-thumb:hover {
+		background-color: var(--sub-clr-hover);
+	}
+
+	#deskCommentBtn {
+		width: 100%;
+		background-color: var(--sub-clr);
+		color: var(--light-clr);
+		outline: none;
+		padding: 0.3rem 0;
+		border-radius: 4px;
+	}
+
+	.add-comment-underline {
+		align-self: center;
+		text-align: center;
+		justify-content: center;
+		justify-self: center;
+		width: 30%;
+		height: 0.3px;
+		background-color: rgb(179, 179, 179);
+	}
+
+	#deskCommentBtn:hover {
+		cursor: pointer;
+		background-color: var(--sub-clr-hover);
+	}
+
 	/* Comment Styles  */
 
 	.comment {

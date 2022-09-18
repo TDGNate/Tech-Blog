@@ -42,6 +42,10 @@
 	flex-direction: column;
 }
 
+.phone-comment-section hr {
+	width: 95%;
+}
+
 .phone-comment-section .post-container-comment-top {
 	margin-bottom: 1.5rem;
 }
@@ -90,6 +94,55 @@
 
 .phone-comment hr {
 	width: 90%;
+}
+
+.phone-container-add-comment {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
+	margin: 1rem 0;
+	text-align: start;
+	width: 95%;
+}
+
+#phneComment {
+	width: 100%;
+	background-color: var(--shaded-clr);
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+	outline: none;
+	border: none;
+	border-radius: 4px;
+	min-height: 100px;
+	max-height: 125px;
+	resize: none;
+	color: var(--light-clr);
+}
+
+#phneBtn {
+	width: 100%;
+	background-color: var(--sub-clr);
+	color: var(--light-clr);
+	outline: none;
+	padding: 0.3rem 0;
+	border-radius: 4px;
+}
+
+#phneBtn:hover {
+	cursor: pointer;
+	background-color: var(--sub-clr-hover);
+}
+
+.phone-container-add-comment .add-comment-underline {
+	align-self: center;
+	text-align: center;
+	justify-content: center;
+	justify-self: center;
+	width: 30%;
+	height: 0.3px;
+	background-color: rgb(179, 179, 179);
 }
 
 /* mobile version preloaders  */

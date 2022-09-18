@@ -22,7 +22,6 @@ function removePicked() {
 
     }
   }
-
 }
 
 // hides the desktop comment section 

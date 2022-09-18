@@ -13,7 +13,6 @@ const commentXBtn = document.querySelector(".x");
 let posts = document.querySelectorAll(".post");
 
 // Check if Null 
-
 if (commentXBtn) {
 
   commentXBtn.addEventListener("click", () => {
@@ -71,6 +70,7 @@ if (postsContainer) {
       let newPickPost = document.querySelector(".phone-picked");
 
       // Updaing all values 
+      newPickPost.setAttribute("value", elValue);
       newPickPost.querySelector(".picked-pt").textContent = elTitle;
       newPickPost.querySelector(".picked-pc").textContent = elContent;
       newPickPost.querySelector(".picked-pu").textContent = elUser;
@@ -81,6 +81,5 @@ if (postsContainer) {
       mobileComments(mobilePostId);
 
     }
-
   });
 }
