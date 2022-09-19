@@ -82,8 +82,6 @@ router.post("/", async (req, res) => {
     req.session.save(() => {
       
       req.session.loggedIn = true;
-      req.session.userId = userID;
-      req.session.userName = userName;
 
       res.json(comment);
 
@@ -115,8 +113,6 @@ router.put("/:id", async (req, res) => {
     req.session.save(() => {
       
       req.session.loggedIn = true;
-      req.session.userId = userID;
-      req.session.userName = userName;
 
       res.json(comment);
 
@@ -152,8 +148,6 @@ router.delete("/:id", async (req, res) => {
     req.session.save(() => {
       
       req.session.loggedIn = true;
-      req.session.userId = userID;
-      req.session.userName = userName;
 
       res.json(comment);
 

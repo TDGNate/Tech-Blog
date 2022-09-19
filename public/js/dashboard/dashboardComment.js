@@ -10,18 +10,44 @@ if (dashboardCommentContainer) {
 
     if (clickedEl.classList.contains("fa-pen-to-square")) {
 
-      let postId = parseInt(clickedEl.parentElement.getAttribute("value"));
+      let CommentId = parseInt(clickedEl.parentElement.getAttribute("value"));
 
       let userId = parseInt(document.getElementById("dashboardUsername").getAttribute("value"));
 
-      if (typeof postId == "number" && typeof userId == "number") {
+      if (typeof CommentId == "number" && typeof userId == "number") {
 
         window
         .document
         .location
-        .href = `/dashboard/modify-comment/${postId}`;
+        .href = `/dashboard/modify-comment/${CommentId}`;
 
       }
     }
   });
 }
+
+// Edit Button 
+
+const editCommentBtn = document.getElementById("editCommentBtn");
+
+if (editCommentBtn) {
+
+  const updateForm = document.querySelector(".mod-comment");
+
+  editCommentBtn.addEventListener("click", () => {
+
+    if (editCommentBtn.value == "Edit") {
+
+      editCommentBtn.value = "Hide Form";
+      console.log("worked");
+      updateForm.style.display = "flex";
+
+    } else {
+
+      editCommentBtn.value = "Edit";
+      updateForm.style.display = "none";
+
+    }
+
+  });
+} 

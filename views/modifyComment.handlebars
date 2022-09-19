@@ -28,25 +28,17 @@
 		{{! Creating a new Comment  }}
 
 		<form class="container-sub mod-comment">
-			{{! Title  }}
-			<label for="comment title">Update Title:</label>
-			<input
-				placeholder="{{comment.title}}..."
-				type="text"
-				class="mod-dashboard-comment-create-title"
-				name="title"
-				value="{{comment.title}}"
-				required
-			/>
+
 			{{! Content  }}
-			<label for="comment-message">Update Message:</label>
+			<label for="comment-message">Update Comment:</label>
 			<textarea
 				name="updatecommentMessage"
 				type="text"
 				id="updateCommentMessage"
-				placeholder="{{comment.content}}..."
+				placeholder="{{comment.comment}}..."
+				maxlength="375"
 				required
-			>{{comment.content}}</textarea>
+			>{{comment.comment}}</textarea>
 
 			{{! Submit Button  }}
 			<input type="submit" id="updateCommentBtn" value="Update" class="btn" />

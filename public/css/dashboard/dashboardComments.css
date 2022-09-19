@@ -5,6 +5,7 @@
 	border-radius: 8px;
 	overflow: hidden;
 	margin: 0.8rem;
+	min-height: 180px;
 	width: 80%;
 	transition: all 300ms ease;
 	position: relative;
@@ -22,6 +23,7 @@
 }
 
 .comment-second-side {
+	margin: auto;
 	text-align: center;
 	padding: 0.5rem;
 }
