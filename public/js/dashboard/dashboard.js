@@ -15,10 +15,21 @@ if (dashboardPostContainer) {
       let userId = parseInt(document.getElementById("dashboardUsername").getAttribute("value"));
 
       console.log(postId, userId);
-      
+
       let doubleCheckUser = parseInt(e.target.getAttribute("value"));
 
+
+      if (userId == doubleCheckUser) {
+
+        window
+          .document
+          .location
+          .href = `/dashboard/modify-post/${postId}`;
+
+      } else return;
       
+
+
 
     }
 

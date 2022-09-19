@@ -1,1 +1,35 @@
-<h1>page to mod post</h1>
+<div class="page modify-post">
+	<div class="container">
+
+		<h1>Modify Your Post</h1>
+
+		<hr />
+
+		{{! Creating a new Post  }}
+
+		<form class="container-sub mod-post">
+			{{! Title  }}
+			<label for="post title">Title:</label>
+			<input
+				placeholder="Update Title..."
+				type="text"
+				class="mod-dashboard-post-create-title"
+				name="title"
+				required
+			/>
+			{{! Content  }}
+			<label for="post-message">Message:</label>
+			<textarea
+				name="updatePostMessage"
+				type="text"
+				id="updatePostMessage"
+				placeholder="Message..."
+				required
+			></textarea>
+
+			{{! Submit Button  }}
+			<input type="submit" id="updatePostBtn" value="Submit!" class="btn" />
+		</form>
+
+	</div>
+</div>

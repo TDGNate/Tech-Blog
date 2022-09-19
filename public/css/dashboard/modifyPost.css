@@ -1,0 +1,30 @@
+.dashboard form {
+	margin: 2.8rem 0 4rem 0;
+}
+
+#updatePostMessage {
+	background-color: var(--shaded-clr);
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+	width: 80%;
+	outline: none;
+	border: none;
+	border-radius: 4px;
+	min-height: 6rem;
+	max-height: auto;
+	resize: none;
+	color: var(--light-clr);
+}
+
+.mod-dashboard-post-create-content:focus {
+	background-color: var(--shaded-clr-hover);
+}
+
+#updatePostBtn {
+	background-color: var(--sub-clr);
+	color: var(--light-clr);
+}
+
+#updatePostBtn:hover {
+	background-color: var(--sub-clr-hover);
+}

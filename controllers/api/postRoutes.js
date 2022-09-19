@@ -142,11 +142,18 @@ router.post("/", auth, async (req, res) => {
 // Update a Post 
 router.put("/:id", auth, async (req, res) => {
   try {
-    const posts = await Post.update({
+    const posts = await Post.update(
+      {
       title: req.body.title,
       content: req.body.content,
       user_id: req.session.userId
-    });
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    );
 
     req.session.save(() => {
       
