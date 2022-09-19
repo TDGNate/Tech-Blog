@@ -15,7 +15,7 @@
 		0 0 1.3rem var(--accent-clr-hover), 0 0 0.2rem var(--accent-clr-hover),
 		0 0 2.2rem var(--accent-clr-hover), inset 0 0 1.3rem var(--accent-clr-hover);
 	animation: sub-flicker 2s infinite alternate;
-	margin: 4rem 0;
+	margin: 4rem 0 2.5rem 0;
 }
 
 .selected-post-content {
@@ -39,9 +39,57 @@
 	color: rgb(167, 167, 167);
 }
 
+/* Button Container  */
+
+.dash-post-btns-container {
+	gap: 0.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-items: center;
+	width: 100%;
+}
+
+.modify-post .btn {
+	width: 90%;
+	padding: 1rem;
+	font-size: 1.2rem;
+}
+
+/* Edit button  */
+
+#editPostBtn {
+	background-color: rgba(107, 227, 55, 0.847);
+	color: var(--dark-clr);
+}
+
+#editPostBtn:hover {
+	background-color: rgb(56, 135, 22);
+	color: #fff;
+	font-weight: bold;
+}
+
+/* Delete button  */
+
+#deletePostBtn {
+	justify-content: center;
+	justify-self: center;
+	align-self: center;
+	background-color: rgba(255, 96, 133, 0.875);
+	color: var(--dark-clr);
+}
+
+#deletePostBtn:hover {
+	background-color: rgb(255, 41, 41);
+	color: var(--light-clr);
+	font-weight: bold;
+}
+
 /* Update form  */
 
-.dashboard form {
+.modify-post form {
+	display: none;
 	margin: 2.8rem 0 4rem 0;
 }
 
@@ -59,6 +107,19 @@
 	color: var(--light-clr);
 }
 
+/* Post message scroll bar  */
+
+#updatePostMessage::-webkit-scrollbar {
+	width: 8px;
+	background: var(--shaded-clr);
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+#updatePostMessage::-webkit-scrollbar-thumb:hover {
+	background-color: var(--sub-clr-hover);
+}
+
 #updatePostMessage:focus {
 	background-color: var(--shaded-clr-hover);
 }
@@ -69,7 +130,7 @@
 }
 
 #updatePostBtn:hover {
-	background-color: var(--accent-clr-hover);
+	background-color: var(--sub-clr-hover);
 }
 
 /* Desktop Version  */
@@ -96,5 +157,25 @@
 		width: 30%;
 		gap: 1rem;
 		font-size: 1.5rem;
+	}
+
+	/* form  */
+
+	.modify-post form {
+		margin: 3rem 0;
+	}
+
+	/* buttons  */
+
+	.dash-post-btns-container {
+		margin: 3rem 0;
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+
+	.modify-post .btn {
+		width: 45%;
+		padding: 0.5rem;
+		font-size: 1.2rem;
 	}
 }

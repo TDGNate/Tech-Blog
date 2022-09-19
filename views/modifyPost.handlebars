@@ -21,6 +21,11 @@
 				<div class="selected-post-date">{{post.date_created}}</div>
 			</div>
 		</div>
+		<div class="dash-post-btns-container">
+			<input type="button" id="editPostBtn" value="Edit" class="btn" />
+			<input type="button" id="deletePostBtn" value="Delete" class="btn" />
+
+		</div>
 
 		<hr />
 
@@ -30,7 +35,7 @@
 			{{! Title  }}
 			<label for="post title">Title:</label>
 			<input
-				placeholder="Update Title..."
+				placeholder="{{post.title}}..."
 				type="text"
 				class="mod-dashboard-post-create-title"
 				name="title"
@@ -42,13 +47,16 @@
 				name="updatePostMessage"
 				type="text"
 				id="updatePostMessage"
-				placeholder="Message..."
+				placeholder="{{post.content}}..."
 				required
 			></textarea>
 
 			{{! Submit Button  }}
-			<input type="submit" id="updatePostBtn" value="Submit!" class="btn" />
+			<input type="submit" id="updatePostBtn" value="Update" class="btn" />
 		</form>
 
 	</div>
 </div>
+
+<script src="/js/dashboard/dashboard.js"></script>
+<script src="/js/dashboard/dashboardCalls.js"></script>

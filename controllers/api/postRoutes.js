@@ -173,6 +173,7 @@ router.put("/:id", auth, async (req, res) => {
 // delete posts 
 router.delete("/:id", auth, async (req, res) => {
   try {
+
     const posts = await Post.destroy({
       where: {
         id: req.params.id
@@ -193,13 +194,14 @@ router.delete("/:id", auth, async (req, res) => {
       
       req.session.loggedIn = true;
 
-      res.json(posts);
+      res.json({ message: "deleted"});
 
     });
 
   } catch (err) {
 
     res.status(500).json({ message: "Server Error" });
+    
   }
 });
 

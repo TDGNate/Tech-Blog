@@ -58,9 +58,9 @@ if (postsContainer) {
         .location
           .href = "/login";
 
-        return;
-
       }, 2775);
+
+      return;
 
     }
 

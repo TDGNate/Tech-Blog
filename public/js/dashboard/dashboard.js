@@ -10,25 +10,14 @@ if (dashboardPostContainer) {
 
     if (clickedEl.classList.contains("fa-pen-to-square")) {
 
-      // get all the elements from selected post 
-      let postTitle = clickedEl.parentElement.querySelector(".dashboard-post-title").textContent;
-      let postContent = clickedEl.parentElement.querySelector(".dashboard-post-content").textContent;
-      let postDate = clickedEl.parentElement.querySelector(".dashboard-post-date").textContent;
-      let postUser = document.getElementById("dashboardUsername");
-
       // Get Post ID and user ID 
       let postId = parseInt(clickedEl.parentElement.getAttribute("value"));
 
       let userId = parseInt(document.getElementById("dashboardUsername").getAttribute("value"));
 
-
-
       let doubleCheckUser = parseInt(e.target.getAttribute("value"));
 
-
       if (userId == doubleCheckUser) {
-
-        // displaySelectedPost(postTitle, postContent, postUser, postDate, postId, userId);
 
         window
           .document
@@ -40,35 +29,65 @@ if (dashboardPostContainer) {
   });
 }
 
-// async function displaySelectedPost(title, content, user, date, postId, userid) {
+// Edit Button 
 
-//   setTimeout(() => {
+const editPostBtn = document.getElementById("editPostBtn");
 
-//     let newTitle = document.querySelector("selected-mod-post-title");
+if (editPostBtn) {
 
-//     if (newTitle) {
-    
-//       // Get all elements 
-//       let newContent = document.querySelector("selected-post-content");
-//       let newUser = document.querySelector("selected-post-user");
-//       let newDate = document.querySelector("selected-post-date");
-  
-//       // Change all elements 
-//       newTitle.textContent = title;
-//       newContent.textContent = content;
-//       newUser.textContent = user;
-//       newDate.textContent = date;
+  const updateForm = document.querySelector(".mod-post");
 
-//       // set values 
-//       let newPostValue = document.querySelector(".selected-mod-post");
-//       let newUserValue = document.querySelector(".selected-post-user");
+  editPostBtn.addEventListener("click", () => {
 
-//       newPostValue.setAttribute(value, postId);
-//       newUserValue.setAttribute(value, userid);
-  
-//       }
-      
-//   }, 1000);
+    if (editPostBtn.value == "Edit") {
+
+      editPostBtn.value = "Hide Form";
+      console.log("worked");
+      updateForm.style.display = "flex";
+
+    } else {
+
+      editPostBtn.value = "Edit";
+      updateForm.style.display = "none";
+
+    }
+
+  });
+} 
+
+// Delete Button
+
+const deletePostBtn = document.getElementById("deletePostBtn");
+
+if (deletePostBtn) { 
+
+  deletePostBtn.addEventListener("click", () => { 
+
+    swal({
+      title: "Are you sure you want to delete this post?",
+      button: true
+    }).then((data) => {
+      if (data) {
+
+        swal({
+          text: "Deleting...",
+          button: false
+        });
+
+        const postId = parseInt(document.querySelector(".selected-mod-post-title").getAttribute("value"));
+
+        setTimeout(() => {
+
+          deletePost(postId); 
+
+          swal.close();
+
+        }, 1200);
+
+      }
+    });
 
 
-// }
+  });
+
+}
