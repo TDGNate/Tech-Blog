@@ -25,9 +25,15 @@ async function deletePost(postId) {
             window
             .document
             .location
-            .href = "/dashboard";
+              .href = "/dashboard";
   
           }, 2100);
+
+          setTimeout(() => {
+
+            deletePostBtn.removeAttribute("disabled");
+
+          }, 2500);
 
         }
       });

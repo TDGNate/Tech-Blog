@@ -63,6 +63,8 @@ if (deletePostBtn) {
 
   deletePostBtn.addEventListener("click", () => { 
 
+    deletePostBtn.setAttribute("disabled", "");
+
     swal({
       title: "Are you sure you want to delete this post?",
       button: true
@@ -87,7 +89,29 @@ if (deletePostBtn) {
       }
     });
 
-
   });
 
+}
+
+const createPostBtn = document.getElementById("createPostBtn");
+
+if (createPostBtn) {
+
+  createPostBtn.addEventListener("click", () => {
+
+    setTimeout(() => {
+
+      createPostBtn.setAttribute("disabled", "");
+
+      setTimeout(() => {
+  
+        createPostBtn.removeAttribute("disabled");
+        
+      }, 1950);
+      
+    }, 500);
+    
+
+
+  });
 }
