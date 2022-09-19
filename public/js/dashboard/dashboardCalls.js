@@ -3,8 +3,6 @@
 // Update A Post 
 async function updatePost(title, content, userId, postId) {
 
-  console.log(title, content, userId, postId);
-
   await fetch(`/api/post/${postId}`, {
     method: "PUT",
     headers: {
@@ -89,8 +87,6 @@ async function deletePost(postId) {
 // Update a Comment 
 async function updateComment(comment, userId, commentId) {
 
-  console.log(comment, userId, commentId);
-
   await fetch(`/api/comment/${commentId}`, {
     method: "PUT",
     headers: {
@@ -128,6 +124,48 @@ async function updateComment(comment, userId, commentId) {
 
         }, 1000);
       }
+  });
+
+}
+
+// Delete Comment
+
+async function deleteComment(commentId) {
+
+  await fetch(`/api/comment/${commentId}`, {  method: "DELETE" })
+  .then((res) =>
+    
+    res.json()
+
+  )
+  .then((data) => {
+
+    console.log(data);
+
+    if (data.message == "deleted") {
+
+      swal({
+        icon: "success",
+        text: "Redirecting...",
+        button: false
+      });
+
+      setTimeout(() => {
+
+        window
+        .document
+        .location
+          .href = "/dashboard";
+
+      }, 1875);
+
+      setTimeout(() => {
+
+        deleteCommentBtn.removeAttribute("disabled");
+
+      }, 2500);
+
+    }
   });
 
 }

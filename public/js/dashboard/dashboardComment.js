@@ -80,3 +80,41 @@ if (newUpdatedCommentContentForm) {
     }
 });
 }
+
+// Delete Button
+
+const deleteCommentBtn = document.getElementById("deleteCommentBtn");
+
+if (deleteCommentBtn) { 
+
+  deleteCommentBtn.addEventListener("click", () => { 
+
+    deleteCommentBtn.setAttribute("disabled", "");
+
+    swal({
+      title: "Are you sure you want to delete this Comment?",
+      button: true
+    }).then((data) => {
+      
+      if (data) {
+
+        swal({
+          text: "Deleting...",
+          button: false
+        });
+
+        const commentId = parseInt(document.querySelector(".modify-comment-id").getAttribute("value"));
+
+        setTimeout(() => {
+
+          deleteComment(commentId); 
+
+          swal.close();
+
+        }, 1200);
+
+      }
+    });
+
+  });
+}
