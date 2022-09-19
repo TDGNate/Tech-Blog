@@ -1,3 +1,46 @@
+/* Dashboard Mod Post  */
+
+/* Selected Post  */
+
+.selected-mod-post {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem 1rem;
+	border-radius: 8px;
+	min-height: 175px;
+	border: 1px solid #fff;
+	box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff,
+		0 0 1.3rem var(--accent-clr-hover), 0 0 0.2rem var(--accent-clr-hover),
+		0 0 2.2rem var(--accent-clr-hover), inset 0 0 1.3rem var(--accent-clr-hover);
+	animation: sub-flicker 2s infinite alternate;
+	margin: 4rem 0;
+}
+
+.selected-post-content {
+	font-size: 1.3rem;
+	padding: 1rem;
+}
+
+.selected-post-right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-top: 1px solid rgb(167, 167, 167);
+	width: 75%;
+	padding: 1rem 0;
+	gap: 0.8rem;
+	font-size: 1.2rem;
+}
+
+.selected-post-date {
+	color: rgb(167, 167, 167);
+}
+
+/* Update form  */
+
 .dashboard form {
 	margin: 2.8rem 0 4rem 0;
 }
@@ -16,7 +59,7 @@
 	color: var(--light-clr);
 }
 
-.mod-dashboard-post-create-content:focus {
+#updatePostMessage:focus {
 	background-color: var(--shaded-clr-hover);
 }
 
@@ -26,5 +69,32 @@
 }
 
 #updatePostBtn:hover {
-	background-color: var(--sub-clr-hover);
+	background-color: var(--accent-clr-hover);
+}
+
+/* Desktop Version  */
+
+@media screen and (min-width: 980px) {
+	.page .modify-post {
+		height: auto;
+	}
+
+	.selected-mod-post {
+		flex-direction: row;
+		min-height: 200px;
+	}
+
+	.selected-post-content {
+		font-size: 1.5rem;
+		padding: 1.2rem;
+		width: 65%;
+	}
+
+	.selected-post-right {
+		border-top: none;
+		border-left: 1px solid rgb(167, 167, 167);
+		width: 30%;
+		gap: 1rem;
+		font-size: 1.5rem;
+	}
 }

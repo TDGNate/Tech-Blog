@@ -137,7 +137,43 @@ router.get("/modify-post/:id", auth, async (req, res) => {
 
   try {
 
-    res.render("modifyPost");
+    const postData = await Post.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [
+        {
+          model: User,
+          attributes: [
+            "name",
+            "id"
+          ]
+        },
+        {
+          model: Comment,
+          attributes: [
+            "id",
+            "comment",
+            "date_created"
+          ],
+          include: {
+            model: User,
+            attributes: [
+              "name",
+              "id"
+            ]
+          }
+        }
+      ]
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render("modifyPost", {
+      post
+    });
+
+    // res.json(post); 
 
   } catch (err) {
     res.status(500).json(err);

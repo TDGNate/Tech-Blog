@@ -1,7 +1,26 @@
 <div class="page modify-post">
 	<div class="container">
 
-		<h1>Modify Your Post</h1>
+		<h1>Modify Post:
+			<span
+				class="selected-mod-post-title"
+				value="{{post.id}}"
+			>{{post.title}}</span></h1>
+
+		<hr />
+
+		<div class="selected-mod-post">
+			<div class="selected-post-content">{{post.content}}</div>
+
+			<div class="selected-post-right">
+				<div
+					class="selected-post-user"
+					value="{{post.user_id}}"
+				>{{post.user.name}}
+				</div>
+				<div class="selected-post-date">{{post.date_created}}</div>
+			</div>
+		</div>
 
 		<hr />
 
