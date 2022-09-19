@@ -7,6 +7,7 @@ const auth = require("../utils/auth");
 const { Comment, Post, User} = require("../models");
 const sequelize = require("sequelize");
 
+// Load up dashboard 
 router.get("/", auth, async (req, res) => {
   try {
 
@@ -21,7 +22,7 @@ router.get("/", auth, async (req, res) => {
         {
           model: Post,
           order: sequelize.literal("id DESC"),
-          attributes: ["id", "title", "content", "date_created"],
+          attributes: ["id", "title", "content", "date_created", "user_id"],
         },
         {
           model: Comment,
@@ -69,7 +70,7 @@ router.get("/", auth, async (req, res) => {
   }
 });
 
-// get One Post 
+// Page for one post
 router.get("/post/:id", auth, async (req, res) => {
   try {
 
@@ -129,6 +130,31 @@ router.get("/post/:id", auth, async (req, res) => {
     res.status(500).json({ message: "Server Error" });
 
   }
+});
+
+// Route to Modify their Post 
+router.get("/modify-post/:id", auth, async (req, res) => {
+
+  try {
+
+    res.render("modifyPost");
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+ 
+// Route to Modify their Comment 
+router.get("/modify-comment/:id", auth, async (req, res) => {
+
+  try {
+
+    res.render("modifyComment");
+
+  } catch (err) {
+    res.status(500).json(err);
+  }
+
 });
 
 module.exports = router;
