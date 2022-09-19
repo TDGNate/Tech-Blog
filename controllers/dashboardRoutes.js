@@ -168,6 +168,15 @@ router.get("/modify-post/:id", auth, async (req, res) => {
       ]
     });
 
+    if (!postData) {
+
+      res.render("404", {
+        layout: "blank"
+      });
+
+      return;
+    }
+
     const post = postData.get({ plain: true });
 
     res.render("modifyPost", {
@@ -188,7 +197,40 @@ router.get("/modify-comment/:id", auth, async (req, res) => {
 
   try {
 
-    res.render("modifyComment");
+    const id = req.params.id;
+
+    const commentData = await Comment.findOne({
+      where: {
+        id: id
+      },
+      include: [
+        {
+         model: Post
+        },
+        {
+          model: User
+        }
+      ]
+    });
+
+    if (!commentData) {
+
+      res.render("404", {
+        layout: "blank"
+      });
+
+      return;
+    }
+
+    const comment = commentData.get({ plain: true });
+
+    res.render("modifyComment", {
+      comment,
+      loggedIn: req.session.loggedIn,
+      active: {dashboard: true}
+    });
+
+    // res.json(comment);
 
   } catch (err) {
     res.status(500).json(err);

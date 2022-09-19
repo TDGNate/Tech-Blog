@@ -1,1 +1,56 @@
-<h1>page to mod comment</h1>
+<div class="page modify-comment">
+	<div class="container">
+
+		<h1 value="{{comment.id}}">Modify Your Comment</h1>
+
+		<hr />
+
+		<div class="selected-mod-comment">
+			<div class="selected-comment-content">{{comment.comment}}</div>
+
+			<div class="selected-comment-right">
+				<div
+					class="selected-comment-user"
+					value="{{comment.user_id}}"
+				>{{comment.user.name}}
+				</div>
+				<div class="selected-comment-date">{{comment.date_created}}</div>
+			</div>
+		</div>
+		<div class="dash-comment-btns-container">
+			<input type="button" id="editCommentBtn" value="Edit" class="btn" />
+			<input type="button" id="deleteCommentBtn" value="Delete" class="btn" />
+
+		</div>
+
+		<hr />
+
+		{{! Creating a new Comment  }}
+
+		<form class="container-sub mod-comment">
+			{{! Title  }}
+			<label for="comment title">Update Title:</label>
+			<input
+				placeholder="{{comment.title}}..."
+				type="text"
+				class="mod-dashboard-comment-create-title"
+				name="title"
+				value="{{comment.title}}"
+				required
+			/>
+			{{! Content  }}
+			<label for="comment-message">Update Message:</label>
+			<textarea
+				name="updatecommentMessage"
+				type="text"
+				id="updateCommentMessage"
+				placeholder="{{comment.content}}..."
+				required
+			>{{comment.content}}</textarea>
+
+			{{! Submit Button  }}
+			<input type="submit" id="updateCommentBtn" value="Update" class="btn" />
+		</form>
+
+	</div>
+</div>
