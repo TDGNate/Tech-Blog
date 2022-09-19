@@ -59,6 +59,26 @@
 	margin: 0.8rem;
 	width: 80%;
 	transition: all 300ms ease;
+	position: relative;
+}
+
+.dashboard-post i {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	z-index: 10;
+	font-size: 1.6rem;
+	color: rgb(167, 167, 167);
+	transition: all 400ms ease;
+}
+
+.dashboard-post i:hover {
+	cursor: pointer;
+	color: var(--sub-clr-hover);
+}
+
+.dashboard-post::after {
+	content: "";
 }
 
 .dashboard-post:hover {

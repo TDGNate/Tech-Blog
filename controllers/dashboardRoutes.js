@@ -25,8 +25,11 @@ router.get("/", auth, async (req, res) => {
         },
         {
           model: Comment,
-          attributes: {
-            exclude: "user_id"
+          include: {
+            model: User,
+            attributes: {
+              exclude: ["password"]
+            }
           },
           include: {
             model: Post,
@@ -37,7 +40,6 @@ router.get("/", auth, async (req, res) => {
           },
           attributes: {
             exclude: [
-              "user_id",
               "content"
             ]
           }
@@ -56,9 +58,10 @@ router.get("/", auth, async (req, res) => {
     res.render("dashboard", {
       user,
       loggedIn: req.session.loggedIn,
+      active: {dashboard: true}
     });
 
-    // res.json(user); 
+    // res.json(user);  
 
 
   } catch (err) {

@@ -7,6 +7,7 @@
 	margin: 0.8rem;
 	width: 80%;
 	transition: all 300ms ease;
+	position: relative;
 }
 
 .dashboard-comment:hover {
@@ -45,6 +46,21 @@
 
 .dashboard-comment-post-user {
 	font-weight: bold;
+}
+
+.dashboard-comment i {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	z-index: 10;
+	font-size: 1.6rem;
+	color: rgb(167, 167, 167);
+	transition: all 400ms ease;
+}
+
+.dashboard-comment i:hover {
+	cursor: pointer;
+	color: var(--accent-clr-hover);
 }
 
 /* Desktop Dashboard Comments  */
