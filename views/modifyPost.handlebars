@@ -33,23 +33,24 @@
 
 		<form class="container-sub mod-post">
 			{{! Title  }}
-			<label for="post title">Title:</label>
+			<label for="post title">Update Title:</label>
 			<input
 				placeholder="{{post.title}}..."
 				type="text"
 				class="mod-dashboard-post-create-title"
 				name="title"
+				value="{{post.title}}"
 				required
 			/>
 			{{! Content  }}
-			<label for="post-message">Message:</label>
+			<label for="post-message">Update Message:</label>
 			<textarea
 				name="updatePostMessage"
 				type="text"
 				id="updatePostMessage"
 				placeholder="{{post.content}}..."
 				required
-			></textarea>
+			>{{post.content}}</textarea>
 
 			{{! Submit Button  }}
 			<input type="submit" id="updatePostBtn" value="Update" class="btn" />

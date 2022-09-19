@@ -55,6 +55,30 @@ if (editPostBtn) {
   });
 } 
 
+// Update Button
+
+const updatePostBtn = document.getElementById("updatePostBtn");
+const newUpdatedPostContentForm = document.getElementById("updatePostMessage");
+
+if (updatePostBtn) {
+  updatePostBtn.addEventListener("click", (e) => {
+
+    // Stop Auto Reload 
+    e.preventDefault();
+    initPostUpdate();
+  });
+}
+
+if (newUpdatedPostContentForm) {
+  newUpdatedPostContentForm.addEventListener("keyup", function(e) {
+    if (e.key === "Enter") {
+        
+      initPostUpdate();
+
+    }
+});
+}
+
 // Delete Button
 
 const deletePostBtn = document.getElementById("deletePostBtn");
@@ -90,7 +114,6 @@ if (deletePostBtn) {
     });
 
   });
-
 }
 
 const createPostBtn = document.getElementById("createPostBtn");
@@ -98,7 +121,6 @@ const createPostBtn = document.getElementById("createPostBtn");
 if (createPostBtn) {
 
   createPostBtn.addEventListener("click", () => {
-
     setTimeout(() => {
 
       createPostBtn.setAttribute("disabled", "");
@@ -110,8 +132,41 @@ if (createPostBtn) {
       }, 1950);
       
     }, 500);
-    
-
-
   });
+}
+
+// Initializes the Post Update Request 
+function initPostUpdate() {
+
+      // Get the values of the form 
+      let newUpdatedPostTitle = document.querySelector(".mod-dashboard-post-create-title").value;
+    
+      let newUpdatedPostContent = document.getElementById("updatePostMessage").value;
+  
+      // Get User Id 
+      let userId = parseInt(document.querySelector(".selected-post-user").getAttribute("value"));
+  
+      // Get Post Id
+      let postId = parseInt(document.querySelector(".selected-mod-post-title").getAttribute("value"));
+  
+      swal({
+        text: "Updating...",
+        button: false
+      });
+  
+      setTimeout(() => {
+        
+        updatePost(newUpdatedPostTitle, newUpdatedPostContent, userId, postId);
+  
+      }, 1000);
+  
+}
+
+// Function to Clears all forms 
+function clearForms() {
+
+  // Mod Post Page 
+  document.querySelector(".mod-dashboard-post-create-title").value = "";
+  document.getElementById("updatePostMessage").value = "";
+
 }

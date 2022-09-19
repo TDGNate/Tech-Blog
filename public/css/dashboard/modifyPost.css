@@ -12,8 +12,8 @@
 	min-height: 175px;
 	border: 1px solid #fff;
 	box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff,
-		0 0 1.3rem var(--accent-clr-hover), 0 0 0.2rem var(--accent-clr-hover),
-		0 0 2.2rem var(--accent-clr-hover), inset 0 0 1.3rem var(--accent-clr-hover);
+		0 0 1.3rem var(--sub-clr-hover), 0 0 0.2rem var(--sub-clr-hover),
+		0 0 2.2rem var(--sub-clr-hover), inset 0 0 1.3rem var(--sub-clr-hover);
 	animation: sub-flicker 2s infinite alternate;
 	margin: 4rem 0 2.5rem 0;
 }

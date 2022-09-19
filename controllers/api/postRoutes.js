@@ -142,7 +142,8 @@ router.post("/", auth, async (req, res) => {
 // Update a Post 
 router.put("/:id", auth, async (req, res) => {
   try {
-    const posts = await Post.update(
+
+    const postData = await Post.update(
       {
       title: req.body.title,
       content: req.body.content,
@@ -155,18 +156,27 @@ router.put("/:id", auth, async (req, res) => {
       }
     );
 
+    if (!postData) {
+
+      // Send back 404 page 
+      res.render("404", {
+        layout: "blank"
+      });
+
+    }
+
     req.session.save(() => {
       
       req.session.loggedIn = true;
 
-    // to reload the page after creating a new post 
-      res.redirect("/dashboard");
+      res.json({ message: "updated"});
 
     });
 
   } catch (err) {
 
     res.status(500).json({ message: "Server Error" });
+
   }
 });
 

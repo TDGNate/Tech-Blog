@@ -120,7 +120,8 @@ router.get("/post/:id", auth, async (req, res) => {
 
     res.render("onePostPage", {
       post,
-      loggedIn: req.session.loggedIn
+      loggedIn: req.session.loggedIn,
+      active: {dashboard: true}
     });
 
     // res.json(post); 
@@ -170,7 +171,9 @@ router.get("/modify-post/:id", auth, async (req, res) => {
     const post = postData.get({ plain: true });
 
     res.render("modifyPost", {
-      post
+      post,
+      loggedIn: req.session.loggedIn,
+      active: {dashboard: true}
     });
 
     // res.json(post); 
