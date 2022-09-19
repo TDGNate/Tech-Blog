@@ -26,95 +26,122 @@ if (dashboardCommentContainer) {
   });
 }
 
-// Edit Button 
+// Edit Button
 
-const editCommentBtn = document.getElementById("editCommentBtn");
+let userCommentViewer = document.querySelector(".modify-comment");
+let currentComment = document.querySelector(".selected-comment-user");
 
-if (editCommentBtn) {
+let userCommentViewerId;
+let currentCommentId;
 
-  const updateForm = document.querySelector(".mod-comment");
+// Avoid Console Log Errors
 
-  editCommentBtn.addEventListener("click", () => {
-
-    if (editCommentBtn.value == "Edit") {
-
-      editCommentBtn.value = "Hide Form";
-      console.log("worked");
-      updateForm.style.display = "flex";
-
-    } else {
-
-      editCommentBtn.value = "Edit";
-      updateForm.style.display = "none";
-
-    }
-
-  });
-} 
-
-// Update Button
-
-const updateCommentBtn = document.getElementById("updateCommentBtn");
-const newUpdatedCommentContentForm = document.getElementById("updateCommentMessage");
-
-if (updateCommentBtn) {
-  updateCommentBtn.addEventListener("click", (e) => {
-
-    // Stop Auto Reload 
-    e.preventDefault();
-    initCommentUpdate();
-
-    clearForms();
-
-  });
+if (userCommentViewer) {
+  userCommentViewerId = parseInt(userCommentViewer.getAttribute("value"));
 }
 
-if (newUpdatedCommentContentForm) {
-  newUpdatedCommentContentForm.addEventListener("keyup", function(e) {
-    if (e.key === "Enter") {
-        
+if (currentComment) {
+  currentCommentId = parseInt(currentComment.getAttribute("value"));
+}
+
+if (userCommentViewerId !== currentCommentId) {
+  if (document.querySelector(".dash-comment-btns-container")) {
+    document.querySelector(".dash-comment-btns-container").style.display = "none";
+  }
+
+} else {
+  if (document.querySelector(".dash-comment-btns-container")) {
+    document.querySelector(".dash-comment-btns-container").style.display = "flex";
+  }
+
+  const editCommentBtn = document.getElementById("editCommentBtn");
+
+  if (editCommentBtn) {
+
+    const updateForm = document.querySelector(".mod-comment");
+
+    editCommentBtn.addEventListener("click", () => {
+
+      if (editCommentBtn.value == "Edit") {
+
+        editCommentBtn.value = "Hide Form";
+        console.log("worked");
+        updateForm.style.display = "flex";
+
+      } else {
+
+        editCommentBtn.value = "Edit";
+        updateForm.style.display = "none";
+
+      }
+
+    });
+  }
+
+  // Update Button
+
+  const updateCommentBtn = document.getElementById("updateCommentBtn");
+  const newUpdatedCommentContentForm = document.getElementById("updateCommentMessage");
+
+  if (updateCommentBtn) {
+    updateCommentBtn.addEventListener("click", (e) => {
+
+      // Stop Auto Reload 
+      e.preventDefault();
       initCommentUpdate();
 
       clearForms();
 
-    }
-});
-}
+    });
+  }
 
-// Delete Button
+  if (newUpdatedCommentContentForm) {
+    newUpdatedCommentContentForm.addEventListener("keyup", function (e) {
+      if (e.key === "Enter") {
+        
+        initCommentUpdate();
 
-const deleteCommentBtn = document.getElementById("deleteCommentBtn");
-
-if (deleteCommentBtn) { 
-
-  deleteCommentBtn.addEventListener("click", () => { 
-
-    deleteCommentBtn.setAttribute("disabled", "");
-
-    swal({
-      title: "Are you sure you want to delete this Comment?",
-      button: true
-    }).then((data) => {
-      
-      if (data) {
-
-        swal({
-          text: "Deleting...",
-          button: false
-        });
-
-        const commentId = parseInt(document.querySelector(".modify-comment-id").getAttribute("value"));
-
-        setTimeout(() => {
-
-          deleteComment(commentId); 
-
-          swal.close();
-
-        }, 1200);
+        clearForms();
 
       }
     });
+  }
 
-  });
+  // Delete Button
+
+  const deleteCommentBtn = document.getElementById("deleteCommentBtn");
+
+  if (deleteCommentBtn) {
+
+    deleteCommentBtn.addEventListener("click", () => {
+
+      deleteCommentBtn.setAttribute("disabled", "");
+
+      swal({
+        title: "Are you sure you want to delete this Comment?",
+        button: true
+      }).then((data) => {
+
+        if (data) {
+
+          swal({
+            text: "Deleting...",
+            button: false
+          });
+
+          const commentId = parseInt(document.querySelector(".modify-comment-id").getAttribute("value"));
+
+          setTimeout(() => {
+
+            deleteComment(commentId);
+
+            swal.close();
+
+          }, 1200);
+
+        }
+      });
+
+    });
+  }
 }

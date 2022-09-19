@@ -31,17 +31,33 @@ if (dashboardPostContainer) {
 
 // Edit Button
 
-let userViewerId = parseInt(document.querySelector(".modify-post").getAttribute("value"));
+let userPostViewer = document.querySelector(".modify-post");
+let currentPost = document.querySelector(".selected-post-user");
 
-let currentPostId = parseInt(document.querySelector(".selected-post-user").getAttribute("value"));
+let userPostViewerId;
+let currentPostId;
 
-if (userViewerId !== currentPostId) {
+// To Avoid Console Logs Errors
 
-  document.querySelector(".dash-post-btns-container").style.display = "none";
+if (userPostViewer) {
+  userPostViewerId = parseInt(userPostViewer.getAttribute("value"));
+}
 
+if (currentPost) {
+  currentPostId = parseInt(currentPost.getAttribute("value"));
+}
+
+if (userPostViewerId !== currentPostId) {
+
+  if (document.querySelector(".dash-post-btns-container")) {
+    document.querySelector(".dash-post-btns-container").style.display = "none";
+  }
+  
 } else {
 
-  document.querySelector(".dash-post-btns-container").style.display= "flex";
+  if (document.querySelector(".dash-post-btns-container")) {
+    document.querySelector(".dash-post-btns-container").style.display = "flex";
+  }
 
   const editPostBtn = document.getElementById("editPostBtn");
 
