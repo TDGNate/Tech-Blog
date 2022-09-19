@@ -181,6 +181,7 @@ router.get("/modify-post/:id", auth, async (req, res) => {
 
     res.render("modifyPost", {
       post,
+      userId: req.session.userId,
       loggedIn: req.session.loggedIn,
       active: {dashboard: true}
     });
@@ -226,6 +227,7 @@ router.get("/modify-comment/:id", auth, async (req, res) => {
 
     res.render("modifyComment", {
       comment,
+      userId: req.session.userId,
       loggedIn: req.session.loggedIn,
       active: {dashboard: true}
     });

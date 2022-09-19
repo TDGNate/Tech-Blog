@@ -18,6 +18,10 @@
 	margin: 4rem 0 2.5rem 0;
 }
 
+.modify-comment-req-user-id {
+	color: rgb(255, 255, 255);
+}
+
 .selected-comment-content {
 	font-size: 1.3rem;
 	padding: 1rem;

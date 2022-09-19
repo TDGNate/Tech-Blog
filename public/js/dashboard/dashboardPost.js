@@ -29,96 +29,109 @@ if (dashboardPostContainer) {
   });
 }
 
-// Edit Button 
+// Edit Button
 
-const editPostBtn = document.getElementById("editPostBtn");
+let userViewerId = parseInt(document.querySelector(".modify-post").getAttribute("value"));
 
-if (editPostBtn) {
+let currentPostId = parseInt(document.querySelector(".selected-post-user").getAttribute("value"));
 
-  const updateForm = document.querySelector(".mod-post");
+if (userViewerId !== currentPostId) {
 
-  editPostBtn.addEventListener("click", () => {
+  document.querySelector(".dash-post-btns-container").style.display = "none";
 
-    if (editPostBtn.value == "Edit") {
+} else {
 
-      editPostBtn.value = "Hide Form";
-      console.log("worked");
-      updateForm.style.display = "flex";
+  document.querySelector(".dash-post-btns-container").style.display= "flex";
 
-    } else {
+  const editPostBtn = document.getElementById("editPostBtn");
 
-      editPostBtn.value = "Edit";
-      updateForm.style.display = "none";
+  if (editPostBtn) {
 
-    }
+    const updateForm = document.querySelector(".mod-post");
 
-  });
-} 
+    editPostBtn.addEventListener("click", () => {
 
-// Update Button
+      if (editPostBtn.value == "Edit") {
 
-const updatePostBtn = document.getElementById("updatePostBtn");
-const newUpdatedPostContentForm = document.getElementById("updatePostMessage");
+        editPostBtn.value = "Hide Form";
+        console.log("worked");
+        updateForm.style.display = "flex";
 
-if (updatePostBtn) {
-  updatePostBtn.addEventListener("click", (e) => {
+      } else {
 
-    // Stop Auto Reload 
-    e.preventDefault();
-    initPostUpdate();
+        editPostBtn.value = "Edit";
+        updateForm.style.display = "none";
 
-    clearForms();
+      }
 
-  });
-}
+    });
+  }
 
-if (newUpdatedPostContentForm) {
-  newUpdatedPostContentForm.addEventListener("keyup", function(e) {
-    if (e.key === "Enter") {
-        
+  // Update Button
+
+  const updatePostBtn = document.getElementById("updatePostBtn");
+  const newUpdatedPostContentForm = document.getElementById("updatePostMessage");
+
+  if (updatePostBtn) {
+    updatePostBtn.addEventListener("click", (e) => {
+
+      // Stop Auto Reload 
+      e.preventDefault();
       initPostUpdate();
 
       clearForms();
 
-    }
-});
-}
+    });
+  }
 
-// Delete Button
+  if (newUpdatedPostContentForm) {
+    newUpdatedPostContentForm.addEventListener("keyup", function (e) {
+      if (e.key === "Enter") {
+        
+        initPostUpdate();
 
-const deletePostBtn = document.getElementById("deletePostBtn");
-
-if (deletePostBtn) { 
-
-  deletePostBtn.addEventListener("click", () => { 
-
-    deletePostBtn.setAttribute("disabled", "");
-
-    swal({
-      title: "Are you sure you want to delete this post?",
-      button: true
-    }).then((data) => {
-      if (data) {
-
-        swal({
-          text: "Deleting...",
-          button: false
-        });
-
-        const postId = parseInt(document.querySelector(".selected-mod-post-title").getAttribute("value"));
-
-        setTimeout(() => {
-
-          deletePost(postId); 
-
-          swal.close();
-
-        }, 1200);
+        clearForms();
 
       }
     });
+  }
 
-  });
+  // Delete Button
+
+  const deletePostBtn = document.getElementById("deletePostBtn");
+
+  if (deletePostBtn) {
+
+    deletePostBtn.addEventListener("click", () => {
+
+      deletePostBtn.setAttribute("disabled", "");
+
+      swal({
+        title: "Are you sure you want to delete this post?",
+        button: true
+      }).then((data) => {
+        if (data) {
+
+          swal({
+            text: "Deleting...",
+            button: false
+          });
+
+          const postId = parseInt(document.querySelector(".selected-mod-post-title").getAttribute("value"));
+
+          setTimeout(() => {
+
+            deletePost(postId);
+
+            swal.close();
+
+          }, 1200);
+
+        }
+      });
+
+    });
+  }
 }
 
 const createPostBtn = document.getElementById("createPostBtn");
