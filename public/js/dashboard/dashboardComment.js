@@ -51,3 +51,32 @@ if (editCommentBtn) {
 
   });
 } 
+
+// Update Button
+
+const updateCommentBtn = document.getElementById("updateCommentBtn");
+const newUpdatedCommentContentForm = document.getElementById("updateCommentMessage");
+
+if (updateCommentBtn) {
+  updateCommentBtn.addEventListener("click", (e) => {
+
+    // Stop Auto Reload 
+    e.preventDefault();
+    initCommentUpdate();
+
+    clearForms();
+
+  });
+}
+
+if (newUpdatedCommentContentForm) {
+  newUpdatedCommentContentForm.addEventListener("keyup", function(e) {
+    if (e.key === "Enter") {
+        
+      initCommentUpdate();
+
+      clearForms();
+
+    }
+});
+}

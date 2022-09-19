@@ -66,6 +66,9 @@ if (updatePostBtn) {
     // Stop Auto Reload 
     e.preventDefault();
     initPostUpdate();
+
+    clearForms();
+
   });
 }
 
@@ -74,6 +77,8 @@ if (newUpdatedPostContentForm) {
     if (e.key === "Enter") {
         
       initPostUpdate();
+
+      clearForms();
 
     }
 });

@@ -114,7 +114,7 @@ router.put("/:id", async (req, res) => {
       
       req.session.loggedIn = true;
 
-      res.json(comment);
+      res.json({ message: "updated" });
 
     });
 

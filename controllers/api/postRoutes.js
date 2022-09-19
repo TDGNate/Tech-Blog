@@ -121,7 +121,7 @@ router.post("/", auth, async (req, res) => {
     const posts = await Post.create({
       title: req.body.title,
       content: req.body.content,
-      user_id: req.body.userId
+      user_id: req.session.userId
     });
 
     req.session.save(() => {
@@ -147,7 +147,7 @@ router.put("/:id", auth, async (req, res) => {
       {
       title: req.body.title,
       content: req.body.content,
-      user_id: req.body.userId
+      user_id: req.session.userId
       },
       {
         where: {

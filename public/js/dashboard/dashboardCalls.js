@@ -27,8 +27,6 @@ async function updatePost(title, content, userId, postId) {
 
       if (data.message == "updated") {
 
-        clearForms();
-
         swal({
           icon: "success",
           text: "Redirecting...",
@@ -86,4 +84,50 @@ async function deletePost(postId) {
 
         }
       });
+}
+
+// Update a Comment 
+async function updateComment(comment, userId, commentId) {
+
+  console.log(comment, userId, commentId);
+
+  await fetch(`/api/comment/${commentId}`, {
+    method: "PUT",
+    headers: {
+      "Content-type": "application/json"
+    },
+    body: JSON.stringify({
+      comment: comment,
+      user_id: userId
+    })
+  })
+    .then((res) => 
+    
+      res.json()
+
+    )
+    .then((data) => {
+
+      console.log(data);
+
+      if (data.message == "updated") {
+
+        swal({
+          icon: "success",
+          text: "Redirecting...",
+          button: false
+        });
+
+        setTimeout(() => {
+          
+          swal.close();
+          window
+          .document
+          .location
+            .href = "/dashboard";
+
+        }, 1000);
+      }
+  });
+
 }
