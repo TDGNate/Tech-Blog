@@ -65,7 +65,6 @@ if (userCommentViewerId !== currentCommentId) {
       if (editCommentBtn.value == "Edit") {
 
         editCommentBtn.value = "Hide Form";
-        console.log("worked");
         updateForm.style.display = "flex";
 
       } else {

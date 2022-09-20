@@ -82,7 +82,7 @@
 
 #deletePostBtn:hover {
 	background-color: rgb(255, 41, 41);
-	color: var(--light-clr);
+	color: #fff;
 	font-weight: bold;
 }
 

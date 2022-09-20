@@ -11,6 +11,14 @@
 	position: relative;
 }
 
+.dashboard-comment hr {
+	align-self: center;
+	text-align: center;
+	width: 20%;
+	margin: 1rem auto;
+	background-color: var(--accent-clr-hover);
+}
+
 .dashboard-comment:hover {
 	background-color: var(--shaded-clr-hover);
 	transform: translate(-2px, -3px);
@@ -25,7 +33,7 @@
 .comment-second-side {
 	margin: auto;
 	text-align: center;
-	padding: 0.5rem;
+	padding: 1rem 0.6rem;
 }
 
 .dashboard-comment-content {
@@ -74,6 +82,11 @@
 		width: 75%;
 		min-height: 200px;
 		gap: 5%;
+	}
+
+	.dashboard-comment hr {
+		width: 25%;
+		margin: 1rem 0;
 	}
 
 	.comment-second-side {

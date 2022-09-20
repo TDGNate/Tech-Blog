@@ -119,6 +119,24 @@
 	margin-bottom: 0.6rem;
 }
 
+.dashboard-post-section-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.dashboard-no-post-message {
+	background-color: var(--shaded-clr);
+	padding: 1rem;
+	width: 80%;
+	text-align: center;
+	font-size: 1.2rem;
+	border-radius: 8px;
+	justify-self: center;
+	margin: 0;
+}
+
 /* Dashboard Comments Section */
 
 .dashboard-comment-section {
@@ -212,6 +230,18 @@
 
 	.dashboard-post i:hover {
 		color: var(--sub-clr-hover);
+	}
+
+	.dashboard-post-section-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.dashboard-no-post-message {
+		margin: 2.5rem;
+		font-size: 1.4rem;
 	}
 
 	/* Comment Section  */

@@ -290,6 +290,19 @@
 	.comment-sub-text {
 		display: none;
 	}
+
+	/* View Full Post styles  */
+
+	#deskViewFullPost {
+		color: var(--sub-clr-hover);
+		margin: 0 auto;
+	}
+
+	#deskViewFullPost:hover {
+		cursor: pointer;
+		text-decoration: none;
+		color: var(--light-clr);
+	}
 }
 
 .x:after {

@@ -21,7 +21,7 @@
 		0 0 0.2rem var(--sub-clr-hover), 0 0 2.2rem var(--sub-clr-hover),
 		inset 0 0 1.3rem var(--sub-clr-hover);
 	animation: sub-flicker 2s infinite alternate;
-	margin: 4rem 0;
+	margin: 4rem 0 2rem 0;
 }
 
 .post-page-post-content {
@@ -126,6 +126,17 @@
 
 	.post-page-no-comments {
 		font-size: 1.4rem;
+	}
+
+	/* Go back btn  */
+
+	.post-page-go-back {
+		font-size: 1.2rem;
+		color: var(--sub-clr-hover);
+	}
+
+	.post-page-go-back:hover {
+		color: var(--light-clr);
 	}
 }
 

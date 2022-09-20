@@ -1,42 +1,7 @@
 [
   {
-    "comment": "fjasdlk jfk sdfjl dsjfkla dj",
+    "comment": "first comment",
     "user_id": 1,
-    "post_id": 2
-  },
-  {
-    "comment": "sdafsad254 4325 234543523434523 43253",
-    "user_id": 2,
-    "post_id": 5
-  },
-  {
-    "comment": "bbvn plain to you how all this mistaken idea of denouncing pleasure and pr",
-    "user_id": 4,
-    "post_id": 5
-  },
-  {
-    "comment": "l. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure hi",
-    "user_id": 2,
-    "post_id": 2
-  },
-  {
-    "comment": "an who chooses to enjoy a pleasure that has no annoying conseque",
-    "user_id": 3,
-    "post_id": 2
-  },
-  {
-    "comment": "This is another test comment ",
-    "user_id": 4,
-    "post_id": 2
-  },
-  {
-    "comment": "Hey, here is another test comment, very awesome ",
-    "user_id": 5,
-    "post_id": 2
-  },
-  {
-    "comment": "fdsjfksdlf sdjkf ldsfjsdklfjds fljdsklaf; jdaklfd fjasdfld jaskfl sd;jfklsdafj sdklaf sjdfklsd;fajdf sdkljfl; ",
-    "user_id": 6,
     "post_id": 2
   }
 ]

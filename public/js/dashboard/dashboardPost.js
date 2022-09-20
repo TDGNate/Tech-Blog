@@ -52,7 +52,7 @@ if (userPostViewerId !== currentPostId) {
   if (document.querySelector(".dash-post-btns-container")) {
     document.querySelector(".dash-post-btns-container").style.display = "none";
   }
-  
+
 } else {
 
   if (document.querySelector(".dash-post-btns-container")) {
@@ -70,7 +70,6 @@ if (userPostViewerId !== currentPostId) {
       if (editPostBtn.value == "Edit") {
 
         editPostBtn.value = "Hide Form";
-        console.log("worked");
         updateForm.style.display = "flex";
 
       } else {
@@ -133,16 +132,21 @@ if (userPostViewerId !== currentPostId) {
             button: false
           });
 
-          const postId = parseInt(document.querySelector(".selected-mod-post-title").getAttribute("value"));
+          const postIdEl = document.querySelector(".selected-mod-post-title");
 
-          setTimeout(() => {
+          if (postIdEl) {
 
-            deletePost(postId);
+            const postId = parseInt(postIdEl.getAttribute("value"));
 
-            swal.close();
+            setTimeout(() => {
+  
+              deletePost(postId);
+  
+              swal.close();
+  
+            }, 1200);
 
-          }, 1200);
-
+          }
         }
       });
 

@@ -21,7 +21,7 @@ async function updatePost(title, content, userId, postId) {
     )
     .then((data) => {
 
-      console.log(data);
+      // console.log(data); 
 
       if (data.message == "updated") {
 
@@ -45,6 +45,7 @@ async function updatePost(title, content, userId, postId) {
 }
 
 // Delete A Post 
+
 async function deletePost(postId) {
 
     await fetch(`/api/post/${postId}`, {  method: "DELETE" })
@@ -55,7 +56,7 @@ async function deletePost(postId) {
       )
       .then((data) => {
 
-        console.log(data);
+        // console.log(data); 
 
         if (data.message == "deleted") {
 
@@ -104,7 +105,7 @@ async function updateComment(comment, userId, commentId) {
     )
     .then((data) => {
 
-      console.log(data);
+      // console.log(data); 
 
       if (data.message == "updated") {
 
@@ -140,7 +141,7 @@ async function deleteComment(commentId) {
   )
   .then((data) => {
 
-    console.log(data);
+    // console.log(data); 
 
     if (data.message == "deleted") {
 

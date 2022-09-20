@@ -2,9 +2,7 @@
 const sequelize = require("../config/connection");
 
 // models 
-const Comment = require("../models/comment");
-const Post = require("../models/post");
-const User = require("../models/user");
+const { Comment, Post, User} = require("../models");
 
 // seeds 
 const userSeeds = require("./users.json");

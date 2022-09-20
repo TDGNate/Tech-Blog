@@ -184,13 +184,17 @@ router.put("/:id", auth, async (req, res) => {
 router.delete("/:id", auth, async (req, res) => {
   try {
 
-    const posts = await Post.destroy({
+    const postData = await Post.destroy({
       where: {
         id: req.params.id
       }
+    }).catch(err => {
+      res.json(err);
+
+      return;
     });
 
-    if (!posts) {
+    if (!postData) {
 
       // Send back 404 page 
       res.render("404", {

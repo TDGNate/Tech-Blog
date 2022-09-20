@@ -8,7 +8,7 @@ async function registerUser(name, email, password) {
     button: false
   });
 
-  console.log(name, email, password);
+  // console.log(name, email, password); 
 
   // Making Call 
   await fetch("/api/user/register", {
@@ -59,6 +59,8 @@ async function registerUser(name, email, password) {
 
     })
     .catch((err) => {
+
       console.log(err);
+
     });
 }

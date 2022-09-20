@@ -42,12 +42,24 @@
 
 		<h2>Your Posts</h2>
 
+
 		<div class="container-sub" id="dashboardPostContainer">
+
+		{{#if user.posts}}
 
 			{{! Dashboard Cards  }}
 			{{#each user.posts as |post|}}
 				{{> dashCard}}
 			{{/each}}
+
+
+		{{else}}
+
+		<div class="dashboard-post-section-container">
+			<p class="dashboard-no-post-message">You have no posts yet</p>
+		</div>
+
+		{{/if}}
 
 		</div>
 
