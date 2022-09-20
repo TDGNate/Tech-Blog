@@ -116,9 +116,9 @@ if (userCommentViewerId !== currentCommentId) {
 
       deleteCommentBtn.setAttribute("disabled", "");
 
-      swal({
-        title: "Are you sure you want to delete this Comment?",
-        button: true
+      swal("Are you sure you want to delete this comment?", {
+        dangerMode: true,
+        buttons: true,
       }).then((data) => {
 
         if (data) {

@@ -14,7 +14,6 @@
 	box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff,
 		0 0 1.3rem var(--accent-clr-hover), 0 0 0.2rem var(--accent-clr-hover),
 		0 0 2.2rem var(--accent-clr-hover), inset 0 0 1.3rem var(--accent-clr-hover);
-	animation: accent-flicker 2s infinite alternate;
 	margin: 4rem 0 2.5rem 0;
 }
 
@@ -64,14 +63,18 @@
 /* Edit button  */
 
 #editCommentBtn {
-	background-color: rgba(107, 227, 55, 0.847);
-	color: var(--dark-clr);
+	background-color: transparent;
+	color: var(--light-clr);
+	box-shadow: 0 0 0.1rem #fff, 0 0 0.2rem #fff,
+		0 0 1.1rem rgba(107, 227, 55, 0.847), 0 0 0.1rem rgba(107, 227, 55, 0.847),
+		0 0 2rem rgba(107, 227, 55, 0.847),
+		inset 0 0 1.1rem rgba(107, 227, 55, 0.847);
+	border: 1px solid white;
 }
 
 #editCommentBtn:hover {
-	background-color: rgb(56, 135, 22);
-	color: #fff;
 	font-weight: bold;
+	background-color: rgba(107, 227, 55, 0.351);
 }
 
 /* Delete button  */
@@ -80,13 +83,19 @@
 	justify-content: center;
 	justify-self: center;
 	align-self: center;
-	background-color: rgba(255, 96, 133, 0.875);
-	color: var(--dark-clr);
+	background-color: transparent;
+	box-shadow: 0 0 0.1rem #fff, 0 0 0.2rem #fff,
+		0 0 1.1rem rgba(255, 96, 133, 0.875), 0 0 0.1rem rgba(255, 96, 133, 0.875),
+		0 0 2rem rgba(255, 96, 133, 0.875),
+		inset 0 0 1.1rem rgba(255, 96, 133, 0.875);
+	color: white;
+	border: white 1px solid;
+	animation: red-sub-flicker 2s infinite alternate;
 }
 
 #deleteCommentBtn:hover {
-	background-color: rgb(255, 41, 41);
-	color: var(--light-clr);
+	background-color: rgba(255, 0, 0, 0.351);
+	color: #fff;
 	font-weight: bold;
 }
 
@@ -181,5 +190,27 @@
 		width: 45%;
 		padding: 0.5rem;
 		font-size: 1.2rem;
+	}
+}
+
+/* animations  */
+
+@keyframes red-sub-flicker {
+	0%,
+	18%,
+	22%,
+	25%,
+	53%,
+	57%,
+	100% {
+		box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff,
+			0 0 1.3rem rgba(255, 96, 133, 0.875), 0 0 0.2rem rgba(255, 96, 133, 0.875),
+			0 0 2.2rem rgba(255, 96, 133, 0.875),
+			inset 0 0 1.3rem rgba(255, 96, 133, 0.875);
+	}
+
+	24%,
+	55% {
+		box-shadow: none;
 	}
 }

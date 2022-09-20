@@ -121,9 +121,9 @@ if (userPostViewerId !== currentPostId) {
 
       deletePostBtn.setAttribute("disabled", "");
 
-      swal({
-        title: "Are you sure you want to delete this post?",
-        button: true
+      swal("Are you sure you want to delete this post?", {
+        dangerMode: true,
+        buttons: true,
       }).then((data) => {
         if (data) {
 

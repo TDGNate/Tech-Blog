@@ -20,7 +20,6 @@
 	box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 1.3rem var(--sub-clr-hover),
 		0 0 0.2rem var(--sub-clr-hover), 0 0 2.2rem var(--sub-clr-hover),
 		inset 0 0 1.3rem var(--sub-clr-hover);
-	animation: sub-flicker 2s infinite alternate;
 	margin: 4rem 0 2rem 0;
 }
 
@@ -140,21 +139,3 @@
 	}
 }
 
-/* @keyframes sub-flicker {
-	0%,
-	18%,
-	22%,
-	25%,
-	53%,
-	57%,
-	100% {
-		box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff,
-			0 0 1.3rem var(--sub-clr-hover), 0 0 0.2rem var(--sub-clr-hover),
-			0 0 2.2rem var(--sub-clr-hover), inset 0 0 1.3rem var(--sub-clr-hover);
-	}
-
-	24%,
-	55% {
-		box-shadow: none;
-	}
-} */
