@@ -20,12 +20,11 @@ The tools for styling that came in clutch:
 
 Deployed app: https://techer-blogger.herokuapp.com/
 
-
 ## Table Of Contents
 
 - [Usage](#usage)
 - [Install](#install)
-- [Contribute](#contributing)
+- [Contribute](#contribution)
 - [Questions](#questions)
 
 ---
@@ -81,16 +80,16 @@ _If everything went smooth, you should see 'Now listening on http:/localhost:300
   <img src="assets\app_pictures\desktop_modify_post.png" width="48%" />
   <img src="assets\app_pictures\desktop_modify_comment.png" width="48%" />
 
-### Others (View signle post, Register Success)
+### Others (View a single post, Register Success page)
 
   <img src="assets\app_pictures\desktop_single_post.png" width="48%" />
   <img src="assets\app_pictures\success.png" width="48%" />
 
 </p>
 
-[You can go here to see mobile version](/assets/mobile_version.md)
+[Click here to view the mobile screen sizes](/assets/mobile_version.md)
 
-Folders containing the images:
+Folders containing all images:
 
 [Desktop pictures](/assets/app_pictures/)
 
@@ -98,9 +97,9 @@ Folders containing the images:
 
 ---
 
-## Contributing
+## Contribution
 
-No specific rules for contributing, but if you want to support you can make issues which I will review to improve the app.
+No specific rules for contributing, but if you want to support you can make an issue in the 'issues' tab on Github which I can review to improve the app! :)
 
 Or feel free to fork this repo, add your changes, and make a pull req!
 
