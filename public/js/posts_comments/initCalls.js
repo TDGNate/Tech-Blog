@@ -49,7 +49,7 @@ if (postsContainer) {
           button: false
         });
 
-      }, 1750);
+      }, 1600);
       
       setTimeout(() => {
         
@@ -58,9 +58,9 @@ if (postsContainer) {
         .location
           .href = "/login";
 
-        return;
+      }, 2255);
 
-      }, 2775);
+      return;
 
     }
 
@@ -73,6 +73,7 @@ if (postsContainer) {
     }
 
     if (w >= 980) {
+
       postsContainer.style.width = "60%";
       commentContainer.style.display = "block";
       post.style.cssText = "border: 1px solid var(--light-clr)";
@@ -82,7 +83,12 @@ if (postsContainer) {
       post.classList.add("picked");
       let postPicked = document.querySelector(".picked");
       postPicked.style.maxHeight = "320px"; 
-    
+
+      // change link for viewing full post 
+      let deskViewFullPost = document.getElementById("deskViewFullPost");
+
+      deskViewFullPost.href = `dashboard/post/${onePostId}`;
+        
       getComments(onePostId);
 
     } else {
@@ -110,6 +116,11 @@ if (postsContainer) {
       newPickPost.querySelector(".picked-pcr").textContent = elCreated;
 
       let mobilePostId = parseInt(elValue);
+
+      // change link for viewing full post 
+      let phneViewFullPost = document.getElementById("phneViewFullPost");
+
+      phneViewFullPost.href = `dashboard/post/${mobilePostId}`;
 
       mobileComments(mobilePostId);
 

@@ -13,14 +13,13 @@ const textArea = document.getElementById("deskComment");
 
 if (textArea) {
 
-  textArea.addEventListener("keyup", function(event) {
-    if (event.key === "Enter") {
+  textArea.addEventListener("keyup", function(e) {
+    if (e.key === "Enter") {
         
       initDeskComments();
 
     }
 });
-
 }
 
 // Setting up the add comments functionality 

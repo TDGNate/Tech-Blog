@@ -1,0 +1,194 @@
+/* Dashboard Mod Post  */
+
+/* Selected Post  */
+
+.selected-mod-post {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem 1rem;
+	border-radius: 8px;
+	min-height: 175px;
+	border: 1px solid #fff;
+	box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 1.3rem var(--sub-clr-hover),
+		0 0 0.2rem var(--sub-clr-hover), 0 0 2.2rem var(--sub-clr-hover),
+		inset 0 0 1.3rem var(--sub-clr-hover);
+	margin: 4rem 0 2.5rem 0;
+}
+
+.selected-post-content {
+	font-size: 1.3rem;
+	padding: 1rem;
+}
+
+.selected-post-right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-top: 1px solid rgb(167, 167, 167);
+	width: 75%;
+	padding: 1rem 0;
+	gap: 0.8rem;
+	font-size: 1.2rem;
+}
+
+.selected-post-date {
+	color: rgb(167, 167, 167);
+}
+
+/* Button Container  */
+
+.dash-post-btns-container {
+	gap: 0.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-items: center;
+	width: 100%;
+}
+
+.modify-post .btn {
+	width: 80%;
+	padding: 0.8rem;
+	font-size: 1.2rem;
+}
+
+/* Edit button  */
+
+#editPostBtn {
+	background-color: transparent;
+	color: var(--light-clr);
+	box-shadow: 0 0 0.1rem #fff, 0 0 0.2rem #fff,
+		0 0 1.1rem rgba(107, 227, 55, 0.847), 0 0 0.1rem rgba(107, 227, 55, 0.847),
+		0 0 2rem rgba(107, 227, 55, 0.847),
+		inset 0 0 1.1rem rgba(107, 227, 55, 0.847);
+	border: 1px solid white;
+}
+
+#editPostBtn:hover {
+	font-weight: bold;
+	background-color: rgba(107, 227, 55, 0.351);
+}
+
+/* Delete button  */
+
+#deletePostBtn {
+	justify-content: center;
+	justify-self: center;
+	align-self: center;
+	background-color: transparent;
+	box-shadow: 0 0 0.1rem #fff, 0 0 0.2rem #fff,
+		0 0 1.1rem rgba(255, 96, 133, 0.875), 0 0 0.1rem rgba(255, 96, 133, 0.875),
+		0 0 2rem rgba(255, 96, 133, 0.875),
+		inset 0 0 1.1rem rgba(255, 96, 133, 0.875);
+	color: var(--light-clr);
+	border: white 1px solid;
+	animation: red-sub-flicker 2s infinite alternate;
+}
+
+#deletePostBtn:hover {
+	background-color: rgba(255, 0, 0, 0.351);
+	color: #fff;
+	font-weight: bold;
+}
+
+.modify-comment .swal-model {
+	background-color: rgba(255, 96, 133, 0.875);
+}
+
+/* Update form  */
+
+.modify-post form {
+	display: none;
+	margin: 2.8rem 0 4rem 0;
+}
+
+#updatePostMessage {
+	background-color: var(--shaded-clr);
+	padding: 0.5rem;
+	margin-bottom: 1rem;
+	width: 80%;
+	outline: none;
+	border: none;
+	border-radius: 4px;
+	min-height: 9rem;
+	max-height: auto;
+	resize: none;
+	color: var(--light-clr);
+}
+
+/* Post message scroll bar  */
+
+#updatePostMessage::-webkit-scrollbar {
+	width: 8px;
+	background: var(--shaded-clr);
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+#updatePostMessage::-webkit-scrollbar-thumb:hover {
+	background-color: var(--sub-clr-hover);
+}
+
+#updatePostMessage:focus {
+	background-color: var(--shaded-clr-hover);
+}
+
+#updatePostBtn {
+	background-color: var(--sub-clr);
+	color: var(--light-clr);
+}
+
+#updatePostBtn:hover {
+	background-color: var(--sub-clr-hover);
+}
+
+/* Desktop Version  */
+
+@media screen and (min-width: 980px) {
+	.page .modify-post {
+		height: auto;
+	}
+
+	.selected-mod-post {
+		flex-direction: row;
+		min-height: 200px;
+	}
+
+	.selected-post-content {
+		font-size: 1.5rem;
+		padding: 1.2rem;
+		width: 65%;
+	}
+
+	.selected-post-right {
+		border-top: none;
+		border-left: 1px solid rgb(167, 167, 167);
+		width: 30%;
+		gap: 1rem;
+		font-size: 1.5rem;
+	}
+
+	/* form  */
+
+	.modify-post form {
+		margin: 3rem 0;
+	}
+
+	/* buttons  */
+
+	.dash-post-btns-container {
+		margin: 3rem 0;
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+
+	.modify-post .btn {
+		width: 45%;
+		padding: 0.5rem;
+		font-size: 1.4rem 0;
+	}
+}

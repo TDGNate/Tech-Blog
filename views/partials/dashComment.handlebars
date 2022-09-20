@@ -1,6 +1,6 @@
 {{! Dashboard Comments  }}
 
-<div class="dashboard-comment">
+<div class="dashboard-comment" value="{{id}}">
 
 	<div class="dashboard-comment-date">
 		{{date_created}}
@@ -11,6 +11,7 @@
 		<div class="dashboard-comment-content">
 			{{comment}}
 		</div>
+		<hr />
 		<div class="dashboard-comment-post" value="{{post.id}}">
 			Commented on the Post
 			<a

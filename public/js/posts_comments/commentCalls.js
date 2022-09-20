@@ -41,6 +41,7 @@ async function getComments(postId) {
           comments.forEach((com) => {
 
             // cache the API data 
+            let id = com.id;
             let text = com.comment;
             let user = com.user.name;
             let date = com.date_created;
@@ -56,6 +57,7 @@ async function getComments(postId) {
             // adding classes to new Elements 
             commentDiv.classList.add("comment");
             commentDiv.classList.add("post-hover");
+            commentDiv.setAttribute("value", id);
             commentContentDiv.classList.add("comment-content");
             commentBottomDiv.classList.add("comment-bottom");
             commentUserDiv.classList.add("comment-name");

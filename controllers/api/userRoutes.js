@@ -78,9 +78,7 @@ router.post("/login", async (req, res) => {
     if (!user) {
 
       // Send back 404 page 
-      res.render("404", {
-        layout: "blank"
-      });
+      res.render("signUp");
 
       return;
     }

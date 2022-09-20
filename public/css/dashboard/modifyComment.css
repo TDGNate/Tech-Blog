@@ -1,0 +1,216 @@
+/* Dashboard Mod Comment  */
+
+/* Selected Comment  */
+
+.selected-mod-comment {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem 1rem;
+	border-radius: 8px;
+	min-height: 175px;
+	border: 1px solid #fff;
+	box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff,
+		0 0 1.3rem var(--accent-clr-hover), 0 0 0.2rem var(--accent-clr-hover),
+		0 0 2.2rem var(--accent-clr-hover), inset 0 0 1.3rem var(--accent-clr-hover);
+	margin: 4rem 0 2.5rem 0;
+}
+
+.modify-comment-req-user-id {
+	color: rgb(255, 255, 255);
+}
+
+.selected-comment-content {
+	font-size: 1.3rem;
+	padding: 1rem;
+}
+
+.selected-comment-right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-top: 1px solid rgb(167, 167, 167);
+	width: 75%;
+	padding: 1rem 0;
+	gap: 0.8rem;
+	font-size: 1.2rem;
+}
+
+.selected-comment-date {
+	color: rgb(167, 167, 167);
+}
+
+/* Button Container  */
+
+.dash-comment-btns-container {
+	gap: 0.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-items: center;
+	width: 100%;
+}
+
+.modify-comment .btn {
+	width: 80%;
+	padding: 0.8rem;
+	font-size: 1.2rem;
+}
+
+/* Edit button  */
+
+#editCommentBtn {
+	background-color: transparent;
+	color: var(--light-clr);
+	box-shadow: 0 0 0.1rem #fff, 0 0 0.2rem #fff,
+		0 0 1.1rem rgba(107, 227, 55, 0.847), 0 0 0.1rem rgba(107, 227, 55, 0.847),
+		0 0 2rem rgba(107, 227, 55, 0.847),
+		inset 0 0 1.1rem rgba(107, 227, 55, 0.847);
+	border: 1px solid white;
+}
+
+#editCommentBtn:hover {
+	font-weight: bold;
+	background-color: rgba(107, 227, 55, 0.351);
+}
+
+/* Delete button  */
+
+#deleteCommentBtn {
+	justify-content: center;
+	justify-self: center;
+	align-self: center;
+	background-color: transparent;
+	box-shadow: 0 0 0.1rem #fff, 0 0 0.2rem #fff,
+		0 0 1.1rem rgba(255, 96, 133, 0.875), 0 0 0.1rem rgba(255, 96, 133, 0.875),
+		0 0 2rem rgba(255, 96, 133, 0.875),
+		inset 0 0 1.1rem rgba(255, 96, 133, 0.875);
+	color: white;
+	border: white 1px solid;
+	animation: red-sub-flicker 2s infinite alternate;
+}
+
+#deleteCommentBtn:hover {
+	background-color: rgba(255, 0, 0, 0.351);
+	color: #fff;
+	font-weight: bold;
+}
+
+/* Update form  */
+
+.modify-comment form {
+	display: none;
+	margin: 2.8rem 0 4rem 0;
+}
+
+#updateCommentMessage {
+	background-color: var(--shaded-clr);
+	padding: 0.8rem 1rem;
+	margin-bottom: 1rem;
+	width: 80%;
+	outline: none;
+	border: none;
+	border-radius: 4px;
+	min-height: 9rem;
+	max-height: auto;
+	resize: none;
+	color: var(--light-clr);
+}
+
+/* Comment message scroll bar  */
+
+#updateCommentMessage::-webkit-scrollbar {
+	width: 8px;
+	background: var(--shaded-clr);
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+#updateCommentMessage::-webkit-scrollbar-thumb:hover {
+	background-color: var(--sub-clr-hover);
+}
+
+#updateCommentMessage:focus {
+	background-color: var(--shaded-clr-hover);
+}
+
+#updateCommentBtn {
+	background-color: var(--sub-clr);
+	color: var(--light-clr);
+}
+
+#updateCommentBtn:hover {
+	background-color: var(--sub-clr-hover);
+}
+
+/* Desktop Version  */
+
+@media screen and (min-width: 980px) {
+	.page .modify-comment {
+		height: auto;
+	}
+
+	.selected-mod-comment {
+		flex-direction: row;
+		min-height: 200px;
+	}
+
+	.selected-comment-content {
+		font-size: 1.5rem;
+		padding: 1.2rem;
+		width: 65%;
+	}
+
+	.selected-comment-right {
+		border-top: none;
+		border-left: 1px solid rgb(167, 167, 167);
+		width: 30%;
+		gap: 1rem;
+		font-size: 1.5rem;
+	}
+
+	/* form  */
+
+	.modify-comment form {
+		margin: 3rem 0;
+	}
+
+	/* buttons  */
+
+	.dash-comment-btns-container {
+		margin: 3rem 0;
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+
+	.modify-comment .btn {
+		width: 45%;
+		padding: 0.5rem;
+		font-size: 1.2rem;
+	}
+}
+
+/* animations  */
+
+@keyframes red-sub-flicker {
+	0%,
+	18%,
+	22%,
+	25%,
+	53%,
+	57%,
+	100% {
+		box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff,
+			0 0 1.3rem rgba(255, 96, 133, 0.875), 0 0 0.2rem rgba(255, 96, 133, 0.875),
+			0 0 2.2rem rgba(255, 96, 133, 0.875),
+			inset 0 0 1.3rem rgba(255, 96, 133, 0.875);
+	}
+
+	24%,
+	55% {
+		box-shadow: none;
+	}
+}

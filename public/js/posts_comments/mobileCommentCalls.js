@@ -35,6 +35,7 @@ async function mobileComments(postId) {
           comments.forEach((com) => {
 
           // cache the API data 
+          let id = com.id;
           let text = com.comment;
           let user = com.user.name;
           let date = com.date_created; 
@@ -49,6 +50,7 @@ async function mobileComments(postId) {
 
           // giving classes 
           commentDivMobile.classList.add("phone-comment");
+          commentDivMobile.setAttribute("value", id);
           commentContentDivMobile.classList.add("phone-comment-content");
           commentBottomDivMobile.classList.add("phone-comment-bottom");
           commentNameDivMobile.classList.add("phone-comment-name");
@@ -85,6 +87,7 @@ async function mobileComments(postId) {
       });
 
   } else {
+    
     console.log("The Post Value ID is not a number (Mobile Call)");
 
     return;

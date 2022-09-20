@@ -18,15 +18,59 @@ router.get("/", async (req, res) => {
       
         return;
     }
-    res
+
+    req.session.save(() => {
+      
+      req.session.loggedIn = true;
+
+      res
       .status(200)
       .json(comment);
+
+    });
+
+  } catch (err) {
+
+    res.status(500).json({ message: "Server Error" });
+  }
+});
+ 
+// Get One Comment 
+router.get("/:id", async (req, res) => {
+  try {
+
+    const comment = await Comment.findOne({
+      where: {
+        id: req.params.id
+      }
+    });
+
+    if (!comment) {
+      // Send back 404 page 
+      res.render("404", {
+        layout: "blank"
+      });
+      
+        return;
+    }
+
+    req.session.save(() => {
+      
+      req.session.loggedIn = true;
+
+      res
+      .status(200)
+      .json(comment);
+
+    });
+    
   } catch (err) {
 
     res.status(500).json({ message: "Server Error" });
   }
  });
 
+// Create a Comment 
 router.post("/", async (req, res) => {
   try {
     const comment = await Comment.create({
@@ -35,19 +79,58 @@ router.post("/", async (req, res) => {
       post_id: req.body.post_id
     });
 
-    res.json(comment);
+    req.session.save(() => {
+      
+      req.session.loggedIn = true;
+
+      res.json(comment);
+
+    });
+
+
   } catch (err) {
 
     res.status(500).json({ message: "Server Error" });
   }
 });
 
-// delete comment 
-router.delete("/", async (req, res) => {
+// Update a Comment 
+router.put("/:id", async (req, res) => {
+  try {
+    const comment = await Comment.update(
+      {
+      comment: req.body.comment,
+      user_id: req.body.user_id,
+      post_id: req.body.post_id
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    );
+
+    req.session.save(() => {
+      
+      req.session.loggedIn = true;
+
+      res.json({ message: "updated" });
+
+    });
+
+
+  } catch (err) {
+
+    res.status(500).json({ message: "Server Error" });
+  }
+});
+
+// delete a Comment
+router.delete("/:id", async (req, res) => {
   try {
     const comment = await Comment.destroy({
       where: {
-        id: req.body.id
+        id: req.params.id
       }
     });
 
@@ -62,7 +145,14 @@ router.delete("/", async (req, res) => {
         return;
     }
 
-    res.json(comment);
+    req.session.save(() => {
+      
+      req.session.loggedIn = true;
+
+      res.json({ message: "deleted" });
+
+    });
+
   } catch (err) {
 
     res.status(500).json({ message: "Server Error" });

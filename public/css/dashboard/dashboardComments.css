@@ -5,9 +5,18 @@
 	border-radius: 8px;
 	overflow: hidden;
 	margin: 0.8rem;
+	min-height: 180px;
 	width: 80%;
 	transition: all 300ms ease;
 	position: relative;
+}
+
+.dashboard-comment hr {
+	align-self: center;
+	text-align: center;
+	width: 20%;
+	margin: 1rem auto;
+	background-color: var(--accent-clr-hover);
 }
 
 .dashboard-comment:hover {
@@ -22,8 +31,9 @@
 }
 
 .comment-second-side {
+	margin: auto;
 	text-align: center;
-	padding: 0.5rem;
+	padding: 1rem 0.6rem;
 }
 
 .dashboard-comment-content {
@@ -72,6 +82,11 @@
 		width: 75%;
 		min-height: 200px;
 		gap: 5%;
+	}
+
+	.dashboard-comment hr {
+		width: 25%;
+		margin: 1rem 0;
 	}
 
 	.comment-second-side {

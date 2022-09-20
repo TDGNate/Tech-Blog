@@ -1,0 +1,50 @@
+<div class="page modify-comment" value="{{userId}}">
+	<div class="container">
+
+		<h1 class="modify-comment-id" value="{{comment.id}}">Modify
+			<span class="modify-comment-req-user-id" value="{{userId}}">Your</span>
+			Comment</h1>
+
+		<hr />
+
+		<div class="selected-mod-comment">
+			<div class="selected-comment-content">{{comment.comment}}</div>
+
+			<div class="selected-comment-right">
+				<div
+					class="selected-comment-user"
+					value="{{comment.user_id}}"
+				>{{comment.user.name}}
+				</div>
+				<div class="selected-comment-date">{{comment.date_created}}</div>
+			</div>
+		</div>
+		<div class="dash-comment-btns-container">
+			<input type="button" id="editCommentBtn" value="Edit" class="btn" />
+			<input type="button" id="deleteCommentBtn" value="Delete" class="btn" />
+
+		</div>
+
+		<hr />
+
+		{{! Creating a new Comment  }}
+
+		<form class="container-sub mod-comment">
+
+			{{! Content  }}
+			<label for="comment-message">Update Comment:</label>
+			<textarea
+				name="updatecommentMessage"
+				type="text"
+				id="updateCommentMessage"
+				placeholder="{{comment.comment}}..."
+				maxlength="375"
+				required
+			>{{comment.comment}}</textarea>
+
+			{{! Submit Button  }}
+			<input type="submit" id="updateCommentBtn" value="Update" class="btn" />
+		</form>
+
+	</div>
+</div>

@@ -42,12 +42,24 @@
 
 		<h2>Your Posts</h2>
 
-		<div class="container-sub">
+
+		<div class="container-sub" id="dashboardPostContainer">
+
+		{{#if user.posts}}
 
 			{{! Dashboard Cards  }}
 			{{#each user.posts as |post|}}
 				{{> dashCard}}
 			{{/each}}
+
+
+		{{else}}
+
+		<div class="dashboard-post-section-container">
+			<p class="dashboard-no-post-message">You have no posts</p>
+		</div>
+
+		{{/if}}
 
 		</div>
 
@@ -56,7 +68,7 @@
 		<div class="dashboard-comment-section">
 			<h2>Your Comments</h2>
 
-		<div class="container-sub">
+		<div class="container-sub" id="dashboardCommentContainer">
 					{{#if user.comments}}
 
 						{{!-- Each User's Posts  --}}
@@ -67,7 +79,7 @@
 					{{else}}
 
 						<div class="dashboard-comment-section-container">
-							<p class="dashboard-no-comment-message">You have no comments yet</p>
+							<p class="dashboard-no-comment-message">You have no comments</p>
 						</div>
 
 					{{/if}}

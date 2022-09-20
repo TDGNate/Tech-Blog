@@ -64,8 +64,8 @@
 
 .dashboard-post i {
 	position: absolute;
-	top: 1rem;
-	right: 1rem;
+	top: 0.8rem;
+	right: 0.8rem;
 	z-index: 10;
 	font-size: 1.6rem;
 	color: rgb(167, 167, 167);
@@ -74,7 +74,7 @@
 
 .dashboard-post i:hover {
 	cursor: pointer;
-	color: var(--sub-clr-hover);
+	color: var(--light-clr);
 }
 
 .dashboard-post::after {
@@ -119,10 +119,28 @@
 	margin-bottom: 0.6rem;
 }
 
+.dashboard-post-section-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.dashboard-no-post-message {
+	background-color: var(--shaded-clr);
+	padding: 1rem;
+	width: 80%;
+	text-align: center;
+	font-size: 1.2rem;
+	border-radius: 8px;
+	justify-self: center;
+	margin: 0;
+}
+
 /* Dashboard Comments Section */
 
 .dashboard-comment-section {
-	padding: 1.8rem;
+	padding: 1.8rem 0;
 	min-height: 25%;
 	width: 100%;
 }
@@ -143,6 +161,21 @@
 	border-radius: 8px;
 	justify-self: center;
 	margin: 0;
+}
+
+#dashboardCommentContainer .dashboard-comment i {
+	position: absolute;
+	top: 0.8rem;
+	right: 0.8rem;
+	z-index: 10;
+	font-size: 1.6rem;
+	color: rgb(167, 167, 167);
+	transition: all 400ms ease;
+}
+
+#dashboardCommentContainer .dashboard-comment i:hover {
+	cursor: pointer;
+	color: var(--light-clr);
 }
 
 /* Desktop Version  */
@@ -195,6 +228,22 @@
 		padding: 0;
 	}
 
+	.dashboard-post i:hover {
+		color: var(--sub-clr-hover);
+	}
+
+	.dashboard-post-section-container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.dashboard-no-post-message {
+		margin: 2.5rem;
+		font-size: 1.4rem;
+	}
+
 	/* Comment Section  */
 
 	.dashboard-comment-section {
@@ -212,5 +261,9 @@
 	.dashboard-no-comment-message {
 		margin: 2.5rem;
 		font-size: 1.4rem;
+	}
+
+	#dashboardCommentContainer .dashboard-comment i:hover {
+		color: var(--accent-clr-hover);
 	}
 }

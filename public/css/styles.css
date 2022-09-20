@@ -162,29 +162,34 @@ input:focus {
 	color: var(--light-clr);
 }
 
+/* Sweet Alert button  */
+
 .swal-button {
 	padding: 7px 19px;
 	border-radius: 2px;
-	background-color: var(--sub-clr);
 	font-size: 15px;
 	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
 	outline: none;
 	border: 1px solid var(--dark-clr);
 	padding: 0.7rem 1.5rem;
 	border-radius: 5px;
+	transition: all 400ms ease;
+	color: white;
+	background-color: rgba(45, 127, 178, 0.325);
 }
 
 .swal-button:hover {
-	background-color: var(--sub-clr-hover) !important;
+	color: black;
+	background-color: transparent;
 }
 
-.swal-button:active {
-	background-color: var(--sub-clr-hover) !important;
-}
+/* Sweet Alert Overlays  */
 
 .swal-overlay {
 	background-color: rgba(0, 0, 0, 0.8);
 }
+
+/* Sweet Alert Icons  */
 
 .swal-icon {
 	background-color: var(--dark-clr);

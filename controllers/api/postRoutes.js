@@ -1,6 +1,9 @@
 // Post Routes 
 
 const router = require("express").Router();
+const auth = require("../../utils/auth");
+
+// Models 
 const { Comment, Post, User} = require("../../models");
 
 // Posts
@@ -43,10 +46,16 @@ router.get("/", async (req, res) => {
         return;
     }
 
-    res
+    req.session.save(() => {
+      
+      req.session.loggedIn = true;
+
+      res
       .status(200)
       .json(posts);
-    
+
+    });
+
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
   }
@@ -90,16 +99,24 @@ router.get("/:id", async (req, res) => {
       
         return;
     }
-    res
+
+    req.session.save(() => {
+      
+      req.session.loggedIn = true;
+
+      res
       .status(200)
       .json(posts);
+
+    });
+
   } catch (err) {
     res.status(500).json({ message: "Server Error" });
   }
  });
 
 // create post 
-router.post("/", async (req, res) => {
+router.post("/", auth, async (req, res) => {
   try {
     const posts = await Post.create({
       title: req.body.title,
@@ -107,8 +124,14 @@ router.post("/", async (req, res) => {
       user_id: req.session.userId
     });
 
+    req.session.save(() => {
+      
+      req.session.loggedIn = true;
+
     // to reload the page after creating a new post 
-    res.redirect("/dashboard");
+      res.redirect("/dashboard");
+
+    });
 
   } catch (err) {
 
@@ -116,16 +139,62 @@ router.post("/", async (req, res) => {
   }
 });
 
-// delete posts 
-router.delete("/", async (req, res) => {
+// Update a Post 
+router.put("/:id", auth, async (req, res) => {
   try {
-    const posts = await Post.destroy({
-      where: {
-        id: req.body.id
+
+    const postData = await Post.update(
+      {
+      title: req.body.title,
+      content: req.body.content,
+      user_id: req.session.userId
+      },
+      {
+        where: {
+          id: req.params.id
+        }
       }
+    );
+
+    if (!postData) {
+
+      // Send back 404 page 
+      res.render("404", {
+        layout: "blank"
+      });
+
+    }
+
+    req.session.save(() => {
+      
+      req.session.loggedIn = true;
+
+      res.json({ message: "updated"});
+
     });
 
-    if (!posts) {
+  } catch (err) {
+
+    res.status(500).json({ message: "Server Error" });
+
+  }
+});
+
+// delete posts 
+router.delete("/:id", auth, async (req, res) => {
+  try {
+
+    const postData = await Post.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).catch(err => {
+      res.json(err);
+
+      return;
+    });
+
+    if (!postData) {
 
       // Send back 404 page 
       res.render("404", {
@@ -135,10 +204,18 @@ router.delete("/", async (req, res) => {
         return;
     }
 
-    res.json(posts);
+    req.session.save(() => {
+      
+      req.session.loggedIn = true;
+
+      res.json({ message: "deleted"});
+
+    });
+
   } catch (err) {
 
     res.status(500).json({ message: "Server Error" });
+    
   }
 });
 
